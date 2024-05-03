@@ -1,0 +1,315 @@
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #d7d2cb;
+}
+/* ==Sidebar== */
+.sidebar header {
+  position: relative;
+}
+
+.sidebar .text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #f3f8ff;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar.close .text {
+  opacity: 0;
+}
+
+.sidebar .image {
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 14px;
+  height: 100%;
+  width: 250px;
+  background: #211515;
+  transition: all 0.2s ease;
+  z-index: 100;
+  border-right:3px solid;
+  border-right-color: white;
+}
+
+.sidebar.close {
+  width: 85px;
+}
+
+.sidebar li {
+  height: 0;
+  margin-top: 50px;
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+
+.sidebar li .icon {
+  font-size: 25px;
+  min-width: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+  color: #f3f8ff;
+  font-weight: 400;
+}
+
+.sidebar .image-text img {
+  width: 40px;
+  border-radius: 50%;
+  min-width: 50px;
+}
+
+.sidebar header .image-text {
+  display: flex;
+  align-items: center;
+}
+
+.header .image-text .text-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-header .name {
+  font-size: 23px;
+  font-weight: 900;
+  margin-left: 5px;
+}
+
+.text-header .section {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.sidebar header .toggle {
+  position: absolute;
+  top: 20%;
+  right: -43px;
+  transform: translateX(-50%);
+  height: 30px;
+  width: 30px;
+  background-color: #f6bf19;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+  color: #f6bf19;
+}
+
+/* home */
+section {
+  padding: 2rem 9%;
+}
+.home {
+  position: relative;
+  height: 100vh;
+  left: 250px;
+  width: calc(100% - 250px);
+  align-items: center;
+  justify-content: left;
+  min-height: 100vh;
+  background: url(img/home3.jpg) no-repeat;
+  background-size: cover;
+  transition: all 0.3s ease;
+  display: flex;
+  text-align: left;
+}
+
+.sidebar.close ~ .home {
+  left: 85px;
+  width: calc(100% - 85px);
+}
+
+.home .content {
+  max-width: 40rem;
+}
+
+.home .content h1 {
+  font-size: 70px;
+  color: black;
+}
+
+.home .content p {
+  font-size: 20px;
+  line-height: 1.5rem;
+  color: black;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 2rem;
+  background: #211515;
+  color: #f3f8ff;
+  padding: 1rem 0.7rem;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #f6bf19;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+  left: 250px;
+  width: calc(100% - 200px);
+  align-items: center;
+  justify-content: left;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  display: flex;
+  text-align: left;
+  display:inline;
+}
+
+.sidebar.close ~ .main {
+  left: 85px;
+  width: calc(100% - 85px);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.header {
+  background-color: #211515;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+h3 {
+  display: flex;
+  align-items: center; 
+  padding: 0 20px;
+}
+
+.main-content {
+}
+
+.user-interaction {
+  display:inline-block;
+  width:100%;
+  height: 100px;
+}
+.filter {
+  display: flex;
+  align-items: center; 
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 35px;
+}
+
+.filter-neighborhood {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.from-date {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.to-date {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.filter-date label,
+.filter-date input[type="date"],
+.filter-date button {
+  margin-right: 10px;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+}
+
+#NEIGHBORHOOD {
+  border-radius: 10px;
+}
+
+#start-date {
+  border-radius: 10px;
+}
+
+#end-date {
+  border-radius: 10px;
+}
+
+#label-btn {
+  display: none;
+
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80px;
+  margin-top: 25px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.chart {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.chart-left-1 {
+  width: 600px;
+  height: 300px;
+  background-color: #ccc; 
+  border: 2px solid #000;
+}

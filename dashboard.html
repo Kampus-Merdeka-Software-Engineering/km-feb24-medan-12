@@ -10,7 +10,7 @@
     </style>
 
     <!--CSS-->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dashboard.css" />
 
     <!--Icons-CSS-->
     <link
@@ -59,69 +59,86 @@
     </nav>
     <div class="main">
         <div class="header">
-            <h1>NYC Property Sales Dashboard</h1>
+          <h1>NYC Property Sales Dashboard</h1>
         </div>
         <div class="main-content">
-            <div>
-                <div class = "user-interaction">
+          <div>
+              <div class = "user-interaction">
                     <!--<h3>FILTERING</h3>-->
-                    <form action="#", method="post">
-                        <div class="filter">
-                        <div class="filter-neighborhood">
-                        <label for="NEIGHBORHOOD">NEIGHBORHOOD</label>
-                        <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
-                          <option value="ALPHBAET CITY">ALPHABET CITY</option>
-                          <option value="CHELSEA">CHELSEA</option>
-                          <option value="CHINATOWN">CHINATOWN</option>
-                          <option value="CIVIC CENTER">CIVIC CENTER</option>
-                          <option value="CLINTON">CLINTON</option>
-                          <option value="EAST VILLAGE">EAST VILLAGE</option>
-                          <option value="FASHION">FASHION</option>
-                          <option value="FINANCIAL">FINANCIAL</option>
-                          <option value="FLATIRON">FLATIRON</option>
-                          <option value="GRAMERCY">GRAMERCY</option>
-                          <option value="GREENWICH VILLAGE-CENTRAL">GREENWICH VILLAGE-CENTRAL</option>
-                          <option value="GREENWICH VILLAGE-WEST">GREENWICH VILLAGE-WEST</option>
-                          <option value="HARLEM-CENTRAL">HARLEM-CENTRAL</option>
-                          <option value="HARLEM-EAST">HARLEM-EAST</option>
-                          <option value="HARLEM-UPPER">HARLEM-UPPER</option>
-                          <option value="HARLEM-WEST">HARLEM-WEST</option>
-                          <option value="INWOOD">INWOOD</option>
-                          <option value="JAVITS CENTER">JAVITS CENTER</option>
-                          <option value="KIPS BAY">KIPS BAY</option>
-                          <option value="LITTLE ITALY">LITTLE ITALY</option>
-                          <option value="LOWER EAST SIDE">LOWER EAST SIDE</option>
-                          <option value="MANHATTAN VALLEY">MANHATTAN VALLEY</option>
-                          <option value="MIDTOWN CBD">MIDTOWN CBD</option>
-                          <option value="MIDTOWN EAST">MIDTOWN EAST</option>
-                          <option value="MIDTOWN WEST">MIDTOWN WEST</option>
-                          <option value="MORNINGSIDE HEIGHTS">MORNINGSIDE HEIGHTS</option>
-                          <option value="MURRAY HILL">MURRAY HILL</option>
-                          <option value="ROOSEVELT ISLAND">ROOSEVELT ISLAND</option>
-                          <option value="SOHO">SOHO</option>
-                          <option value="SOUTHBRIDGE">SOUTHBRIDGE</option>
-                          <option value="TRIBECA">TRIBECA</option>
-                          <option value="UPPER EAST SIDE (59-79)">UPPER EAST SIDE (59-79)</option>
-                          <option value="UPPER EAST SIDE (79-96)">UPPER EAST SIDE (79-96)</option>
-                          <option value="UPPER EAST SIDE (96-110)">UPPER EAST SIDE (96-110)</option>
-                          <option value="UPPER WEST SIDE (59-79)">UPPER WEST SIDE (59-79)</option>
-                          <option value="UPPER WEST SIDE (79-96)">UPPER WEST SIDE (79-96)</option>
-                          <option value="UPPER WEST SIDE (96-116)">UPPER WEST SIDE (96-116)</option>
-                          <option value="WASHINGTON HEIGHTS LOWER">WASHINGTON HEIGHTS LOWER</option>
-                          <option value="WASHINGTON HEIGHTS UPPER">WASHINGTON HEIGHTS UPPER</option> 
-                        </select>
-                        </div>
-                        <div class="filter-date">
-                        <label for="start-date">Tanggal Mulai:</label>
-                            <input type="date" id="start-date" name="start-date">
-                        <label for="end-date">Tanggal Akhir:</label>
-                            <input type="date" id="end-date" name="end-date">
-                        <button type="submit">Filter</button>
-                        </div>
-                        </div>
+                <form action="#", method="post">
+                  <div class="filter">
+                    <div class="filter-neighborhood">
+                      <label for="NEIGHBORHOOD">NEIGHBORHOOD</label>
+                      <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
+                        <option value="ALPHBAET CITY">ALPHABET CITY</option>
+                        <option value="CHELSEA">CHELSEA</option>
+                        <option value="CHINATOWN">CHINATOWN</option>
+                        <option value="CIVIC CENTER">CIVIC CENTER</option>
+                        <option value="CLINTON">CLINTON</option>
+                        <option value="EAST VILLAGE">EAST VILLAGE</option>
+                        <option value="FASHION">FASHION</option>
+                        <option value="FINANCIAL">FINANCIAL</option>
+                        <option value="FLATIRON">FLATIRON</option>
+                        <option value="GRAMERCY">GRAMERCY</option>
+                        <option value="GREENWICH VILLAGE-CENTRAL">GREENWICH VILLAGE-CENTRAL</option>
+                        <option value="GREENWICH VILLAGE-WEST">GREENWICH VILLAGE-WEST</option>
+                        <option value="HARLEM-CENTRAL">HARLEM-CENTRAL</option>
+                        <option value="HARLEM-EAST">HARLEM-EAST</option>
+                        <option value="HARLEM-UPPER">HARLEM-UPPER</option>
+                        <option value="HARLEM-WEST">HARLEM-WEST</option>
+                        <option value="INWOOD">INWOOD</option>
+                        <option value="JAVITS CENTER">JAVITS CENTER</option>
+                        <option value="KIPS BAY">KIPS BAY</option>
+                        <option value="LITTLE ITALY">LITTLE ITALY</option>
+                        <option value="LOWER EAST SIDE">LOWER EAST SIDE</option>
+                        <option value="MANHATTAN VALLEY">MANHATTAN VALLEY</option>
+                        <option value="MIDTOWN CBD">MIDTOWN CBD</option>
+                        <option value="MIDTOWN EAST">MIDTOWN EAST</option>
+                        <option value="MIDTOWN WEST">MIDTOWN WEST</option>
+                        <option value="MORNINGSIDE HEIGHTS">MORNINGSIDE HEIGHTS</option>
+                        <option value="MURRAY HILL">MURRAY HILL</option>
+                        <option value="ROOSEVELT ISLAND">ROOSEVELT ISLAND</option>
+                        <option value="SOHO">SOHO</option>
+                        <option value="SOUTHBRIDGE">SOUTHBRIDGE</option>
+                        <option value="TRIBECA">TRIBECA</option>
+                        <option value="UPPER EAST SIDE (59-79)">UPPER EAST SIDE (59-79)</option>
+                        <option value="UPPER EAST SIDE (79-96)">UPPER EAST SIDE (79-96)</option>
+                        <option value="UPPER EAST SIDE (96-110)">UPPER EAST SIDE (96-110)</option>
+                        <option value="UPPER WEST SIDE (59-79)">UPPER WEST SIDE (59-79)</option>
+                        <option value="UPPER WEST SIDE (79-96)">UPPER WEST SIDE (79-96)</option>
+                        <option value="UPPER WEST SIDE (96-116)">UPPER WEST SIDE (96-116)</option>
+                        <option value="WASHINGTON HEIGHTS LOWER">WASHINGTON HEIGHTS LOWER</option>
+                        <option value="WASHINGTON HEIGHTS UPPER">WASHINGTON HEIGHTS UPPER</option> 
+                      </select>
+                    </div>
+                    <div class="from-date">
+                      <label for="start-date">FROM:</label>
+                      <input type="date" id="start-date" name="start-date">
+                    </div>
+                    <div class="to-date">
+                      <label for="end-date">TO:</label>
+                      <input type="date" id="end-date" name="end-date">
+                    </div>
+                    <div class="button">
+                      <label id="label-btn" for="stickyButton">tombol</label>
+                      <button id="stickyButton" class="sticky-button" type="submit">FILTER</button>
+                    </div>
+                  </div>
                 </div>
-            </div>
+          </div>
         </div>
+          <div class="chart">
+            <div class="chart-left">
+              <div class="chart-left-1">
+
+              </div>
+            </div>
+            <div class="chart-right">
+              <div class="chart-right-1">
+
+            </div>
+            </div>
+          </div>
         </div>
     <script src="script.js"></script>
 </body>
