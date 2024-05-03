@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="main">
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--Font Google-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital@1&family=Courgette&family=Poppins:wght@300;400;500;600;700&family=Ubuntu&family=Ysabeau+Infant:ital,wght@1,1&display=swap");
+    </style>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--Icons-CSS-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="img/logo.jpg" alt="logo" />
+          </span>
+          <div class="text text-header">
+            <span class="name">Team 12</span>
+            <span class="section">Medan</span>
+          </div>
+        </div>
+        <i class="bx bx-menu toggle"></i>
+    </header>
+      <div class="menubar">
+        <div class="menu-links">
+          <li class="nav-list">
+            <a href="index.html">
+              <i class="bx bx-home-alt icon"></i>
+              <span class="text nav-text">Home</span></a
+            >
+          </li>
+          <ul class="menu-links">
+            <li class="nav-list">
+              <a href="dashboard.html">
+                <i class="bx bxs-dashboard icon"></i>
+                <span class="text nav-text">Dashboard</span></a
+              >
+            </li>
+            <li class="nav-list">
+              <a href="dataset.html">
+                <i class="bx bx-data icon"></i>
+                <span class="text nav-text">Dataset</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main">
         <div class="header">
             <h1>NYC Property Sales Dashboard</h1>
         </div>
@@ -70,11 +123,6 @@
             </div>
         </div>
         </div>
-        <div class="footer">
-            <div>
-
-            </div>
-        </div>
-
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
