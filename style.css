@@ -236,3 +236,136 @@ button {
   margin-top: 30px;
   margin-left: 20px;
 }
+
+/* Dashboard */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.header {
+  background-color: #211515;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.user-interaction {
+  display:inline-block;
+  width:100%;
+  height: 100px;
+}
+
+.filter {
+  display: flex;
+  align-items: center; 
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 35px;
+}
+
+.filter-neighborhood {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.from-date {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.to-date {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.filter-date label,
+.filter-date input[type="date"],
+.filter-date button {
+  margin-right: 10px;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+}
+
+#NEIGHBORHOOD {
+  border-radius: 10px;
+}
+
+#start-date {
+  border-radius: 10px;
+}
+
+#end-date {
+  border-radius: 10px;
+}
+
+#label-btn {
+  display: none;
+
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80px;
+  margin-top: 25px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.chart {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.chart-left-1 {
+  width: 600px;
+  height: 300px;
+  background-color: #ccc; 
+  border: 2px solid #000;
+}
+
+.chart-right-1 {
+  width: 200px;
+  height: 300px;
+  background-color: #ccc; 
+  border: 2px solid #000;
+}
+
+.main {
+  position:absolute;
+  height: 100vh;
+  left:250px;
+  width: calc(100% - 250px);
+  align-items: center;
+  justify-content: left;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  text-align: left;
+  display: inline-flexbox;
+}
+
+.sidebar.close ~ .main {
+  left: 85px;
+  width: calc(100% - 85px);
+}
