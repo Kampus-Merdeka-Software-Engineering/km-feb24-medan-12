@@ -10,7 +10,7 @@
     </style>
 
     <!--CSS-->
-    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!--Icons-CSS-->
     <link
@@ -19,6 +19,7 @@
     />
 </head>
 <body>
+    <!--navigasi bar-->
     <nav class="sidebar close">
       <header>
         <div class="image-text">
@@ -57,16 +58,21 @@
         </div>
       </div>
     </nav>
+    <!--section untuk bagian utama dari dashboard-->
     <div class="main">
+        <!--Header-->
         <div class="header">
           <h1>NYC Property Sales Dashboard</h1>
         </div>
+        <!--section untuk menampung bagian form-->
         <div class="main-content">
           <div>
+              <!--section form-->
               <div class = "user-interaction">
-                    <!--<h3>FILTERING</h3>-->
+                <!--FORM-->
                 <form action="#", method="post">
                   <div class="filter">
+                    <!--Section untuk select "NEIGHBORHOOD"-->
                     <div class="filter-neighborhood">
                       <label for="NEIGHBORHOOD">NEIGHBORHOOD</label>
                       <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
@@ -111,6 +117,7 @@
                         <option value="WASHINGTON HEIGHTS UPPER">WASHINGTON HEIGHTS UPPER</option> 
                       </select>
                     </div>
+                    <!--section untuk tanggal-->
                     <div class="from-date">
                       <label for="start-date">FROM:</label>
                       <input type="date" id="start-date" name="start-date">
@@ -119,6 +126,7 @@
                       <label for="end-date">TO:</label>
                       <input type="date" id="end-date" name="end-date">
                     </div>
+                    <!--Tombol untuk submit filter-->
                     <div class="button">
                       <label id="label-btn" for="stickyButton">tombol</label>
                       <button id="stickyButton" class="sticky-button" type="submit">FILTER</button>
@@ -127,19 +135,25 @@
                 </div>
           </div>
         </div>
+          <!--section untuk chart ringkasan yang berupa angka-->
+          <div class="chart-mini">
+            <div class="chart-mini-1">Total revenue</div>
+            <div class="chart-mini-2">Total Transaction</div>
+            <div class="chart-mini-3">Average Sales</div>
+            <div class="chart-mini-4">Total Commercial Unit</div>
+            <div class="chart-mini-5">Total Residential Unit</div>
+          </div>
+          <!--section untuk chart berupa grafik-->
           <div class="chart">
-            <div class="chart-left">
-              <div class="chart-left-1">
-
-              </div>
-            </div>
-            <div class="chart-right">
-              <div class="chart-right-1">
-
-            </div>
-            </div>
+            <div class="chart-1">quarterly sales revenue</div>
+            <div class="chart-2">monthly sales revenue</div>
+            <div class="chart-3">sales composition by building classification</div>
+            <div class="chart-4">total revenue by tax class</div>
+            <div class="chart-5">total revenue by building category</div>
+            <div class="chart-6">top 10 total revenue and transaction by neigborhood</div>
           </div>
         </div>
+    <!--file javascript-->
     <script src="script.js"></script>
 </body>
 </html>
