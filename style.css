@@ -450,3 +450,52 @@ button:hover {
   left: 85px;
   width: calc(100% - 85px);
 }
+
+@media screen and (max-width: 720px) {
+  .header {
+    width: 100%;
+    font-size: 40%;
+  }
+  .main-content {
+    height:20%;
+  }
+  form {
+    width:100%;
+  }
+  .filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    column-gap: 10%;
+    font-size: 80%;
+    align-items: start;
+  }
+ #label-NEIGHBORHOOD, #date{
+  display:none;
+ }
+  .filter-neighborhood {
+    width:50%;
+  }
+  .from-date {
+    width:50%;
+    margin-top:5px;
+  }
+  .to-date {
+    width:50%;
+    margin-top:5px;
+  }
+  .sticky-button {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  .chart-mini {
+    display:none;
+  }
+  .chart {
+    display: flex;
+    flex-direction: column;
+  }
+  .chart-1, .chart-2, .chart-3, .chart-4, .chart-5, .chart-6 {
+    width:95%;
+  }
+}
