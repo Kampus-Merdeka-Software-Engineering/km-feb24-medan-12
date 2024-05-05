@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
 </head>
-<body>
+<body class="responsive-sidebar">
     <!--navigasi bar-->
     <nav class="sidebar close">
       <header>
@@ -74,7 +74,7 @@
                   <div class="filter">
                     <!--Section untuk select "NEIGHBORHOOD"-->
                     <div class="filter-neighborhood">
-                      <label for="NEIGHBORHOOD">NEIGHBORHOOD</label>
+                      <label id="label-NEIGHBORHOOD" for="NEIGHBORHOOD">NEIGHBORHOOD</label>
                       <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
                         <option value="ALPHBAET CITY">ALPHABET CITY</option>
                         <option value="CHELSEA">CHELSEA</option>
@@ -119,11 +119,11 @@
                     </div>
                     <!--section untuk tanggal-->
                     <div class="from-date">
-                      <label for="start-date">FROM:</label>
+                      <label id="date" for="start-date">FROM:</label>
                       <input type="date" id="start-date" name="start-date">
                     </div>
                     <div class="to-date">
-                      <label for="end-date">TO:</label>
+                      <label id="date" for="end-date">TO:</label>
                       <input type="date" id="end-date" name="end-date">
                     </div>
                     <!--Tombol untuk submit filter-->
@@ -135,6 +135,7 @@
                 </div>
           </div>
         </div>
+          <div class="chart-area">
           <!--section untuk chart ringkasan yang berupa angka-->
           <div class="chart-mini">
             <div class="chart-mini-1">Total revenue</div>
@@ -152,6 +153,7 @@
             <div class="chart-5">total revenue by building category</div>
             <div class="chart-6">top 10 total revenue and transaction by neigborhood</div>
           </div>
+        </div>
         </div>
     <!--file javascript-->
     <script src="script.js"></script>
