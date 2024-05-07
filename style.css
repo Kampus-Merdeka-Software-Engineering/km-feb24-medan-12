@@ -331,7 +331,8 @@ button:hover {
 }
 
 .chart-area {
-  padding-left: 5%;
+  padding-left: 3%;
+  max-width: 100%;
 }
 .chart {
   display:inline-grid;
