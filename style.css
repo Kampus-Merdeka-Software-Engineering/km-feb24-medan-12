@@ -455,6 +455,35 @@ button:hover {
   width: calc(100% - 85px);
 }
 
+.footer {
+  background-color: #0a1a44;
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0a1a44, #00c4cc);
+  flex-wrap: wrap;
+}
+
+.footer .links {
+  margin-bottom: 3rem;
+}
+
+.footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+.footer .credit {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.footer .credit a {
+  color: #fff;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 720px) {
   .header {
     width: 100%;
