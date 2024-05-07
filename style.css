@@ -330,6 +330,10 @@ button:hover {
   background-color: #555;
 }
 
+.chart-area {
+  padding-left: 3%;
+  max-width: 100%;
+}
 .chart {
   display:inline-grid;
   grid-template-columns: auto auto;
@@ -494,6 +498,10 @@ button:hover {
     margin-left: 0px;
     width:83px;
     height:23px;
+  }
+
+  .chart-area {
+    padding-left: 0;
   }
   .chart-mini {
     display:none;
