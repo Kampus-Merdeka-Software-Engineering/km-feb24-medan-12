@@ -356,7 +356,7 @@ button:hover {
 }
 
 .chart-3 {
-  width: 400px;
+  width: 600px;
   height: 300px;
   background-color: #ccc; 
   border: 2px solid #000;
@@ -372,7 +372,7 @@ button:hover {
 }
 
 .chart-5 {
-  width: 400px;
+  width: 600px;
   height: 300px;
   background-color: #ccc; 
   border: 2px solid #000;
@@ -464,29 +464,36 @@ button:hover {
   }
   .filter {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
     column-gap: 10%;
+    row-gap: 10%;
     font-size: 80%;
     align-items: start;
   }
  #label-NEIGHBORHOOD, #date{
-  display:none;
  }
   .filter-neighborhood {
     width:50%;
   }
   .from-date {
     width:50%;
-    margin-top:5px;
   }
   .to-date {
     width:50%;
     margin-top:5px;
   }
-  .sticky-button {
-    margin-left: 0;
-    margin-top: 5px;
+  #start-date, #end-date{
+    height:23px;
+  }
+  .button{
+    padding-top:13%;
+  }
+  #stickyButton {
+    margin-top: 0px;
+    margin-left: 0px;
+    width:83px;
+    height:23px;
   }
   .chart-mini {
     display:none;
