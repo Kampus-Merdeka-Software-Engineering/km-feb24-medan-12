@@ -1,0 +1,197 @@
+[
+	{
+		"﻿NEIGHBORHOOD": "HARLEM-CENTRAL",
+		"Revenue": "374187152",
+		"Transaction": "557"
+	},
+	{
+		"﻿NEIGHBORHOOD": "MIDTOWN WEST",
+		"Revenue": "367318761",
+		"Transaction": "614"
+	},
+	{
+		"﻿NEIGHBORHOOD": "FINANCIAL",
+		"Revenue": "332055034",
+		"Transaction": "338"
+	},
+	{
+		"﻿NEIGHBORHOOD": "UPPER EAST SIDE (79-96)",
+		"Revenue": "325902062",
+		"Transaction": "477"
+	},
+	{
+		"﻿NEIGHBORHOOD": "UPPER WEST SIDE (59-79)",
+		"Revenue": "291191194",
+		"Transaction": "550"
+	},
+	{
+		"﻿NEIGHBORHOOD": "UPPER EAST SIDE (59-79)",
+		"Revenue": "265645972",
+		"Transaction": "419"
+	},
+	{
+		"﻿NEIGHBORHOOD": "MIDTOWN EAST",
+		"Revenue": "227668982",
+		"Transaction": "475"
+	},
+	{
+		"﻿NEIGHBORHOOD": "CLINTON",
+		"Revenue": "226930820",
+		"Transaction": "235"
+	},
+	{
+		"﻿NEIGHBORHOOD": "KIPS BAY",
+		"Revenue": "221740680",
+		"Transaction": "272"
+	},
+	{
+		"﻿NEIGHBORHOOD": "TRIBECA",
+		"Revenue": "215785049",
+		"Transaction": "308"
+	},
+	{
+		"﻿NEIGHBORHOOD": "MURRAY HILL",
+		"Revenue": "178217646",
+		"Transaction": "231"
+	},
+	{
+		"﻿NEIGHBORHOOD": "CHELSEA",
+		"Revenue": "167704140",
+		"Transaction": "244"
+	},
+	{
+		"﻿NEIGHBORHOOD": "UPPER WEST SIDE (79-96)",
+		"Revenue": "135478636",
+		"Transaction": "356"
+	},
+	{
+		"﻿NEIGHBORHOOD": "FLATIRON",
+		"Revenue": "105560875",
+		"Transaction": "144"
+	},
+	{
+		"﻿NEIGHBORHOOD": "MANHATTAN VALLEY",
+		"Revenue": "101107638",
+		"Transaction": "175"
+	},
+	{
+		"﻿NEIGHBORHOOD": "HARLEM-EAST",
+		"Revenue": "91620177",
+		"Transaction": "212"
+	},
+	{
+		"﻿NEIGHBORHOOD": "GREENWICH VILLAGE-WEST",
+		"Revenue": "90089554",
+		"Transaction": "192"
+	},
+	{
+		"﻿NEIGHBORHOOD": "ALPHABET CITY",
+		"Revenue": "71163816",
+		"Transaction": "109"
+	},
+	{
+		"﻿NEIGHBORHOOD": "GRAMERCY",
+		"Revenue": "56897451",
+		"Transaction": "108"
+	},
+	{
+		"﻿NEIGHBORHOOD": "UPPER WEST SIDE (96-116)",
+		"Revenue": "49161934",
+		"Transaction": "83"
+	},
+	{
+		"﻿NEIGHBORHOOD": "MIDTOWN CBD",
+		"Revenue": "49139665",
+		"Transaction": "84"
+	},
+	{
+		"﻿NEIGHBORHOOD": "GREENWICH VILLAGE-CENTRAL",
+		"Revenue": "48900487",
+		"Transaction": "165"
+	},
+	{
+		"﻿NEIGHBORHOOD": "SOUTHBRIDGE",
+		"Revenue": "46712576",
+		"Transaction": "42"
+	},
+	{
+		"﻿NEIGHBORHOOD": "LOWER EAST SIDE",
+		"Revenue": "46710260",
+		"Transaction": "90"
+	},
+	{
+		"﻿NEIGHBORHOOD": "SOHO",
+		"Revenue": "45108906",
+		"Transaction": "88"
+	},
+	{
+		"﻿NEIGHBORHOOD": "HARLEM-UPPER",
+		"Revenue": "41538797",
+		"Transaction": "68"
+	},
+	{
+		"﻿NEIGHBORHOOD": "CHINATOWN",
+		"Revenue": "39975752",
+		"Transaction": "88"
+	},
+	{
+		"﻿NEIGHBORHOOD": "FASHION",
+		"Revenue": "34985955",
+		"Transaction": "56"
+	},
+	{
+		"﻿NEIGHBORHOOD": "EAST VILLAGE",
+		"Revenue": "31569860",
+		"Transaction": "69"
+	},
+	{
+		"﻿NEIGHBORHOOD": "CIVIC CENTER",
+		"Revenue": "30304975",
+		"Transaction": "55"
+	},
+	{
+		"﻿NEIGHBORHOOD": "WASHINGTON HEIGHTS UPPER",
+		"Revenue": "23108872",
+		"Transaction": "55"
+	},
+	{
+		"﻿NEIGHBORHOOD": "WASHINGTON HEIGHTS LOWER",
+		"Revenue": "22584701",
+		"Transaction": "53"
+	},
+	{
+		"﻿NEIGHBORHOOD": "UPPER EAST SIDE (96-110)",
+		"Revenue": "14381816",
+		"Transaction": "24"
+	},
+	{
+		"﻿NEIGHBORHOOD": "INWOOD",
+		"Revenue": "14183449",
+		"Transaction": "40"
+	},
+	{
+		"﻿NEIGHBORHOOD": "ROOSEVELT ISLAND",
+		"Revenue": "9498999",
+		"Transaction": "14"
+	},
+	{
+		"﻿NEIGHBORHOOD": "LITTLE ITALY",
+		"Revenue": "8963000",
+		"Transaction": "19"
+	},
+	{
+		"﻿NEIGHBORHOOD": "HARLEM-WEST",
+		"Revenue": "8582500",
+		"Transaction": "8"
+	},
+	{
+		"﻿NEIGHBORHOOD": "JAVITS CENTER",
+		"Revenue": "3775000",
+		"Transaction": "8"
+	},
+	{
+		"﻿NEIGHBORHOOD": "MORNINGSIDE HEIGHTS",
+		"Revenue": "0",
+		"Transaction": "1"
+	}
+]
