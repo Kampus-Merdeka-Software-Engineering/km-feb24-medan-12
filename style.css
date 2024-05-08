@@ -6,7 +6,7 @@
 }
 
 body {
-  height: 300vh;
+  height: 100vh;
   background: #d7d2cb;
 }
 /* ==Sidebar== */
@@ -254,6 +254,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  border-bottom: 5px solid #ffd743;
 }
 
 .user-interaction {
@@ -456,13 +457,13 @@ button:hover {
 }
 
 .footer {
-  background-color: #0a1a44;
+  background-color: #2c1a1a;
   text-align: center;
   padding: 1rem 0 3rem;
   margin-top: 3rem;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #0a1a44, #00c4cc);
   flex-wrap: wrap;
+  border-top: 5px solid #ffd743;
 }
 
 .footer .links {
