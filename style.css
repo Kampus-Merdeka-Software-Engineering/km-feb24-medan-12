@@ -485,6 +485,7 @@ button:hover {
   font-weight: 700;
 }
 
+/*media screen untuk ukuran mobile*/
 @media (min-width:320px) and (max-width: 720px) {
   .header {
     width: 100%;
@@ -543,6 +544,7 @@ button:hover {
   }
 }
 
+/*media screen untuk ukuran tablet*/
 @media (min-width:768px) and (max-width: 1025px) {
   .header {
     width: 100%;
