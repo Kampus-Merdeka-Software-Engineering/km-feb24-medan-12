@@ -485,7 +485,7 @@ button:hover {
   font-weight: 700;
 }
 
-@media screen and (max-width: 720px) {
+@media (min-width:320px) and (max-width: 720px) {
   .header {
     width: 100%;
     font-size: 40%;
@@ -505,8 +505,6 @@ button:hover {
     font-size: 80%;
     align-items: start;
   }
- #label-NEIGHBORHOOD, #date{
- }
   .filter-neighborhood {
     width:50%;
   }
@@ -530,6 +528,87 @@ button:hover {
     height:23px;
   }
 
+  .chart-area {
+    padding-left: 0;
+  }
+  .chart-mini {
+    display:none;
+  }
+  .chart {
+    display: flex;
+    flex-direction: column;
+  }
+  .chart-1, .chart-2, .chart-3, .chart-4, .chart-5, .chart-6 {
+    width:95%;
+  }
+}
+
+@media (min-width:768px) and (max-width: 1025px) {
+  .header {
+    width: 100%;
+    font-size: 80%;
+  }
+  .main-content {
+    height:10%;
+  }
+  form {
+    width:100%;
+  }
+  .filter {
+    width: 90%;
+    /*display: inline-grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 10%;
+    row-gap: 10%;*/
+    display: flex;
+    font-size: 80%;
+    align-items: start;
+  }
+ #label-NEIGHBORHOOD, #date{
+ }
+  .filter-neighborhood {
+    width:50%;
+  }
+  .from-date {
+    width:50%;
+  }
+  .to-date {
+    width:50%;
+  }
+  #start-date, #end-date{
+    height:23px;
+  }
+  .button {
+    padding-top: 17px;
+  }
+
+  #stickyButton {
+    margin-top: 0;
+    margin-left: 0px;
+    width:83px;
+    height:23px;
+  }
+
+  .chart-area {
+    padding-left: 0;
+    width:100%;
+  }
+  .chart-mini {
+    display:none;
+  }
+  /*.chart {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    margin-left: 0;
+    padding-left: 20px;
+  }
+  .chart-1, .chart-3, .chart-5 {
+    width:400px;
+  }
+  .chart-2, .chart-4, .chart-6 {
+    width:300px;
+  }*/
   .chart-area {
     padding-left: 0;
   }
