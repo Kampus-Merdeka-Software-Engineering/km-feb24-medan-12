@@ -1,96 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Dataset</title>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital@1&family=Courgette&family=Poppins:wght@300;400;500;600;700&family=Ubuntu&family=Ysabeau+Infant:ital,wght@1,1&display=swap");
-      </style>
-  
-      <!--CSS-->
-      <link rel="stylesheet" href="style.css" />
-  
-      <!--Icons-CSS-->
-      <link
-        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-        rel="stylesheet"
-      />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman Dataset</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital@1&family=Courgette&family=Poppins:wght@300;400;500;600;700&family=Ubuntu&family=Ysabeau+Infant:ital,wght@1,1&display=swap");
+  </style>
+
+  <!--CSS-->
+  <link rel="stylesheet" href="style.css" />
+
+  <!--Icons-CSS-->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
+
 <body>
-    <nav class="sidebar close">
-        <header>
-          <div class="image-text">
-            <span class="image">
-              <img src="img/logo.jpg" alt="logo" />
-            </span>
-            <div class="text text-header">
-              <span class="name">Team 12</span>
-              <span class="section">Medan</span>
-            </div>
-          </div>
-          <i class="bx bx-menu toggle"></i>
-        </header>
-        <div class="menubar">
-          <div class="menu-links">
-            <li class="nav-list">
-              <a href="index.html">
-                <i class="bx bx-home-alt icon"></i>
-                <span class="text nav-text">Home</span></a
-              >
-            </li>
-            <ul class="menu-links">
-              <li class="nav-list">
-                <a href="dashboard.html">
-                  <i class="bx bxs-dashboard icon"></i>
-                  <span class="text nav-text">Dashboard</span></a
-                >
-              </li>
-              <li class="nav-list">
-                <a href="dataset.html">
-                  <i class="bx bx-data icon"></i>
-                  <span class="text nav-text">Dataset</span></a
-                >
-              </li>
-            </ul>
-          </div>
+  <nav class="sidebar close">
+    <header>
+      <div class="image-text">
+        <span class="image">
+          <img src="img/logo.jpg" alt="logo" />
+        </span>
+        <div class="text text-header">
+          <span class="name">Team 12</span>
+          <span class="section">Medan</span>
         </div>
-      </nav>
-    <div class="text-container">
-    <h1> Dataset NYC Property Sales</h1>
-    <p> Dataset ini berisi catatan setiap bangunan atau unit bangunan (apartemen, dll.) yang dijual di pasar properti Kota New York selama periode 12 bulan.</p>
-    <p> a) Borough : Kode digit untuk wilayah tempat properti berada; secara berurutan adalah Manhattan (1), Bronx (2), Brooklyn (3), Queens (4), dan Staten Island (5)<br>
-        b) Block : Blok Pajak adalah subdivisi wilayah tempat properti nyata berada</br>
-        c) Lot   : Lot Pajak adalah subdivisi dari Blok Pajak dan mewakili lokasi unik properti</br>
-        d) Neighborhood : Penilai Departemen Keuangan menentukan nama lingkungan dalam proses penilaian properti</br>
-        e) Building_Class_Category : Ini adalah bidang yang kami sertakan agar pengguna Rolling Sales Files dapat dengan mudah mengidentifikasi properti serupa dengan penggunaan luas (misalnya Rumah Satu Keluarga) tanpa mencari Kelas Bangunan individu</br>
-        f) Tax_class_at_Present : Setiap properti di kota dimasukkan ke dalam salah satu dari empat kelas pajak (Kelas 1, 2, 3, dan 4)</br>
-        g) Building_class_at_present : Klasifikasi Bangunan digunakan untuk menggambarkan penggunaan konstruktif suatu properti</br>
-        h) Easement (kemudahan) : hak, seperti hak jalan, yang memungkinkan suatu entitas untuk memanfaatkannya secara terbatas milik nyata orang lain</br>
-        h) Address : Alamat jalan properti seperti pada dataset.Penjualan koperasi sertakan nomor apartemen pada kolom alamat</br>
-        i) Kode_Pos_(Zip_Code) : Kode Pos Properti</br>
-        j) Residential_Unit : Jumlah unit hunian pada properti yang terdaftar</br>
-        k) Commercial_Unit : Jumlah unit komersial di properti yang terdaftar</br>
-        l) Total_Units : Jumlah total unit di properti yang terdaftar</br>
-        m) Land_Square_Feet : Luas tanah properti tercantum dalam kaki persegi</br>
-        n) Gross_Square_Feet : Luas total seluruh lantai suatu bangunan diukur dari permukaan luarnya dinding luar bangunan, termasuk luas tanah dan ruang di dalam bangunan atau struktur apa pun di properti</br>
-        o) Year_Built : Tahun struktur property dibangun</br>
-        p) Sales_Price : harga properti yang dibayar</br>
-        q) Sale_date : Tanggal properti dijual</br>
-        r) 0$_Sales_Price : Penjualan $0 menunjukkan bahwa ada transfer kepemilikan tanpa pertimbangan tunai. Ada sejumlah alasan untuk penjualan $0 termasuk transfer kepemilikan dari orang tua kepada anak-anak.</br>
+      </div>
+      <i class="bx bx-menu toggle"></i>
+    </header>
+    <div class="menubar">
+      <div class="menu-links">
+        <li class="nav-list">
+          <a href="index.html">
+            <i class="bx bx-home-alt icon"></i>
+            <span class="text nav-text">Home</span></a>
+        </li>
+        <ul class="menu-links">
+          <li class="nav-list">
+            <a href="dashboard.html">
+              <i class="bx bxs-dashboard icon"></i>
+              <span class="text nav-text">Dashboard</span></a>
+          </li>
+          <li class="nav-list">
+            <a href="dataset.html">
+              <i class="bx bx-data icon"></i>
+              <span class="text nav-text">Dataset</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="text-container">
+    <h1>Dataset NYC Property Sales</h1>
+    <p>
+      Dataset ini berisi catatan setiap bangunan atau unit bangunan
+      (apartemen, dll.) yang dijual di pasar properti Kota New York selama
+      periode 12 bulan.
     </p>
-    <button>Akses Dataset</button>
-</div>
-<script src="script.js"></script>
-<footer class="footer">
-  <div class="links">
-    <a href="#Home">Home</a>
-    <a href="#Dashboard">Dashboard</a>
-    <a href="#About Us">About Us</a>
+    <div class="accordion-wrapper">
+      <div class="accordion">
+        <div class="accordion-section">
+          <details>
+            <summary class="summary">Borough</summary>
+            <span class="accordion-details">
+              Kode digit untuk wilayah tempat properti berada; secara berurutan
+              adalah Manhattan (1), Bronx (2), Brooklyn (3), Queens (4), dan
+              Staten Island (5)
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Block</summary>
+            <span class="accordion-details">Blok Pajak adalah subdivisi wilayah tempat properti nyata berada
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Lot</summary>
+            <span class="accordion-details">
+              Lot Pajak adalah subdivisi dari Blok Pajak dan mewakili lokasi
+              unik properti
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Neighborhood</summary>
+            <span class="accordion-details">
+              Penilai Departemen Keuangan menentukan nama lingkungan dalam
+              proses penilaian properti
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Building Class Category</summary>
+            <span class="accordion-details">
+              Ini adalah bidang yang kami sertakan agar pengguna Rolling Sales
+              Files dapat dengan mudah mengidentifikasi properti serupa dengan
+              penggunaan luas (misalnya Rumah Satu Keluarga) tanpa mencari Kelas
+              Bangunan individu
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Tax class at Present</summary>
+            <span class="accordion-details">
+              Setiap properti di kota dimasukkan ke dalam salah satu dari empat
+              kelas pajak (Kelas 1, 2, 3, dan 4)
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Building class at present</summary>
+            <span class="accordion-details">
+              Klasifikasi Bangunan digunakan untuk menggambarkan penggunaan
+              konstruktif suatu properti
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Easement (kemudahan)</summary>
+            <span class="accordion-details">
+              hak, seperti hak jalan, yang memungkinkan suatu entitas untuk
+              memanfaatkannya secara terbatas milik nyata orang lain
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Address</summary>
+            <span class="accordion-details">
+              Alamat jalan properti seperti pada dataset.Penjualan koperasi
+              sertakan nomor apartemen pada kolom alamat
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Kode Pos(Zip_Code)</summary>
+            <span class="accordion-details"> Kode Pos Properti </span>
+          </details>
+        </div>
+        <div class="accordion-section">
+          <details>
+            <summary class="summary">Residential Unit</summary>
+            <span class="accordion-details">
+              Jumlah unit hunian pada properti yang terdaftar
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Commercial Unit</summary>
+            <span class="accordion-details">
+              Jumlah unit komersial di properti yang terdaftar
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Total Unit</summary>
+            <span class="accordion-details">
+              Jumlah total unit di properti yang terdaftar
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Land Square Feet</summary>
+            <span class="accordion-details">
+              Luas tanah properti tercantum dalam kaki persegi
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Gross Square Feet</summary>
+            <span class="accordion-details">
+              Luas total seluruh lantai suatu bangunan diukur dari permukaan
+              luarnya dinding luar bangunan, termasuk luas tanah dan ruang di
+              dalam bangunan atau struktur apa pun di properti
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Year Built</summary>
+            <span class="accordion-details">
+              Tahun struktur property dibangun
+            </span>
+          </details>
+          <details>
+            <summary class="summary">Sales Price</summary>
+            <span class="accordion-details"> Harga properti yang dibayar </span>
+          </details>
+          <details>
+            <summary class="summary">Sale date</summary>
+            <span class="accordion-details"> Tanggal properti dijual </span>
+          </details>
+          <details>
+            <summary class="summary">0$ Sales Price</summary>
+            <span class="accordion-details">
+              Penjualan $0 menunjukkan bahwa ada transfer kepemilikan tanpa
+              pertimbangan tunai. Ada sejumlah alasan untuk penjualan $0
+              termasuk transfer kepemilikan dari orang tua kepada anak-anak.
+            </span>
+          </details>
+        </div>
+
+      </div>
+    </div>
+<div class="akses-dataset"><a href="https://www.kaggle.com/datasets/new-york-city/nyc-property-sales/data" target="_blank" >akses data</a></div>
+   
   </div>
-  <div class="credit">
-    <p>Created by <a href="">Team 12 Medan</a>. | &copy; 2024.</p>
-  </div>
-</footer>
+  <script src="script.js"></script>
+  <footer class="footer">
+    <div class="links">
+      <a href="#Home">Home</a>
+      <a href="#Dashboard">Dashboard</a>
+      <a href="#About Us">About Us</a>
+    </div>
+    <div class="credit">
+      <p>Created by <a href="">Team 12 Medan</a>. | &copy; 2024.</p>
+    </div>
+  </footer>
 </body>
+
 </html>
