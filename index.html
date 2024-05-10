@@ -11,7 +11,15 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="style.css" />
-
+    <!--Box Icons-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!--Icons-CSS-->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -19,39 +27,28 @@
     />
   </head>
   <body>
-    <nav class="sidebar close">
+    <nav class="sidebar">
       <header>
         <div class="image-text">
           <span class="image">
             <img src="img/logo.jpg" alt="logo" />
           </span>
-          <div class="text text-header">
-            <span class="name">Team 12</span>
-            <span class="section">Medan</span>
-          </div>
         </div>
-        <i class="bx bx-menu toggle"></i>
       </header>
       <div class="menubar">
         <div class="menu-links">
           <li class="nav-list">
             <a href="index.html">
               <i class="bx bx-home-alt icon"></i>
-              <span class="text nav-text">Home</span></a
-            >
           </li>
           <ul class="menu-links">
             <li class="nav-list">
               <a href="dashboard.html">
                 <i class="bx bxs-dashboard icon"></i>
-                <span class="text nav-text">Dashboard</span></a
-              >
             </li>
             <li class="nav-list">
               <a href="dataset.html">
-                <i class="bx bx-data icon"></i>
-                <span class="text nav-text">Dataset</span></a
-              >
+                <i class="bx bx-data icon"></i></a>
             </li>
           </ul>
         </div>
@@ -67,6 +64,75 @@
         <a href="dashboard.html" class="btn">Go to dashboard</a>
       </div>
     </section>
-    <script src="script.js"></script>
+
+    <!--Dashboard Section-->
+    <section class="dashboard" id="dashboard">
+      <div class="heading">
+        <h2>Dashboard</h2>
+      </div>
+      <!--container-->
+      <div class="dashboard-container">
+        <div class="box">
+          <h2>Chart 1</h2>
+          <p>
+          </p>
+        </div>
+
+        <div class="box">
+          <h2>Chart 2</h2>
+          <p>
+          </p>
+        </div>
+
+        <div class="box">
+          <h2>Chart 3</h2>
+          <p>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--About-->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="img/home4.jpg" alt="">
+      </div>
+      <div class="about-text">
+        <a href="#about"></a>
+        <h2>Dataset</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Dicta labore quo, corporis nemo laboriosam tenetur quibusdam consequuntur 
+          odit provident assumenda accusantium, eaque, architecto vitae? Eligendi.
+        </p>
+
+        <a href="about.html" class="button">Go to Dataset</a>
+      </div>
+    </section>
+
+    <!--footer-->
+    <section class="footer">
+      <div class="footer-box">
+        <h2>Manhattan Sales Dashboard</h2>
+        <p>Follow our social media:</p>
+        <div class="social">
+          <a href="https://www.linkedin.com/school/revou/"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.instagram.com/revou_id/"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          <a
+            href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-medan-12"
+            ><i class="bx bxl-github"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+    <!--copyright-->
+    <div class="copyright">
+      <p>&#169; Medan-Team 12</p>
+    </div>
   </body>
 </html>
