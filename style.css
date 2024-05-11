@@ -778,7 +778,7 @@ details > span::after {
   display: block;
   margin-top: 12px;
   content: "";
-  background-color: #000;
+  background-color: gray;
   width: 500px;
   height: 2px;
 }
