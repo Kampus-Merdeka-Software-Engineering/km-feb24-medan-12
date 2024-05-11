@@ -797,3 +797,55 @@ text-decoration: none;
   background-color: #211515;
   margin-top: 24px;
 }
+
+.sidebar-mobile{
+  display: none;
+}
+/* Mobile Media Query*/
+
+@media  screen and (max-width:767px) {
+  .sidebar{
+    display : none;
+  }
+
+  .main{
+    left: unset;
+    width: 100vw;
+  }
+
+  .sidebar-mobile{
+    display: flex;
+    flex-direction: row;
+    background-color: #000;
+    gap: 20px;
+  }
+
+  header{
+    padding: 10px;
+  }
+
+  header .image-text img {
+    max-width: 40px;
+    border-radius: 50px;
+  }
+
+  .menubar{
+    display: flex;
+    align-items: center;
+  }
+
+  .menubar ul.menu-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .menubar ul.menu-links i{
+    font-size: 24px;
+  }
+  
+
+    
+}

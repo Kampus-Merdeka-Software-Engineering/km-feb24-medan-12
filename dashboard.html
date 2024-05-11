@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -17,8 +17,8 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-</head>
-<body class="responsive-sidebar">
+  </head>
+  <body class="responsive-sidebar">
     <!--navigasi bar-->
     <nav class="sidebar">
       <header>
@@ -33,15 +33,18 @@
           <li class="nav-list">
             <a href="index.html">
               <i class="bx bx-home-alt icon"></i>
+            </a>
           </li>
           <ul class="menu-links">
             <li class="nav-list">
               <a href="dashboard.html">
                 <i class="bx bxs-dashboard icon"></i>
+              </a>
             </li>
             <li class="nav-list">
               <a href="dataset.html">
-                <i class="bx bx-data icon"></i></a>
+                <i class="bx bx-data icon"></i>
+              </a>
             </li>
           </ul>
         </div>
@@ -49,122 +52,184 @@
     </nav>
     <!--section untuk bagian utama dari dashboard-->
     <div class="main">
-        <!--Header-->
-        <div class="header">
-          <h1>NYC Property Sales Dashboard</h1>
+      <!--Header-->
+      <div class="header">
+        <h1>NYC Property Sales Dashboard</h1>
+      </div>
+      <!--navigasi bar-->
+      <nav class="sidebar-mobile">
+        <header>
+          <div class="image-text">
+            <span class="image">
+              <img src="img/logo.jpg" alt="logo" />
+            </span>
+          </div>
+        </header>
+        <div class="menubar">
+          <div class="menu-links">
+            <ul class="menu-links">
+              <li class="nav-list">
+                <a href="index.html">
+                  <i class="bx bx-home-alt icon"></i>
+                </a>
+              </li>
+              <li class="nav-list">
+                <a href="dashboard.html">
+                  <i class="bx bxs-dashboard icon"></i>
+                </a>
+              </li>
+              <li class="nav-list">
+                <a href="dataset.html">
+                  <i class="bx bx-data icon"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <!--section untuk menampung bagian form-->
-        <div class="main-content">
-          <div>
-              <!--section form-->
-              <div class = "user-interaction">
-                <!--FORM-->
-                <form action="#", method="post">
-                  <div class="filter">
-                    <!--Section untuk select "NEIGHBORHOOD"-->
-                    <div class="filter-neighborhood">
-                      <label id="label-NEIGHBORHOOD" for="NEIGHBORHOOD">NEIGHBORHOOD</label>
-                      <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
-                        <option value="ALPHBAET CITY">ALPHABET CITY</option>
-                        <option value="CHELSEA">CHELSEA</option>
-                        <option value="CHINATOWN">CHINATOWN</option>
-                        <option value="CIVIC CENTER">CIVIC CENTER</option>
-                        <option value="CLINTON">CLINTON</option>
-                        <option value="EAST VILLAGE">EAST VILLAGE</option>
-                        <option value="FASHION">FASHION</option>
-                        <option value="FINANCIAL">FINANCIAL</option>
-                        <option value="FLATIRON">FLATIRON</option>
-                        <option value="GRAMERCY">GRAMERCY</option>
-                        <option value="GREENWICH VILLAGE-CENTRAL">GREENWICH VILLAGE-CENTRAL</option>
-                        <option value="GREENWICH VILLAGE-WEST">GREENWICH VILLAGE-WEST</option>
-                        <option value="HARLEM-CENTRAL">HARLEM-CENTRAL</option>
-                        <option value="HARLEM-EAST">HARLEM-EAST</option>
-                        <option value="HARLEM-UPPER">HARLEM-UPPER</option>
-                        <option value="HARLEM-WEST">HARLEM-WEST</option>
-                        <option value="INWOOD">INWOOD</option>
-                        <option value="JAVITS CENTER">JAVITS CENTER</option>
-                        <option value="KIPS BAY">KIPS BAY</option>
-                        <option value="LITTLE ITALY">LITTLE ITALY</option>
-                        <option value="LOWER EAST SIDE">LOWER EAST SIDE</option>
-                        <option value="MANHATTAN VALLEY">MANHATTAN VALLEY</option>
-                        <option value="MIDTOWN CBD">MIDTOWN CBD</option>
-                        <option value="MIDTOWN EAST">MIDTOWN EAST</option>
-                        <option value="MIDTOWN WEST">MIDTOWN WEST</option>
-                        <option value="MORNINGSIDE HEIGHTS">MORNINGSIDE HEIGHTS</option>
-                        <option value="MURRAY HILL">MURRAY HILL</option>
-                        <option value="ROOSEVELT ISLAND">ROOSEVELT ISLAND</option>
-                        <option value="SOHO">SOHO</option>
-                        <option value="SOUTHBRIDGE">SOUTHBRIDGE</option>
-                        <option value="TRIBECA">TRIBECA</option>
-                        <option value="UPPER EAST SIDE (59-79)">UPPER EAST SIDE (59-79)</option>
-                        <option value="UPPER EAST SIDE (79-96)">UPPER EAST SIDE (79-96)</option>
-                        <option value="UPPER EAST SIDE (96-110)">UPPER EAST SIDE (96-110)</option>
-                        <option value="UPPER WEST SIDE (59-79)">UPPER WEST SIDE (59-79)</option>
-                        <option value="UPPER WEST SIDE (79-96)">UPPER WEST SIDE (79-96)</option>
-                        <option value="UPPER WEST SIDE (96-116)">UPPER WEST SIDE (96-116)</option>
-                        <option value="WASHINGTON HEIGHTS LOWER">WASHINGTON HEIGHTS LOWER</option>
-                        <option value="WASHINGTON HEIGHTS UPPER">WASHINGTON HEIGHTS UPPER</option> 
-                      </select>
-                    </div>
-                    <!--section untuk tanggal-->
-                    <div class="from-date">
-                      <label id="date" for="start-date">FROM:</label>
-                      <input type="date" id="start-date" name="start-date">
-                    </div>
-                    <div class="to-date">
-                      <label id="date" for="end-date">TO:</label>
-                      <input type="date" id="end-date" name="end-date">
-                    </div>
-                    <!--Tombol untuk submit filter-->
-                    <div class="button">
-                      <label id="label-btn" for="stickyButton">tombol</label>
-                      <button id="stickyButton" class="sticky-button" type="submit">FILTER</button>
-                    </div>
-                  </div>
+      </nav>
+      <!--section untuk menampung bagian form-->
+      <div class="main-content">
+        <div>
+          <!--section form-->
+          <div class="user-interaction">
+            <!--FORM-->
+            <form action="#" , method="post">
+              <div class="filter">
+                <!--Section untuk select "NEIGHBORHOOD"-->
+                <div class="filter-neighborhood">
+                  <label id="label-NEIGHBORHOOD" for="NEIGHBORHOOD"
+                    >NEIGHBORHOOD</label
+                  >
+                  <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
+                    <option value="ALPHBAET CITY">ALPHABET CITY</option>
+                    <option value="CHELSEA">CHELSEA</option>
+                    <option value="CHINATOWN">CHINATOWN</option>
+                    <option value="CIVIC CENTER">CIVIC CENTER</option>
+                    <option value="CLINTON">CLINTON</option>
+                    <option value="EAST VILLAGE">EAST VILLAGE</option>
+                    <option value="FASHION">FASHION</option>
+                    <option value="FINANCIAL">FINANCIAL</option>
+                    <option value="FLATIRON">FLATIRON</option>
+                    <option value="GRAMERCY">GRAMERCY</option>
+                    <option value="GREENWICH VILLAGE-CENTRAL">
+                      GREENWICH VILLAGE-CENTRAL
+                    </option>
+                    <option value="GREENWICH VILLAGE-WEST">
+                      GREENWICH VILLAGE-WEST
+                    </option>
+                    <option value="HARLEM-CENTRAL">HARLEM-CENTRAL</option>
+                    <option value="HARLEM-EAST">HARLEM-EAST</option>
+                    <option value="HARLEM-UPPER">HARLEM-UPPER</option>
+                    <option value="HARLEM-WEST">HARLEM-WEST</option>
+                    <option value="INWOOD">INWOOD</option>
+                    <option value="JAVITS CENTER">JAVITS CENTER</option>
+                    <option value="KIPS BAY">KIPS BAY</option>
+                    <option value="LITTLE ITALY">LITTLE ITALY</option>
+                    <option value="LOWER EAST SIDE">LOWER EAST SIDE</option>
+                    <option value="MANHATTAN VALLEY">MANHATTAN VALLEY</option>
+                    <option value="MIDTOWN CBD">MIDTOWN CBD</option>
+                    <option value="MIDTOWN EAST">MIDTOWN EAST</option>
+                    <option value="MIDTOWN WEST">MIDTOWN WEST</option>
+                    <option value="MORNINGSIDE HEIGHTS">
+                      MORNINGSIDE HEIGHTS
+                    </option>
+                    <option value="MURRAY HILL">MURRAY HILL</option>
+                    <option value="ROOSEVELT ISLAND">ROOSEVELT ISLAND</option>
+                    <option value="SOHO">SOHO</option>
+                    <option value="SOUTHBRIDGE">SOUTHBRIDGE</option>
+                    <option value="TRIBECA">TRIBECA</option>
+                    <option value="UPPER EAST SIDE (59-79)">
+                      UPPER EAST SIDE (59-79)
+                    </option>
+                    <option value="UPPER EAST SIDE (79-96)">
+                      UPPER EAST SIDE (79-96)
+                    </option>
+                    <option value="UPPER EAST SIDE (96-110)">
+                      UPPER EAST SIDE (96-110)
+                    </option>
+                    <option value="UPPER WEST SIDE (59-79)">
+                      UPPER WEST SIDE (59-79)
+                    </option>
+                    <option value="UPPER WEST SIDE (79-96)">
+                      UPPER WEST SIDE (79-96)
+                    </option>
+                    <option value="UPPER WEST SIDE (96-116)">
+                      UPPER WEST SIDE (96-116)
+                    </option>
+                    <option value="WASHINGTON HEIGHTS LOWER">
+                      WASHINGTON HEIGHTS LOWER
+                    </option>
+                    <option value="WASHINGTON HEIGHTS UPPER">
+                      WASHINGTON HEIGHTS UPPER
+                    </option>
+                  </select>
                 </div>
+                <!--section untuk tanggal-->
+                <div class="from-date">
+                  <label id="date" for="start-date">FROM:</label>
+                  <input type="date" id="start-date" name="start-date" />
+                </div>
+                <div class="to-date">
+                  <label id="date" for="end-date">TO:</label>
+                  <input type="date" id="end-date" name="end-date" />
+                </div>
+                <!--Tombol untuk submit filter-->
+                <div class="button">
+                  <label id="label-btn" for="stickyButton">tombol</label>
+                  <button id="stickyButton" class="sticky-button" type="submit">
+                    FILTER
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
-        <div class="chart-area">
-          <!--section untuk chart ringkasan yang berupa angka-->
-          <div class="chart-mini">
-            <div class="chart-mini-1">Total revenue</div>
-            <div class="chart-mini-2">Total Transaction</div>
-            <div class="chart-mini-3">Average Sales</div>
-            <div class="chart-mini-4">Total Commercial Unit</div>
-            <div class="chart-mini-5">Total Residential Unit</div>
+      </div>
+      <div class="chart-area">
+        <!--section untuk chart ringkasan yang berupa angka-->
+        <div class="chart-mini">
+          <div class="chart-mini-1">Total revenue</div>
+          <div class="chart-mini-2">Total Transaction</div>
+          <div class="chart-mini-3">Average Sales</div>
+          <div class="chart-mini-4">Total Commercial Unit</div>
+          <div class="chart-mini-5">Total Residential Unit</div>
+        </div>
+        <!--section untuk chart berupa grafik-->
+        <div class="chart">
+          <div class="chart-1">quarterly sales revenue</div>
+          <div class="chart-2">monthly sales revenue</div>
+          <div class="chart-3">
+            sales composition by building classification
           </div>
-          <!--section untuk chart berupa grafik-->
-          <div class="chart">
-            <div class="chart-1">quarterly sales revenue</div>
-            <div class="chart-2">monthly sales revenue</div>
-            <div class="chart-3">sales composition by building classification</div>
-            <div class="chart-4">total revenue by tax class</div>
-            <div class="chart-5">total revenue by building category</div>
-            <div class="chart-6">top 10 total revenue and transaction by neigborhood</div>
+          <div class="chart-4">total revenue by tax class</div>
+          <div class="chart-5">total revenue by building category</div>
+          <div class="chart-6">
+            top 10 total revenue and transaction by neigborhood
           </div>
         </div>
-        <!--footer-->
-        <footer class="footer">
-          <div class="footer-box">
-            <h2>Manhattan Sales Dashboard</h2>
-            <p>Follow our social media:</p>
-            <div class="social">
-              <a href="https://www.linkedin.com/school/revou/"
-                ><i class="bx bxl-linkedin"></i
-              ></a>
-              <a href="#"><i class="bx bxl-twitter"></i></a>
-              <a href="https://www.instagram.com/revou_id/"
-                ><i class="bx bxl-instagram"></i
-              ></a>
-              <a
-                href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-medan-12"
-                ><i class="bx bxl-github"></i
-              ></a>
-            </div>
+      </div>
+      <!--footer-->
+      <footer class="footer">
+        <div class="footer-box">
+          <h2>Manhattan Sales Dashboard</h2>
+          <p>Follow our social media:</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/school/revou/"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/revou_id/"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a
+              href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-medan-12"
+              ><i class="bx bxl-github"></i
+            ></a>
           </div>
-        </footer>    
+        </div>
+      </footer>
     </div>
     <!--file javascript-->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
