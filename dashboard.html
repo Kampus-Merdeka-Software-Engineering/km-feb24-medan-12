@@ -50,11 +50,42 @@
       </div>
     </nav>
     <!--section untuk bagian utama dari dashboard-->
-    <div class="main">
+    <main class="main">
         <!--Header-->
         <div class="header">
           <h1>NYC Property Sales Dashboard</h1>
         </div>
+        <!--navbar untuk mobile-->
+        <nav class="sidebar-mobile">
+          <header>
+            <div class="image-text">
+              <span class="image">
+                <img src="img/logo.jpg" alt="logo" />
+              </span>
+            </div>
+          </header>
+          <div class="menubar">
+            <div class="menu-links">
+              <ul class="menu-links">
+                <li class="nav-list">
+                  <a href="index.html">
+                    <i class="bx bx-home-alt icon"></i>
+                  </a>
+                </li>
+                <li class="nav-list">
+                  <a href="dashboard.html">
+                    <i class="bx bxs-dashboard icon"></i>
+                  </a>
+                </li>
+                <li class="nav-list">
+                  <a href="dataset.html">
+                    <i class="bx bx-data icon"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
         <!--section untuk menampung bagian form-->
         <div class="main-content">
           <div>
@@ -118,7 +149,7 @@
                       <input type="date" id="end-date" name="end-date">
                     </div>
                     <!--Tombol untuk submit filter-->
-                    <div class="button">
+                    <div class="buttons">
                       <label id="label-btn" for="stickyButton">tombol</label>
                       <button id="stickyButton" class="sticky-button" type="submit">FILTER</button>
                     </div>
@@ -165,8 +196,8 @@
               ></a>
             </div>
           </div>
-        </footer>    
-    </div>
+        </footer>
+      </main>    
     <!--file javascript-->
     <script src="script.js"></script>
 </body>
