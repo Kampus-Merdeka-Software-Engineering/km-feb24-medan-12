@@ -114,52 +114,46 @@ section {
 .home {
   position: relative;
   height: 100vh;
-  left: 250px;
-  width: calc(100% - 250px);
+  width: 100%;
   align-items: center;
-  justify-content: left;
+  justify-content: right;
   min-height: 100vh;
-  background: url(img/home3.jpg) no-repeat;
+  background: url(img/home2.jpg) no-repeat;
   background-size: cover;
   transition: all 0.2s ease;
   display: flex;
-  text-align: left;
-}
-
-.sidebar.close ~ .home {
-  left: 85px;
-  width: calc(100% - 85px);
+  text-align: right;
 }
 
 .home .content {
-  max-width: 40rem;
+  max-width: 60rem;
 }
 
 .home .content h1 {
   font-size: 75px;
   line-height: 6rem;
-  color: white;
-  margin-left: -30px;
+  color: whitesmoke;
+  margin-left: 30px;
 }
 
 .home .content p {
   font-size: 20px;
   line-height: 2rem;
-  color: white;
-  margin-left: -30px;
+  color: whitesmoke;
+  margin-left: 30px;
 }
 
 .btn {
   display: inline-block;
   margin-top: 1rem;
   border-radius: 2rem;
-  background: #211515;
+  background: #231818;
   color: #f3f8ff;
   padding: 1rem 0.7rem;
   cursor: pointer;
   font-size: 12px;
   text-decoration: none;
-  margin-left: -30px;
+  margin-left: 30px;
 }
 
 .btn:hover {
@@ -179,11 +173,6 @@ section {
   min-height: 100vh;
   transition: all 0.2s ease;
   text-align: left;
-}
-
-.sidebar.close ~ .text-container {
-  left: 210px;
-  width: calc(100% - 210px);
 }
 
 .text-container h1 {
@@ -206,17 +195,127 @@ section {
   margin-right: 150px;
   color: #2c1a1a;
 }
-button {
-  width: 500px;
-  height: 50px;
-  color: white;
-  font-size: 17px;
-  border: 0;
-  background: #2c1a1a;
-  border-radius: 25px 25px;
-  margin-top: 20px;
-  margin-left: 20px;
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 2rem;
+  background: #231818;
+  color: #f3f8ff;
+  padding: 1rem 0.7rem;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: none;
 }
+
+/*Dashboard section*/
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  position: relative;
+  top: 5px;
+  justify-content: center;
+}
+.dashboard-container .box {
+  padding: 25px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  text-align: center;
+  background: whitesmoke;
+  margin-left: 50px;
+}
+.dashboard .heading h2 {
+  position: relative;
+  margin-top: 5px;
+  font-size: 2.5rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.dahsboard-container .box p {
+  font-size: 0.938rem;
+}
+.dashboard-container .box h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem;
+}
+
+.dashboard-container .box:hover {
+  background: #d7c4aa;
+  transition: 0.2s all linear;
+}
+
+/*Dataset*/
+.about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+  gap: 1.5rem;
+  margin-top: 50px;
+}
+.about-img img {
+  border-radius: 0.5rem;
+  width: 500px;
+  height: 300px;
+}
+.about-text h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.about-text p {
+  font-size: 0.938rem;
+  margin: 0.5rem 0 1.1rem;
+  text-align: justify;
+}
+
+/*Footer*/
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  gap: 1.5rem;
+  background-color: #d7c4aa;
+  width: 100%;
+  height: 170px;
+}
+.footer-box h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer-box p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  justify-content: center;
+}
+.social a .bx {
+  font-size: 24px;
+  color: whitesmoke;
+  padding: 10px;
+  background: #1c1616;
+  border-radius: 0.2rem;
+}
+.social a .bx:hover {
+  background: #f6bf19;
+  color: whitesmoke;
+}
+.copyright {
+  padding: 20px;
+  text-align: center;
+  color: whitesmoke;
+  background: #1c1616;
+}
+
+/*Media Queries*/
 
 /* Dashboard */
 
@@ -239,14 +338,14 @@ body {
 }
 
 .user-interaction {
-  display:inline-block;
-  width:100%;
+  display: inline-block;
+  width: 100%;
   height: 100px;
 }
 
 .filter {
   display: flex;
-  align-items: center; 
+  align-items: center;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -296,7 +395,6 @@ body {
 
 #label-btn {
   display: none;
-
 }
 
 button {
@@ -315,10 +413,10 @@ button:hover {
 .chart-area {
   padding-left: 3%;
   max-width: 100%;
-  margin-bottom: 5%;;
+  margin-bottom: 5%;
 }
 .chart {
-  display:inline-grid;
+  display: inline-grid;
   grid-template-columns: auto auto;
   margin-top: 20px;
   margin-left: 20px;
@@ -330,14 +428,14 @@ button:hover {
 .chart-1 {
   width: 600px;
   height: 300px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-2 {
   width: 400px;
   height: 300px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
@@ -345,7 +443,7 @@ button:hover {
 .chart-3 {
   width: 600px;
   height: 300px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
@@ -353,7 +451,7 @@ button:hover {
 .chart-4 {
   width: 400px;
   height: 300px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
@@ -361,7 +459,7 @@ button:hover {
 .chart-5 {
   width: 600px;
   height: 300px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
@@ -369,13 +467,13 @@ button:hover {
 .chart-6 {
   width: 400px;
   height: 300px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
 
 .chart-mini {
-  display:inline-grid;
+  display: inline-grid;
   grid-template-columns: auto auto auto auto auto;
   margin-top: 20px;
   margin-left: 20px;
@@ -388,42 +486,42 @@ button:hover {
 .chart-mini-1 {
   width: 170px;
   height: 150px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-2 {
   width: 170px;
   height: 150px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-3 {
   width: 170px;
   height: 150px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-4 {
   width: 170px;
   height: 150px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-5 {
   width: 170px;
   height: 150px;
-  background-color: #ccc; 
+  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .main {
-  position:absolute;
+  position: absolute;
   height: 100vh;
-  left:90px;
+  left: 90px;
   width: calc(100% - 90px);
   align-items: center;
   justify-content: left;
@@ -485,7 +583,7 @@ button:hover {
 }
 
 /*media screen untuk ukuran mobile*/
-@media (min-width:320px) and (max-width: 720px) {
+@media (min-width: 320px) and (max-width: 720px) {
   .sidebar .image {
     min-width: 10px;
     display: flex;
@@ -533,10 +631,10 @@ button:hover {
     font-size: 40%;
   }
   .main-content {
-    height:20%;
+    height: 20%;
   }
   form {
-    width:100%;
+    width: 100%;
   }
   .filter {
     width: 100%;
@@ -548,40 +646,46 @@ button:hover {
     align-items: start;
   }
   .filter-neighborhood {
-    width:50%;
+    width: 50%;
   }
   .from-date {
-    width:50%;
+    width: 50%;
   }
   .to-date {
-    width:50%;
-    margin-top:5px;
+    width: 50%;
+    margin-top: 5px;
   }
-  #start-date, #end-date{
-    height:23px;
+  #start-date,
+  #end-date {
+    height: 23px;
   }
-  .button{
-    padding-top:13%;
+  .button {
+    padding-top: 13%;
   }
   #stickyButton {
     margin-top: 0px;
     margin-left: 0px;
-    width:83px;
-    height:23px;
+    width: 83px;
+    height: 23px;
   }
 
   .chart-area {
     padding-left: 0;
   }
   .chart-mini {
-    display:none;
+    display: none;
   }
   .chart {
     display: flex;
     flex-direction: column;
   }
-  .chart-1, .chart-2, .chart-3, .chart-4, .chart-5, .chart-6 {
-    width:95%;
+  .chart-1,
+  .chart-2,
+  .chart-3,
+  .chart-4,
+  .chart-5,
+  .chart-6 {
+    width: 95%;
   }
   .footer {
     display: grid;
@@ -620,16 +724,16 @@ button:hover {
 }
 
 /*media screen untuk ukuran tablet*/
-@media (min-width:768px) and (max-width: 1025px) {
+@media (min-width: 768px) and (max-width: 1025px) {
   .header {
     width: 100%;
     font-size: 80%;
   }
   .main-content {
-    height:10%;
+    height: 10%;
   }
   form {
-    width:100%;
+    width: 100%;
   }
   .filter {
     width: 90%;
@@ -641,19 +745,21 @@ button:hover {
     font-size: 80%;
     align-items: start;
   }
- #label-NEIGHBORHOOD, #date{
- }
+  #label-NEIGHBORHOOD,
+  #date {
+  }
   .filter-neighborhood {
-    width:50%;
+    width: 50%;
   }
   .from-date {
-    width:50%;
+    width: 50%;
   }
   .to-date {
-    width:50%;
+    width: 50%;
   }
-  #start-date, #end-date{
-    height:23px;
+  #start-date,
+  #end-date {
+    height: 23px;
   }
   .button {
     padding-top: 17px;
@@ -662,16 +768,16 @@ button:hover {
   #stickyButton {
     margin-top: 0;
     margin-left: 0px;
-    width:83px;
-    height:23px;
+    width: 83px;
+    height: 23px;
   }
 
   .chart-area {
     padding-left: 0;
-    width:100%;
+    width: 100%;
   }
   .chart-mini {
-    display:none;
+    display: none;
   }
   /*.chart {
     width: 100%;
@@ -690,14 +796,19 @@ button:hover {
     padding-left: 0;
   }
   .chart-mini {
-    display:none;
+    display: none;
   }
   .chart {
     display: flex;
     flex-direction: column;
   }
-  .chart-1, .chart-2, .chart-3, .chart-4, .chart-5, .chart-6 {
-    width:95%;
+  .chart-1,
+  .chart-2,
+  .chart-3,
+  .chart-4,
+  .chart-5,
+  .chart-6 {
+    width: 95%;
   }
 }
 
@@ -720,7 +831,7 @@ button:hover {
     width: 300px;
   }
 
-  .accordion-details{
+  .accordion-details {
     width: 100%;
   }
 
@@ -749,7 +860,7 @@ button:hover {
 
 .accordion {
   height: 100%;
-  max-width: 500px; 
+  max-width: 500px;
   display: flex;
   align-items: start;
   gap: 36px;
@@ -784,11 +895,11 @@ details > span::after {
 }
 
 a {
-color: white;
-text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
-.akses-dataset{
+.akses-dataset {
   width: 180px;
   border: 0;
   padding: 1rem 1.5rem;
