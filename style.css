@@ -837,12 +837,17 @@ button:hover {
     display: flex;
     flex-direction: column;
   }
+  .chart-mega {
+    padding-left: 0;
+    margin-left: 20px;
+  }
   .chart-1,
   .chart-2,
   .chart-3,
   .chart-4,
   .chart-5,
-  .chart-6 {
+  .chart-6,
+  .chart-mega-1 {
     width: 95%;
   }
   .footer {
@@ -964,12 +969,17 @@ button:hover {
     display: flex;
     flex-direction: column;
   }
+  .chart-mega {
+    padding-left: 0;
+    margin-left: 20px;
+  }
   .chart-1,
   .chart-2,
   .chart-3,
   .chart-4,
   .chart-5,
-  .chart-6 {
+  .chart-6,
+  .chart-mega-1 {
     width: 95%;
   }
 }
