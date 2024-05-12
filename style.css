@@ -580,7 +580,7 @@ button:hover {
 }
 
 .chart-2 {
-  width: 400px;
+  width: 600px;
   height: 300px;
   background-color: #ccc;
   border: 2px solid #000;
@@ -596,7 +596,7 @@ button:hover {
 }
 
 .chart-4 {
-  width: 400px;
+  width: 600px;
   height: 300px;
   background-color: #ccc;
   border: 2px solid #000;
@@ -612,7 +612,7 @@ button:hover {
 }
 
 .chart-6 {
-  width: 400px;
+  width: 600px;
   height: 300px;
   background-color: #ccc;
   border: 2px solid #000;
@@ -627,18 +627,18 @@ button:hover {
   max-width: 100%;
   row-gap: 20px;
   column-gap: 40px;
-  padding-left: 10px;
+  padding-left: 50px;
 }
 
 .chart-mini-1 {
-  width: 170px;
+  width: 200px;
   height: 150px;
   background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-2 {
-  width: 170px;
+  width: 200px;
   height: 150px;
   background-color: #ccc;
   border: 2px solid #000;
@@ -652,15 +652,27 @@ button:hover {
 }
 
 .chart-mini-4 {
-  width: 170px;
+  width: 200px;
   height: 150px;
   background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-5 {
-  width: 170px;
+  width: 200px;
   height: 150px;
+  background-color: #ccc;
+  border: 2px solid #000;
+}
+
+.chart-mega {
+  padding-left: 35px;
+  margin-top: 20px;
+}
+
+.chart-mega-1 {
+  width: 1200px;
+  height: 300px;
   background-color: #ccc;
   border: 2px solid #000;
 }
