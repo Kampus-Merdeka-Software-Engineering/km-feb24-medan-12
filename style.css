@@ -659,14 +659,18 @@ button:hover {
 .main {
   position: absolute;
   height: 100vh;
-  left: 90px;
-  width: calc(100% - 90px);
+  left: 80px;
+  width: calc(100% - 80px);
   align-items: center;
   justify-content: left;
   min-height: 100vh;
   transition: all 0.3s ease;
   text-align: left;
   display: inline-flexbox;
+}
+
+.footer-box {
+  padding-top: 10px;
 }
 
 /*footer*/
@@ -784,6 +788,9 @@ button:hover {
   .chart-mega-1 {
     width: 95%;
   }
+  .footer {
+    padding-top:25px;
+  }
 }
 
 /*media screen untuk ukuran tablet*/
@@ -880,6 +887,9 @@ button:hover {
   .chart-6,
   .chart-mega-1 {
     width: 95%;
+  }
+  .footer-box {
+    padding-top:20px;
   }
 }
 
