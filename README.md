@@ -21,4 +21,5 @@ This project is worked by following members:
 - Fahruddin Hisannurijal
 - Yenni Luthfi
 - Tiara Carendra Galih
+- Ayub Nasrurohman Fahri
 
