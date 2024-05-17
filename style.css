@@ -554,14 +554,12 @@ button:hover {
 .chart-1 {
   width: 600px;
   height: 300px;
-  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-2 {
   width: 600px;
   height: 300px;
-  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
@@ -569,7 +567,6 @@ button:hover {
 .chart-3 {
   width: 600px;
   height: 300px;
-  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
@@ -577,7 +574,6 @@ button:hover {
 .chart-4 {
   width: 600px;
   height: 300px;
-  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
@@ -585,7 +581,6 @@ button:hover {
 .chart-5 {
   width: 600px;
   height: 300px;
-  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
@@ -593,7 +588,6 @@ button:hover {
 .chart-6 {
   width: 600px;
   height: 300px;
-  background-color: #ccc;
   border: 2px solid #000;
   row-gap: 20px;
 }
