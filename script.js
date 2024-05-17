@@ -64,17 +64,26 @@ function createChart(arrPassed, type){
           beginAtZero: true,
           display: false
         },
-        revenue:{
-          axis: 'y',
+        'sales':{
+          type: 'linear',
+          position: 'left',
           min: 0,
-          max: 500000000,
-          display: false
+          max: 400000000,
+          title: {
+            display: true,
+            text: 'Total Sales'
+          }
         },
-        transaction  : {
-          axis: 'y',
+        'transaction'  : {
+          type: 'linear',
+          position: 'right',
           min:  0,
           max: 1000,
-          display: false
+          display: true,
+          title: {
+            display: true,
+            text: 'Total Transactions'
+          }
         }
       }
     }
