@@ -1,5 +1,4 @@
 const ctx = document.getElementById('mychart_6');
-// const cxt = document.getElementById('myChart2');
 
 fetch('File Json/Total_revenue_transaction_neighborhood.json')
 .then(function(response) {
