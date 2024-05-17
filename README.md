@@ -16,6 +16,7 @@ This project is worked by following members:
 - Adelia Putri Handayani
 - Putu Sintha 
 - Riza Reka Atin
+- Ayub Fahri
 - Muhammad Farhan
 - Nuuri Hafida
 - Fahruddin Hisannurijal
