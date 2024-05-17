@@ -1,3 +1,4 @@
+//TOP 10 TOTAL REVENUE AND TRANSACTION BY NEIGHBORHOOD CHART
 const ctx = document.getElementById('mychart_6');
 
 fetch('File Json/Total_revenue_transaction_neighborhood.json')
@@ -37,7 +38,7 @@ function createChart(arrPassed, type){
         label: 'Total Sales',
         data: arrPassed.total_sales,
         borderWidth: 1,
-        yAxisID: "sales"
+        yAxisID: "sales",
       },
       {
         label: 'Transactions',
