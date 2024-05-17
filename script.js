@@ -57,7 +57,6 @@ function createChart(arrPassed, type){
       },
       layout: {
         padding: {
-          bottom: 20
         }
       },
       scales: {
