@@ -148,7 +148,7 @@ function createChart2(arrPassed2, type){
 
 // Quarterly Sales Revenue and Transactions Chart
 function createQuarterlySalesChart() {
-  fetch('File Json/Quarterly_Sales_Revenue.json')
+  fetch('File Json/Quarterly_Sales_revenue.json')
     .then(function(response) {
       if (!response.ok) {
         throw new Error('Network response was not ok');
