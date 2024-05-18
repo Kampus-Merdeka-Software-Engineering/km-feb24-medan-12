@@ -150,13 +150,15 @@ function createChart2(arrPassed2, type){
 function createQuarterlySalesChart() {
   fetch('File Json/Quarterly_Sales_Revenue.json')
     .then(function(response) {
-      if (response.ok) {
-        return response.json();
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
+      return response.json();
     })
     .then(function(data) {
       var arrRevenue = [];
       var arrQuarters = [];
+
       data.forEach(element => {
         arrRevenue.push(element.TOTAL_REVENUE);
         arrQuarters.push(`Q${element.EXTRACTED_QUARTER} ${element.EXTRACTED_YEAR}`);
@@ -167,27 +169,27 @@ function createQuarterlySalesChart() {
         quarters: arrQuarters
       };
 
-      createQuarterlyChart(objChart, 'line'); // Change the type to 'line'
+      createQuarterlyChart(objChart, 'line'); // Tipe chart sekarang adalah 'line'
     })
     .catch(function(error) {
-      console.log('Error fetching data:', error);
+      console.error('Error during fetch operation:', error);
     });
 }
 
 function createQuarterlyChart(arrPassed, type) {
-  const ctx = document.getElementById('mychart_1').getContext('2d');
+  const ctx = document.getElementById('mychart_1');
   new Chart(ctx, {
-    type: type, // Now it's a line chart
+    type: type, // Sekarang adalah grafik garis
     data: {
       labels: arrPassed.quarters,
       datasets: [{
         label: 'Total Revenue',
         data: arrPassed.total_revenue,
         borderColor: 'rgb(0, 0, 255)',
-        backgroundColor: 'rgb(0,0,255)', // Slightly transparent background for visual effect
+        backgroundColor: 'rgba(0, 0, 255, 0.1)',
         borderWidth: 1,
-        fill: false, // Ensure the area under the line is not filled
-        tension: 0.4 // Adds curvature to the line
+        fill: false, // Pastikan area di bawah garis tidak diisi
+        tension: 0.4 // Menambahkan kelengkungan pada garis
       }]
     },
     options: {
@@ -200,7 +202,7 @@ function createQuarterlyChart(arrPassed, type) {
       scales: {
         y: {
           beginAtZero: true,
-          max: 1400000000, // Set max scale value for revenue
+          max: 1400000000, // Atur nilai maksimal untuk pendapatan
           title: {
             display: true,
             text: 'Total Revenue (in USD)'
@@ -212,5 +214,7 @@ function createQuarterlyChart(arrPassed, type) {
   });
 }
 
-// Trigger the chart creation process
+// Memulai proses pembuatan grafik
 createQuarterlySalesChart();
+
+
