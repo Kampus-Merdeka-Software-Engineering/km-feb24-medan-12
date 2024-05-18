@@ -249,32 +249,6 @@ fetch('File Json/Total_Revenue_building_Category.json')
   createChart5(objChart, 'bar');
 })
 
-// SALES COMPOSITION 
-const ctx = document.getElementById("mychart_3");
-
-fetch("File Json/Sales_Composition_building_classification (1).json")
-  .then(function (response) {
-    if (response.ok == true) {
-      return response.json();
-    }
-  })
-  .then(function (data) {
-    console.log(data);
-    var arrBuildingClass = [];
-    var arrTotalRevenue = [];
-    data.forEach((element) => {
-      arrTotalRevenue.push(element.TOTAL_REVENUE);
-      arrBuildingClass.push(element.BUILDING_CLASS);
-    });
-    console.log(arrBuildingClass);
-    console.log(arrTotalRevenue);
-    var objChart = {
-      total_revenue: arrTotalRevenue,
-      building_class: arrBuildingClass,
-    };
-    console.log(objChart);
-    createChart3(objChart, "pie");
-  });
 
 function createChart5(arrPassed5, type) {
   new Chart(chart5, {
@@ -370,3 +344,30 @@ function createChart7(arrLine3, type){
         }
       )
     }
+    
+// SALES COMPOSITION 
+const ctx = document.getElementById("mychart_3");
+
+fetch("File Json/Sales_Composition_building_classification (1).json")
+  .then(function (response) {
+    if (response.ok == true) {
+      return response.json();
+    }
+  })
+  .then(function (data) {
+    console.log(data);
+    var arrBuildingClass = [];
+    var arrTotalRevenue = [];
+    data.forEach((element) => {
+      arrTotalRevenue.push(element.TOTAL_REVENUE);
+      arrBuildingClass.push(element.BUILDING_CLASS);
+    });
+    console.log(arrBuildingClass);
+    console.log(arrTotalRevenue);
+    var objChart = {
+      total_revenue: arrTotalRevenue,
+      building_class: arrBuildingClass,
+    };
+    console.log(objChart);
+    createChart3(objChart, "pie");
+  });
