@@ -250,9 +250,8 @@ fetch('File Json/Total_Revenue_building_Category.json')
 })
 
 function createChart5(arrPassed5, type) {
-  const chart5 = document.getElementById('mychart_5');
   new Chart(chart5, {
-    type: type, // Sekarang adalah grafik garis
+    type: 'bar', 
     data: {
       labels: arrPassed5.building_class_category,
       datasets: [{
@@ -260,29 +259,22 @@ function createChart5(arrPassed5, type) {
         data: arrPassed5.total_revenue,
         borderColor: 'rgb(0, 0, 255)',
         backgroundColor: 'rgba(0, 0, 255, 0.1)',
-        borderWidth: 1,
-        fill: false, // Pastikan area di bawah garis tidak diisi
-        tension: 0.4 // Menambahkan kelengkungan pada garis
+        borderWidth: 1
       }]
     },
     options: {
+      indexAxis: 'y',
+      scales: {
+          x: {
+              type: 'logarithmic',
+          },
+      },
       plugins: {
         title: {
           display: true,
-          text: 'Total Revenue by Building Class Category'
+          text: 'Total Revenue By Building Category'
         }
       },
-      scales: {
-        y: {
-          beginAtZero: true,
-          max: 1400000000, // Atur nilai maksimal untuk pendapatan
-          title: {
-            display: true,
-            text: 'Total Revenue (in USD)'
-          }
-        }
-      },
-      responsive: true
     }
-  });
+  })
 }
