@@ -606,35 +606,30 @@ button:hover {
 .chart-mini-1 {
   width: 200px;
   height: 150px;
-  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-2 {
   width: 200px;
   height: 150px;
-  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-3 {
   width: 170px;
   height: 150px;
-  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-4 {
   width: 200px;
   height: 150px;
-  background-color: #ccc;
   border: 2px solid #000;
 }
 
 .chart-mini-5 {
   width: 200px;
   height: 150px;
-  background-color: #ccc;
   border: 2px solid #000;
 }
 
@@ -646,7 +641,6 @@ button:hover {
 .chart-mega-1 {
   width: 1200px;
   height: 300px;
-  background-color: #ccc;
   border: 2px solid #000;
 }
 
@@ -763,8 +757,19 @@ button:hover {
     padding-left: 0;
   }
   .chart-mini {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
   }
+
+  .chart-mini-1, 
+  .chart-mini-2,
+  .chart-mini-3,
+  .chart-mini-4,
+  .chart-mini-5 {
+    width: 70%;
+  }
+
   .chart {
     display: flex;
     flex-direction: column;
@@ -843,9 +848,6 @@ button:hover {
     padding-left: 0;
     width: 100%;
   }
-  .chart-mini {
-    display: none;
-  }
   /*.chart {
     width: 100%;
     display: inline-grid;
@@ -862,8 +864,17 @@ button:hover {
   .chart-area {
     padding-left: 0;
   }
-  .chart-mini {
-    display: none;
+  .chart-mini{
+    width: 95%;
+    padding-left: 0px;
+  }
+
+  .chart-mini-1, 
+  .chart-mini-2,
+  .chart-mini-3,
+  .chart-mini-4,
+  .chart-mini-5 {
+    width: 100%;
   }
   .chart {
     display: flex;
