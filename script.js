@@ -275,3 +275,98 @@ fetch("File Json/Sales_Composition_building_classification (1).json")
     console.log(objChart);
     createChart3(objChart, "pie");
   });
+
+function createChart5(arrPassed5, type) {
+  new Chart(chart5, {
+    type: 'bar', 
+    data: {
+      labels: arrPassed5.building_class_category,
+      datasets: [{
+        label: 'Total Revenue',
+        data: arrPassed5.total_revenue,
+        borderColor: 'rgb(0, 0, 255)',
+        backgroundColor: 'rgba(0, 0, 255, 0.1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+          x: {
+              type: 'logarithmic',
+          },
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Total Revenue By Building Category'
+        }
+      },
+    }
+  })
+}
+
+//MONTHLY AVERAGE REVENUE
+const chart2 = document.getElementById('mychart_2');
+
+fetch('File Json/Monthly_Average_Revenue.json')
+.then(function(response) {
+
+    if(response.ok == true){
+        return response.json();
+    }
+})
+.then(function(data){
+    console.log(data);
+    var arrYearMonth = [];
+    var arrAverageSalePrice = [];
+    data.forEach(element => {
+      arrYearMonth.push(element.YEAR_MONTH);
+      arrAverageSalePrice.push(element.AVERAGE_SALE_PRICE);
+    });
+    console.log(arrYearMonth);
+    console.log(arrAverageSalePrice);
+    var objChart = {
+      YEAR_MONTH : arrYearMonth,
+      AVERAGE_SALE_PRICE : arrAverageSalePrice,
+
+    };
+    console.log(objChart);
+    createChart7(objChart, 'line');
+})
+
+function createChart7(arrLine3, type){
+
+    new Chart(chart2, {
+        type: type,
+        data: {
+          labels: arrLine3.YEAR_MONTH,
+          datasets: [{
+            label: 'Monthly_Average_Revenue',
+            data: arrLine3.AVERAGE_SALE_PRICE,
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+          }]
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'MONTHLY AVERAGE REVENUE'
+            }
+          },
+          scales: {
+            y: {
+            display: true,
+            ticks: {
+                beginAtZero: true,
+                max: 800000,
+                min: 500000
+            }
+             
+              }
+            }
+          }
+        }
+      )
+    }
