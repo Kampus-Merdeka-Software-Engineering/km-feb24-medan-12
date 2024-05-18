@@ -145,3 +145,72 @@ function createChart2(arrPassed2, type){
     }
   });
 }
+
+// Quarterly Sales Revenue and Transactions Chart
+function createQuarterlySalesChart() {
+  fetch('File Json/Quarterly_Sales_Revenue.json')
+    .then(function(response) {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then(function(data) {
+      var arrRevenue = [];
+      var arrQuarters = [];
+      data.forEach(element => {
+        arrRevenue.push(element.TOTAL_REVENUE);
+        arrQuarters.push(`Q${element.EXTRACTED_QUARTER} ${element.EXTRACTED_YEAR}`);
+      });
+
+      var objChart = {
+        total_revenue: arrRevenue,
+        quarters: arrQuarters
+      };
+
+      createQuarterlyChart(objChart, 'line'); // Change the type to 'line'
+    })
+    .catch(function(error) {
+      console.log('Error fetching data:', error);
+    });
+}
+
+function createQuarterlyChart(arrPassed, type) {
+  const ctx = document.getElementById('mychart_1').getContext('2d');
+  new Chart(ctx, {
+    type: type, // Now it's a line chart
+    data: {
+      labels: arrPassed.quarters,
+      datasets: [{
+        label: 'Total Revenue',
+        data: arrPassed.total_revenue,
+        borderColor: 'rgb(0, 0, 255)',
+        backgroundColor: 'rgb(0,0,255)', // Slightly transparent background for visual effect
+        borderWidth: 1,
+        fill: false, // Ensure the area under the line is not filled
+        tension: 0.4 // Adds curvature to the line
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Quarterly Sales Revenue'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 1400000000, // Set max scale value for revenue
+          title: {
+            display: true,
+            text: 'Total Revenue (in USD)'
+          }
+        }
+      },
+      responsive: true
+    }
+  });
+}
+
+// Trigger the chart creation process
+createQuarterlySalesChart();
