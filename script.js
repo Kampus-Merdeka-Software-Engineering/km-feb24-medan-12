@@ -217,3 +217,72 @@ function createQuarterlyChart(arrPassed, type) {
 // Memulai proses pembuatan grafik
 createQuarterlySalesChart();
 
+//Total Revenue By Building Category
+const chart5 = document.getElementById('mychart_5')
+
+fetch('File Json/Total_Revenue_building_Category.json')
+.then(function(response) {
+    
+    if(response.ok == true) {
+        return response.json();
+    }
+})
+.then(function(data) {
+  console.log(data);
+  var arrTotalRevenue = [];
+  var arrBuildingClassCategory = [];
+  var arrRevenuePercentage = [];
+  data.forEach(element => {
+      arrTotalRevenue.push(element.Total_Revenue);
+      arrBuildingClassCategory.push(element.BUILDING_CLASS_CATEGORY);
+      arrRevenuePercentage.push(element.Revenue_Percentage);       
+  });
+  console.log(arrBuildingClassCategory);
+  console.log(arrTotalRevenue);
+  console.log(arrRevenuePercentage);
+  var objChart = {
+      building_class_category : arrBuildingClassCategory,
+      total_revenue : arrTotalRevenue,
+      revenue_percentage : arrRevenuePercentage
+  };
+  console.log(objChart);
+  createChart5(objChart, 'bar');
+})
+
+function createChart5(arrPassed5, type) {
+  const chart5 = document.getElementById('mychart_5');
+  new Chart(chart5, {
+    type: type, // Sekarang adalah grafik garis
+    data: {
+      labels: arrPassed5.building_class_category,
+      datasets: [{
+        label: 'Total Revenue',
+        data: arrPassed5.total_revenue,
+        borderColor: 'rgb(0, 0, 255)',
+        backgroundColor: 'rgba(0, 0, 255, 0.1)',
+        borderWidth: 1,
+        fill: false, // Pastikan area di bawah garis tidak diisi
+        tension: 0.4 // Menambahkan kelengkungan pada garis
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Total Revenue by Building Class Category'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 1400000000, // Atur nilai maksimal untuk pendapatan
+          title: {
+            display: true,
+            text: 'Total Revenue (in USD)'
+          }
+        }
+      },
+      responsive: true
+    }
+  });
+}
