@@ -217,4 +217,35 @@ function createQuarterlyChart(arrPassed, type) {
 // Memulai proses pembuatan grafik
 createQuarterlySalesChart();
 
+//Total Revenue By Building Category
+const chart5 = document.getElementById('mychart_5')
+
+fetch('File Json/Total_Revenue_building_Category.json')
+.then(function(response) {
+    
+    if(response.ok == true) {
+        return response.json();
+    }
+})
+.then(function(data) {
+  console.log(data);
+  var arrTotalRevenue = [];
+  var arrBuildingClassCategory = [];
+  var arrRevenuePercentage = [];
+  data.forEach(element => {
+      arrTotalRevenue.push(element.Total_Revenue);
+      arrBuildingClassCategory.push(element.BUILDING_CLASS_CATEGORY);
+      arrRevenuePercentage.push(element.Revenue_Percentage);       
+  });
+  console.log(arrBuildingClassCategory);
+  console.log(arrTotalRevenue);
+  console.log(arrRevenuePercentage);
+  var objChart = {
+      building_class_category : arrBuildingClassCategory,
+      total_revenue : arrTotalRevenue,
+      revenue_percentage : arrRevenuePercentage
+  };
+  console.log(objChart);
+  createChart5(objChart, 'bar');
+})
 
