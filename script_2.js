@@ -1,20 +1,4 @@
-fetch("data_NYC.json")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    document.getElementById("total-transaction").textContent = data.length;
-    var totalRevenue = data.reduce((acc, curr) => { return acc + parseInt(curr.SALE_PRICE); }, 0);
-    var totalCommercial = data.reduce((acc, curr) => { return acc + parseInt(curr.COMMERCIAL_UNITS); }, 0);
-    var totalResidential = data.reduce((acc, curr) => { return acc + parseInt(curr.RESIDENTIAL_UNITS); }, 0);
-
-    document.getElementById("total-revenue-text").textContent = totalRevenue;
-    document.getElementById("average-sales").textContent = totalRevenue/data.length;
-    document.getElementById("total-commercial").textContent = totalCommercial;
-    document.getElementById("total-residential").textContent = totalResidential;
-  });
-
- /* document.getElementById('filter-form').addEventListener('submit', function(event) {
+document.getElementById('filter-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
   
     fetch("data_NYC.json")
