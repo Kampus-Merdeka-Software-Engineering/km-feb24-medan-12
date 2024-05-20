@@ -903,8 +903,11 @@ button:hover {
     padding-left: 0;
   }
   .chart-mini{
-    width: 95%;
-    padding-left: 0px;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 0;
+    column-gap: 15px;
   }
 
   .chart-mini-1, 
@@ -927,6 +930,10 @@ button:hover {
   .chart {
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
+    padding-right: 5px;
+    margin-left: 0;
+    width:100%
   }
   .chart-mega {
     padding-left: 0;
