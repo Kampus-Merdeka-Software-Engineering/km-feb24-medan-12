@@ -405,3 +405,71 @@ function createChart3(arrPassed, type) {
     },
   });
 }
+
+// Quarter Total (Sales Transaction)
+const chart7 = document.getElementById('megachart');
+
+fetch('Quarter_Total_Transaction.json')
+.then(function(response) {
+
+    if(response.ok == true){
+        return response.json();
+    }
+})
+.then(function(data){
+    console.log(data);
+   
+    var arrQuarterYear = [];
+    var arrTotalSales = [];
+    data.forEach(element => {
+      arrQuarterYear.push(`Q${element.EXTRACTED_QUARTER} ${element.EXTRACTED_YEAR}`);
+      arrTotalSales.push(element.TOTAL_SALES);
+    });
+    console.log(arrQuarterYear);
+    console.log(arrTotalSales);
+    var objChart = {
+      quarter_year: arrQuarterYear,
+      total_sales: arrTotalSales,
+    };
+    console.log(objChart);
+    createChart(objChart, 'line');
+})
+
+function createChart8(arrLine, type){
+
+  new Chart(chart7, {
+    type: type,
+    data: {
+      labels: arrLine.quarter_year,
+      datasets: [{
+        label: 'Transaction',
+        data: arrLine.total_sales,
+        borderWidth: 1,
+        fill: false,
+        tension: 0.4,
+        yAxisID : "Sales"
+      },
+    ]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Quarter Total Transaction'
+
+            }
+        },
+      scales: {
+        y: {
+          beginAtZero: true, 
+          display: false
+        },
+        Sales: {
+            axis: 'y',
+            min: 0,
+            max: 2000
+        }
+      }
+    }
+  });
+}
