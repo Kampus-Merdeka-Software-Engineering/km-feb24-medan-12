@@ -571,6 +571,12 @@ button:hover {
   row-gap: 20px;
 }
 
+#mychart_3 {
+  width: 300px;
+  height: 300px;
+  margin-left: 100px;
+}
+
 .chart-4 {
   width: 600px;
   height: 300px;
@@ -830,6 +836,13 @@ button:hover {
   }
   .footer {
     padding-top:25px;
+  }
+
+  #chart-3 {
+    width: 300px;
+    height: 300px;
+    margin-left: 5%;
+    margin-top: 5%;
   }
 }
 
