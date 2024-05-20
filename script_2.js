@@ -37,12 +37,12 @@ function updateStatistics(data) {
           const maxDate = new Date("2017-08-31");
   
           if (fromDate && (new Date(fromDate) < minDate || new Date(fromDate) > maxDate)) {
-            alert("From Date must be between 2016-09-01 and 2017-08-31.");
+            alert("From Date must be between 01-09-2016. and 31-08-2017.");
             return;
           }
   
           if (toDate && (new Date(toDate) < minDate || new Date(toDate) > maxDate)) {
-            alert("To Date must be between 2016-09-01 and 2017-08-31.");
+            alert("To Date must be between 01-09-2016. and 31-08-2017.");
             return;
           }
   
