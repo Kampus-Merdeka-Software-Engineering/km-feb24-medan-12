@@ -409,7 +409,7 @@ function createChart3(arrPassed, type) {
 // Quarter Total (Sales Transaction)
 const chart7 = document.getElementById('megachart');
 
-fetch('Quarter_Total_Transaction.json')
+fetch('File Json/Quarter_Total_Transaction.json')
 .then(function(response) {
 
     if(response.ok == true){
@@ -432,7 +432,7 @@ fetch('Quarter_Total_Transaction.json')
       total_sales: arrTotalSales,
     };
     console.log(objChart);
-    createChart(objChart, 'line');
+    createChart8(objChart, 'line');
 })
 
 function createChart8(arrLine, type){
