@@ -574,7 +574,7 @@ button:hover {
 #mychart_3 {
   width: 300px;
   height: 300px;
-  margin-left: 100px;
+  margin-left: 145px;
 }
 
 .chart-4 {
@@ -658,6 +658,7 @@ button:hover {
   padding-right: 5%;
   padding-top: 5%;
   height: 50%;
+  font-size: medium;
 }
 
 .chart-mini p {
