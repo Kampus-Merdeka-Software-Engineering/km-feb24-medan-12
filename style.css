@@ -458,6 +458,15 @@ body {
   border-bottom: 5px solid #ffd743;
 }
 
+.chart-mini-filter {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border: solid 5px #ffd743;
+    border-radius: 25px;
+}
+
 .user-interaction {
   display: inline-block;
   width: 100%;
@@ -792,6 +801,12 @@ button:hover {
     width: 200px;
     height: 35px;
   }
+  .main-content {
+    height: 1100px;
+  }
+  .user-interaction {
+    height: 100%;
+  }
 
   .chart-area {
     padding-left: 0;
@@ -857,8 +872,21 @@ button:hover {
     display: none;
   }
   .main-content {
-    height: 10%;
+    height: 30%;
+    margin-left: 8px;
   }
+
+  .chart-mini-filter {
+    margin-left: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border: solid 3px #ffd743;
+    border-radius: 25px;
+    width: 99%;
+  }
+
   form {
     width: 100%;
   }
@@ -893,6 +921,10 @@ button:hover {
     margin-left: 0px;
     width: 83px;
     height: 23px;
+  }
+
+  .main-content {
+    height:30%;
   }
 
   .chart-area {
