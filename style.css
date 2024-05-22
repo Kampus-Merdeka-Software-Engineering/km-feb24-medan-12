@@ -895,6 +895,7 @@ button:hover {
     display: flex;
     font-size: 80%;
     align-items: start;
+    padding-left: 10px;
   }
   #label-NEIGHBORHOOD,
   #date {
