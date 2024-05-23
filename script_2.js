@@ -5,11 +5,11 @@ function updateStatistics(data) {
     var totalCommercial = data.reduce((acc, curr) => acc + parseInt(curr.COMMERCIAL_UNITS), 0);
     var totalResidential = data.reduce((acc, curr) => acc + parseInt(curr.RESIDENTIAL_UNITS), 0);
   
-    document.getElementById("total-revenue-text").textContent = totalRevenue;
-    document.getElementById("average-sales").textContent = (data.length ? (totalRevenue / data.length).toFixed(2) : 0);
+    document.getElementById("total-revenue-text").textContent = `$${Math.floor(totalRevenue / 1000000)}M`;
+    document.getElementById("average-sales").textContent = `$${Math.floor(data.length ? ((totalRevenue / data.length)/1000).toFixed(2) : 0 )}K`;
     document.getElementById("total-commercial").textContent = totalCommercial;
     document.getElementById("total-residential").textContent = totalResidential;
-  }
+}
   
   // Fungsi untuk memuat dan memfilter data
   function loadData() {
