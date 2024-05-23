@@ -157,9 +157,11 @@ function createQuarterlySalesChart() {
     .then(function (data) {
       var arrRevenue = [];
       var arrQuarters = [];
+      var arrTransactions = [];
 
       data.forEach((element) => {
         arrRevenue.push(element.TOTAL_REVENUE);
+        arrTransactions.push(element.TOTAL_TRANSACTIONS);
         arrQuarters.push(
           `Q${element.EXTRACTED_QUARTER} ${element.EXTRACTED_YEAR}`
         );
@@ -168,6 +170,7 @@ function createQuarterlySalesChart() {
       var objChart = {
         total_revenue: arrRevenue,
         quarters: arrQuarters,
+        total_transactions: arrTransactions,
       };
 
       createQuarterlyChart(objChart, "line"); // Tipe chart sekarang adalah 'line'
@@ -201,6 +204,16 @@ function createQuarterlyChart(arrPassed, type) {
           display: true,
           text: "Quarterly Sales Revenue",
         },
+      tooltip: {
+        callbacks : { 
+          label: function (context){
+            let label = 'Total Revenue: '+ context.raw ||'';
+            let index = context.dataIndex;
+            let totalTransactions = arrPassed.total_transactions[index];
+            return [label, 'Total Transactions: '+ totalTransactions];
+          }
+        }
+      }
       },
       scales: {
         y: {
