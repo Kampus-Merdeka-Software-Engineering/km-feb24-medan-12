@@ -2,7 +2,7 @@
 const chart4 = document.getElementById("mychart_4");
 
 //TOP 10 TOTAL REVENUE AND TRANSACTION BY NEIGHBORHOOD CHART
-const chart6 = document.getElementById("mychart_6");
+const chart6 = document.getElementById("megachart");
 
 fetch("File Json/Total_revenue_transaction_neighborhood.json")
   .then(function (response) {
@@ -234,7 +234,7 @@ function createQuarterlyChart(arrPassed, type) {
 createQuarterlySalesChart();
 
 //Total Revenue By Building Category
-const chart5 = document.getElementById("mychart_5");
+const chart5 = document.getElementById("megachart_2");
 
 fetch("File Json/Total_Revenue_building_Category.json")
   .then(function (response) {
@@ -420,69 +420,69 @@ function createChart3(arrPassed, type) {
 }
 
 // Quarter Total (Sales Transaction)
-const chart7 = document.getElementById('megachart');
+// const chart7 = document.getElementById('megachart');
 
-fetch('File Json/Quarter_Total_Transaction.json')
-.then(function(response) {
+// fetch('File Json/Quarter_Total_Transaction.json')
+// .then(function(response) {
 
-    if(response.ok == true){
-        return response.json();
-    }
-})
-.then(function(data){
-    console.log(data);
+//     if(response.ok == true){
+//         return response.json();
+//     }
+// })
+// .then(function(data){
+//     console.log(data);
    
-    var arrQuarterYear = [];
-    var arrTotalSales = [];
-    data.forEach(element => {
-      arrQuarterYear.push(`Q${element.EXTRACTED_QUARTER} ${element.EXTRACTED_YEAR}`);
-      arrTotalSales.push(element.TOTAL_SALES);
-    });
-    console.log(arrQuarterYear);
-    console.log(arrTotalSales);
-    var objChart = {
-      quarter_year: arrQuarterYear,
-      total_sales: arrTotalSales,
-    };
-    console.log(objChart);
-    createChart8(objChart, 'line');
-})
+//     var arrQuarterYear = [];
+//     var arrTotalSales = [];
+//     data.forEach(element => {
+//       arrQuarterYear.push(`Q${element.EXTRACTED_QUARTER} ${element.EXTRACTED_YEAR}`);
+//       arrTotalSales.push(element.TOTAL_SALES);
+//     });
+//     console.log(arrQuarterYear);
+//     console.log(arrTotalSales);
+//     var objChart = {
+//       quarter_year: arrQuarterYear,
+//       total_sales: arrTotalSales,
+//     };
+//     console.log(objChart);
+//     createChart8(objChart, 'line');
+// })
 
-function createChart8(arrLine, type){
+// function createChart8(arrLine, type){
 
-  new Chart(chart7, {
-    type: type,
-    data: {
-      labels: arrLine.quarter_year,
-      datasets: [{
-        label: 'Transaction',
-        data: arrLine.total_sales,
-        borderWidth: 1,
-        fill: false,
-        tension: 0.4,
-        yAxisID : "Sales"
-      },
-    ]
-    },
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Quarter Total Transaction'
+//   new Chart(chart7, {
+//     type: type,
+//     data: {
+//       labels: arrLine.quarter_year,
+//       datasets: [{
+//         label: 'Transaction',
+//         data: arrLine.total_sales,
+//         borderWidth: 1,
+//         fill: false,
+//         tension: 0.4,
+//         yAxisID : "Sales"
+//       },
+//     ]
+//     },
+//     options: {
+//         plugins: {
+//             title: {
+//                 display: true,
+//                 text: 'Quarter Total Transaction'
 
-            }
-        },
-      scales: {
-        y: {
-          beginAtZero: true, 
-          display: false
-        },
-        Sales: {
-            axis: 'y',
-            min: 0,
-            max: 2000
-        }
-      }
-    }
-  });
-}
+//             }
+//         },
+//       scales: {
+//         y: {
+//           beginAtZero: true, 
+//           display: false
+//         },
+//         Sales: {
+//             axis: 'y',
+//             min: 0,
+//             max: 2000
+//         }
+//       }
+//     }
+//   });
+// }
