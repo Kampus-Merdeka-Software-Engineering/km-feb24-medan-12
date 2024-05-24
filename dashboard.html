@@ -188,6 +188,18 @@
           <!--section untuk chart berupa grafik-->
           <div class="chart">
             <div class="chart-1">
+              <!-- Contoh Filter by Quarter -->
+              <div class="chart-1-filter-div">
+                <form onsubmit="updateQuarterlyChart(event)">
+                  <label for="chart-1-quarter-from">Select From : </label>
+                  <select id="chart-1-quarter-from" name="chart-1-quarter-from">
+                  </select>
+                  <label for="chart-1-quarter-to">To: </label>
+                  <select id="chart-1-quarter-to" name="chart-1-quarter-to">
+                  </select>
+                  <input type="submit" value="Apply"  id="chart-1-filter-apply">
+                </form>
+              </div>
               <canvas id="mychart_1">
               </canvas>
             </div>

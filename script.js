@@ -4,6 +4,10 @@ const chart4 = document.getElementById("mychart_4");
 //TOP 10 TOTAL REVENUE AND TRANSACTION BY NEIGHBORHOOD CHART
 const chart6 = document.getElementById("megachart");
 
+//Variabel penampung data quarterly dan chart quarterly
+let dataQuarterly = null;
+let chartQuarterly = null;
+
 fetch("File Json/Total_revenue_transaction_neighborhood.json")
   .then(function (response) {
     if (response.ok == true) {
@@ -173,6 +177,10 @@ function createQuarterlySalesChart() {
         total_transactions: arrTransactions,
       };
 
+      //variabel penampung diisi dengan dataQuarterly yang telah diinisiasi
+      window.dataQuarterly = objChart;
+      generateQuarterlyOptions(objChart);
+
       createQuarterlyChart(objChart, "line"); // Tipe chart sekarang adalah 'line'
     })
     .catch(function (error) {
@@ -182,7 +190,9 @@ function createQuarterlySalesChart() {
 
 function createQuarterlyChart(arrPassed, type) {
   const ctx = document.getElementById("mychart_1");
-  new Chart(ctx, {
+
+  //variabel penampung diisi dengan chart yang telah diinisiasi
+  window.chartQuarterly = new Chart(ctx, {
     type: type, // Sekarang adalah grafik garis
     data: {
       labels: arrPassed.quarters,
@@ -486,3 +496,50 @@ function createChart3(arrPassed, type) {
 //     }
 //   });
 // }
+
+function generateQuarterlyOptions(dataQuarterlyPassed) {
+  const select = document.getElementById("chart-1-quarter-from");
+
+  dataQuarterlyPassed.quarters.forEach((quarter, index) => {
+    const option = document.createElement("option");
+    option.value = quarter;
+    option.textContent = quarter;
+    select.appendChild(option);
+  });
+
+  select.addEventListener("change", function (event) {
+    const selectTo = document.getElementById("chart-1-quarter-to");
+    const selectedQuarter = event.target.value;
+    const index = window.dataQuarterly.quarters.indexOf(selectedQuarter);
+    selectTo.innerHTML = "";
+    for(let i=index; i < window.dataQuarterly.quarters.length; i++){
+      const option = document.createElement("option");
+      option.value = window.dataQuarterly.quarters[i];
+      option.textContent = window.dataQuarterly.quarters[i];
+      selectTo.appendChild(option);
+      if(i == window.dataQuarterly.quarters.length - 1){
+        selectTo.getElementsByTagName("option")[selectTo.getElementsByTagName("option").length - 1].selected = "selected";
+      }
+    }   
+  });
+  select.getElementsByTagName("option")[0].selected = "selected";
+  select.dispatchEvent(new Event("change"));
+}
+
+function updateQuarterlyChart(e) {
+  e.preventDefault();
+  const selectFrom = document.getElementById("chart-1-quarter-from");
+  const selectTo = document.getElementById("chart-1-quarter-to");
+  const from = selectFrom.value;
+  const to = selectTo.value;
+  const fromIndex = window.dataQuarterly.quarters.indexOf(from);
+  const toIndex = window.dataQuarterly.quarters.indexOf(to);
+  const quarters = window.dataQuarterly.quarters.slice(fromIndex, toIndex + 1);
+  const totalRevenue = window.dataQuarterly.total_revenue.slice(fromIndex, toIndex + 1);
+  const totalTransactions = window.dataQuarterly.total_transactions.slice(fromIndex, toIndex + 1);
+
+  window.chartQuarterly.data.labels = quarters;
+  window.chartQuarterly.data.datasets[0].data = totalRevenue;
+  window.chartQuarterly.data.datasets[0].label = "Total Revenue";
+  window.chartQuarterly.update();
+}
