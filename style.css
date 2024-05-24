@@ -690,6 +690,8 @@ button:hover {
 }
 
 .chart-mega {
+  display: flex;
+  flex-direction: column;
   padding-left: 35px;
   margin-top: 20px;
 }
@@ -704,6 +706,7 @@ button:hover {
 }
 
 .chart-mega-2 {
+  margin-top: 20px;
   width: 1228px;
   height: 300px;
   margin-left: -13px;
@@ -860,8 +863,8 @@ button:hover {
     flex-direction: column;
   }
   .chart-mega {
-    padding-left: 0;
-    margin-left: 20px;
+    padding-left: 20px;
+    margin-left: ;
   }
   .chart-1,
   .chart-2,
@@ -869,8 +872,10 @@ button:hover {
   .chart-4,
   .chart-5,
   .chart-6,
-  .chart-mega-1 {
+  .chart-mega-1,
+  .chart-mega-2 {
     width: 95%;
+    margin-left: 0;
   }
   .footer {
     padding-top: 25px;
@@ -1000,8 +1005,10 @@ button:hover {
   .chart-4,
   .chart-5,
   .chart-6,
-  .chart-mega-1 {
+  .chart-mega-1,
+  .chart-mega-2 {
     width: 95%;
+    margin-left: 0;
   }
   .footer-box {
     padding-top: 20px;
