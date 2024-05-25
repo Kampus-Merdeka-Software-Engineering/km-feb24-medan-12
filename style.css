@@ -571,7 +571,7 @@ button:hover {
 
 .chart-2 {
   width: 600px;
-  height: 300px;
+  height: auto;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
