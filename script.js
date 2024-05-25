@@ -108,7 +108,7 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
   }  
 
 function createChart(arrPassed, type) {
-  new Chart(chart6, {
+  window.megaChartSort = new Chart(chart6, {
     type: type,
     data: {
       labels: arrPassed.neighborhood,
@@ -167,6 +167,66 @@ function createChart(arrPassed, type) {
     },
   });
 }
+
+document.getElementById("sortAscRevenue").addEventListener("click", function() {
+  sortChartData("asc", "revenue");
+});
+
+document.getElementById("sortDescRevenue").addEventListener("click", function() {
+  sortChartData("desc", "revenue");
+});
+
+document.getElementById("sortAscTransactions").addEventListener("click", function() {
+  sortChartData("asc", "transaction");
+});
+
+document.getElementById("sortDescTransactions").addEventListener("click", function() {
+  sortChartData("desc", "transaction");
+});
+
+function sortChartData(strSort, sortBy) {
+  let arrNeighborhoodChart = window.megaChartSort.data.labels;
+  let arrTotalSalesChart = window.megaChartSort.data.datasets[0].data;
+  let arrTotalTransactionChart = window.megaChartSort.data.datasets[1].data;
+  let arrSort = [];
+
+  arrTotalSalesChart.forEach((element, index) => {
+    arrSort.push({ 
+      neighborhood: arrNeighborhoodChart[index], 
+      totalSales: element, 
+      totalTransaction: arrTotalTransactionChart[index] 
+    });
+  });
+
+  if (sortBy === "revenue") {
+    if (strSort === "asc") {
+      arrSort.sort((a, b) => a.totalSales - b.totalSales);
+    } else {
+      arrSort.sort((a, b) => b.totalSales - a.totalSales);
+    }
+  } else if (sortBy === "transaction") {
+    if (strSort === "asc") {
+      arrSort.sort((a, b) => a.totalTransaction - b.totalTransaction);
+    } else {
+      arrSort.sort((a, b) => b.totalTransaction - a.totalTransaction);
+    }
+  }
+
+  arrNeighborhoodChart = [];
+  arrTotalSalesChart = [];
+  arrTotalTransactionChart = [];
+  arrSort.forEach((element) => {
+    arrNeighborhoodChart.push(element.neighborhood);
+    arrTotalSalesChart.push(element.totalSales);
+    arrTotalTransactionChart.push(element.totalTransaction);
+  });
+
+  window.megaChartSort.data.labels = arrNeighborhoodChart;
+  window.megaChartSort.data.datasets[0].data = arrTotalSalesChart;
+  window.megaChartSort.data.datasets[1].data = arrTotalTransactionChart;
+  window.megaChartSort.update();
+}
+
 
 function createChart2(arrPassed2, type) {
   window.chartTaxClass = new Chart(chart4, {
