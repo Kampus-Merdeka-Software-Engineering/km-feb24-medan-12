@@ -202,8 +202,15 @@
               </canvas>
             </div>
             <div class="chart-4">
+              <div class="chart-4-filter-div">
+                <form onsubmit="updateTaxClassChart(event)">
+                  <label for="chart-4-taxclass">Select Tax Class </label>
+                  <select id="chart-4-taxclass" name="chart-4-taxclass">
+                  </select>
+                  <input type="submit" value="Filter"  id="chart-4-filter-apply">
+                </form>
+              </div>
               <canvas id="mychart_4">
-                
               </canvas>
             </div>
             <!-- <div class="chart-5">
