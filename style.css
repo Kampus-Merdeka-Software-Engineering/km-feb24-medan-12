@@ -786,6 +786,15 @@ button:hover {
   .header h1 {
     font-size: 250%;
   }
+
+  .chart-mini-filter {
+    margin-left: 10px;
+    margin-right: 10px
+  }
+
+  .filter {
+    padding-left: 0px;
+  }
   .main-content {
     height: 220px;
   }
@@ -800,14 +809,14 @@ button:hover {
     align-items: start;
   }
   .filter-neighborhood {
-    width: 50%;
+    width: 70%;
   }
   .from-date {
-    width: 50%;
+    width: 70%;
     margin-top: 5px;
   }
   .to-date {
-    width: 50%;
+    width: 70%;
     margin-top: 5px;
   }
   #NEIGHBORHOOD,
@@ -816,6 +825,9 @@ button:hover {
     height: 30px;
   }
 
+  .buttons {
+    width: 100%;
+  }  
   .button {
     padding-top: 13%;
   }
@@ -823,7 +835,7 @@ button:hover {
   #stickyButton {
     margin-top: 0px;
     margin-left: 0px;
-    width: 200px;
+    width: 100%;
     height: 35px;
   }
   .main-content {
@@ -839,7 +851,7 @@ button:hover {
   .chart-mini {
     display: flex;
     flex-direction: column;
-    padding-left: 0px;
+    padding-left: 5%;
   }
 
   .chart-mini-1,
@@ -864,7 +876,7 @@ button:hover {
   }
   .chart-mega {
     padding-left: 20px;
-    margin-left: ;
+    margin-left: 0px;
   }
   .chart-1,
   .chart-2,
@@ -890,7 +902,7 @@ button:hover {
 }
 
 /*media screen untuk ukuran tablet*/
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .header {
     width: 100%;
     font-size: 80%;
@@ -899,7 +911,7 @@ button:hover {
     display: none;
   }
   .main-content {
-    height: 30%;
+    height: 20%;
     margin-left: 8px;
   }
 
@@ -909,7 +921,122 @@ button:hover {
     padding-right: 8px;
     margin-top: 20px;
     padding-bottom: 20px;
-    border: solid 3px #ffd743;
+    border-radius: 25px;
+    width: 99%;
+  }
+
+  form {
+    width: 100%;
+  }
+  .filter {
+    width: 90%;
+    display: flex;
+    font-size: 80%;
+    align-items: start;
+    padding-left: 10px;
+  }
+  .filter-neighborhood {
+    width: 50%;
+  }
+  .from-date {
+    width: 50%;
+  }
+  .to-date {
+    width: 50%;
+  }
+  #start-date,
+  #end-date {
+    height: 23px;
+  }
+  .button {
+    padding-top: 17px;
+  }
+
+  #stickyButton {
+    margin-top: 0;
+    margin-left: 0px;
+    width: 83px;
+    height: 23px;
+  }
+
+  .chart-area {
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 90px;
+  }
+
+  .chart-mini {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 0;
+    column-gap: 15px;
+  }
+
+  .chart-mini-1,
+  .chart-mini-2,
+  .chart-mini-3,
+  .chart-mini-4,
+  .chart-mini-5 {
+    width: 100%;
+  }
+
+  .chart-mini h3 {
+    font-size: 100%;
+    padding-left: 5%;
+  }
+
+  .chart-mini p {
+    font-size: 100%;
+    padding-left: 4%;
+  }
+  .chart {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 5px;
+    margin-left: 0;
+    width: 100%;
+  }
+  .chart-mega {
+    padding-left: 0;
+    margin-left: 20px;
+  }
+  .chart-1,
+  .chart-2,
+  .chart-3,
+  .chart-4,
+  .chart-5,
+  .chart-6,
+  .chart-mega-1,
+  .chart-mega-2 {
+    width: 95%;
+    margin-left: 0;
+  }
+  .footer-box {
+    padding-top: 20px;
+  }
+}
+
+/*@media (min-width: 1024px)
+  .header {
+    width: 100%;
+    font-size: 80%;
+  }
+  .sidebar-mobile {
+    display: none;
+  }
+  .main-content {
+    height: 20%;
+    margin-left: 8px;
+  }
+
+  .chart-mini-filter {
+    margin-left: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 20px;
+    padding-bottom: 20px;
     border-radius: 25px;
     width: 99%;
   }
@@ -949,10 +1076,6 @@ button:hover {
     margin-left: 0px;
     width: 83px;
     height: 23px;
-  }
-
-  .main-content {
-    height: 30%;
   }
 
   .chart-area {
@@ -1013,9 +1136,9 @@ button:hover {
   .footer-box {
     padding-top: 20px;
   }
-}
+}*/
 
-@media (max-width: 980px) {
+@media (min-width: 768px) {
   .text-container {
     height: 100%;
   }
