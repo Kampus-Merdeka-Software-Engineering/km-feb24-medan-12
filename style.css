@@ -563,7 +563,7 @@ button:hover {
 
 .chart-1 {
   width: 600px;
-  height: 300px;
+  height: auto;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
@@ -571,7 +571,7 @@ button:hover {
 
 .chart-2 {
   width: 600px;
-  height: 300px;
+  height: auto;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
@@ -579,7 +579,7 @@ button:hover {
 
 .chart-3 {
   width: 600px;
-  height: 300px;
+  height: auto;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
@@ -593,13 +593,13 @@ button:hover {
 
 .chart-4 {
   width: 600px;
-  height: 300px;
+  height: auto;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
 }
 
-.chart-5 {
+/* .chart-5 {
   width: 600px;
   height: 300px;
   padding: 10px;
@@ -613,7 +613,7 @@ button:hover {
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
-}
+} */
 
 .chart-1,
 .chart-2,
@@ -698,7 +698,7 @@ button:hover {
 
 .chart-mega-1 {
   width: 1228px;
-  height: 300px;
+  height: auto;
   margin-left: -13px;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
@@ -708,7 +708,7 @@ button:hover {
 .chart-mega-2 {
   margin-top: 20px;
   width: 1228px;
-  height: 300px;
+  height: auto;
   margin-left: -13px;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
