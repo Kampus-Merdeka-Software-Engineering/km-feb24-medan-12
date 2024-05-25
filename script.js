@@ -1,5 +1,7 @@
 //Total Revenue By Tax Class
 const chart4 = document.getElementById("mychart_4");
+let dataTaxClass = null;
+let chartTaxClass = null;
 
 //TOP 10 TOTAL REVENUE AND TRANSACTION BY NEIGHBORHOOD CHART
 const chart6 = document.getElementById("megachart");
@@ -51,9 +53,59 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
       tax_class: arrTaxClass,
       total_revenue: arrTotalRevenue,
     };
+
+    window.dataTaxClass = objChart;
+    generateTaxClassOptions(objChart);
+
     console.log(objChart);
     createChart2(objChart, "bar");
   });
+
+  function generateTaxClassOptions(dataTaxClassPassed){
+    const select = document.getElementById("chart-4-taxclass");
+  
+    dataTaxClassPassed.tax_class.forEach((taxclass, index) => {
+      const option = document.createElement("option");
+      option.value = taxclass;
+      option.textContent = taxclass;
+      select.appendChild(option);
+    });
+  
+    select.addEventListener("change", function (event) {
+      // const selectTo = document.getElementById("chart-1-taxclass");
+      const selectedTaxClass = event.target.value;
+      // const index = window.dataTaxClass.tax_class.indexOf(selectedTaxClass);
+      // selectTo.innerHTML = "";
+      // for(let i=index; i < window.dataTaxClass.tax_class.length; i++){
+      //   const option = document.createElement("option");
+      //   option.value = window.dataTaxClass.tax_class[i];
+      //   option.textContent = window.dataTaxClass.tax_class[i];
+      //   selectTo.appendChild(option);
+      //   if(i == window.dataTaxClass.tax_class.length - 1){
+      //     selectTo.getElementsByTagName("option")[selectTo.getElementsByTagName("option").length - 1].selected = "selected";
+      //   }
+      // }   
+    });
+    select.getElementsByTagName("option")[0].selected = "selected";
+    select.dispatchEvent(new Event("change"));
+  }
+  
+  function updateTaxClassChart(e){
+    e.preventDefault();
+    const selectTax = document.getElementById("chart-4-taxclass");
+    // const selectTo = document.getElementById("chart-1-taxclass");
+    const filterTax = selectTax.value;
+    // const to = selectTo.value;
+    const IndexTax = window.dataTaxClass.tax_class.indexOf(filterTax);
+    // const toIndex = window.dataTaxClass.tax_class.indexOf(to);
+    const taxclass = window.dataTaxClass.tax_class.slice(IndexTax, IndexTax + 1);
+    const totalRevenue = window.dataTaxClass.total_revenue.slice(IndexTax, IndexTax + 1);
+  
+    window.chartTaxClass.data.labels = taxclass;
+    window.chartTaxClass.data.datasets[0].data = totalRevenue;
+    window.chartTaxClass.data.datasets[0].label = "Total Revenue";
+    window.chartTaxClass.update();
+  }  
 
 function createChart(arrPassed, type) {
   new Chart(chart6, {
@@ -117,7 +169,7 @@ function createChart(arrPassed, type) {
 }
 
 function createChart2(arrPassed2, type) {
-  new Chart(chart4, {
+  window.chartTaxClass = new Chart(chart4, {
     type: type,
     data: {
       labels: arrPassed2.tax_class,
