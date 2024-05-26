@@ -431,14 +431,14 @@ function createChart5(arrPassed5, type) {
 }
 
 document.getElementById("sortChartAsc").addEventListener("click", function() {
-  sortChartData("asc", "revenue");
+  sortChartDataRevenue("asc", "revenue");
 });
 
 document.getElementById("sortChartDesc").addEventListener("click", function() {
-  sortChartData("desc", "revenue");
+  sortChartDataRevenue("desc", "revenue");
 });
 
-function sortChartData(strSort, sortBy) {
+function sortChartDataRevenue(strSort, sortBy) {
   let arrBuildingClassCategoryChart = window.megaChart2Sort.data.labels;
   let arrTotalRevenueChart = window.megaChart2Sort.data.datasets[0].data;
   let arrSort = [];
