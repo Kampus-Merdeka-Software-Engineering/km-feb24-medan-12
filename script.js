@@ -63,49 +63,71 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
 
   function generateTaxClassOptions(dataTaxClassPassed){
     const select = document.getElementById("chart-4-taxclass");
-  
-    dataTaxClassPassed.tax_class.forEach((taxclass, index) => {
+
+    const option = document.createElement("option");
+    option.value = "All";
+    option.textContent = "All";
+    select.appendChild(option);
+
+    let arrDataTaxClassPassed = dataTaxClassPassed.tax_class;
+
+    arrDataTaxClassPassed.forEach((taxClass, index) => {
       const option = document.createElement("option");
-      option.value = taxclass;
-      option.textContent = taxclass;
+      option.value = taxClass;
+      option.textContent = taxClass;
       select.appendChild(option);
-    });
-  
-    select.addEventListener("change", function (event) {
-      // const selectTo = document.getElementById("chart-1-taxclass");
-      const selectedTaxClass = event.target.value;
-      // const index = window.dataTaxClass.tax_class.indexOf(selectedTaxClass);
-      // selectTo.innerHTML = "";
-      // for(let i=index; i < window.dataTaxClass.tax_class.length; i++){
-      //   const option = document.createElement("option");
-      //   option.value = window.dataTaxClass.tax_class[i];
-      //   option.textContent = window.dataTaxClass.tax_class[i];
-      //   selectTo.appendChild(option);
-      //   if(i == window.dataTaxClass.tax_class.length - 1){
-      //     selectTo.getElementsByTagName("option")[selectTo.getElementsByTagName("option").length - 1].selected = "selected";
-      //   }
-      // }   
-    });
+});
+    select.addEventListener("change", updateTaxClassChart);
+
     select.getElementsByTagName("option")[0].selected = "selected";
-    select.dispatchEvent(new Event("change"));
-  }
+}
   
   function updateTaxClassChart(e){
     e.preventDefault();
-    const selectTax = document.getElementById("chart-4-taxclass");
-    // const selectTo = document.getElementById("chart-1-taxclass");
-    const filterTax = selectTax.value;
-    // const to = selectTo.value;
-    const IndexTax = window.dataTaxClass.tax_class.indexOf(filterTax);
-    // const toIndex = window.dataTaxClass.tax_class.indexOf(to);
-    const taxclass = window.dataTaxClass.tax_class.slice(IndexTax, IndexTax + 1);
-    const totalRevenue = window.dataTaxClass.total_revenue.slice(IndexTax, IndexTax + 1);
-  
-    window.chartTaxClass.data.labels = taxclass;
-    window.chartTaxClass.data.datasets[0].data = totalRevenue;
-    window.chartTaxClass.data.datasets[0].label = "Total Revenue";
+    const select = document.getElementById("chart-4-taxclass");
+    const selectedTaxClass = select.value;
+    const taxClassIndex = window.dataTaxClass.tax_class.indexOf(selectedTaxClass);
+    var arrTaxClassFiltered = window.dataTaxClass.tax_class.filter(
+    (taxClass, index) => index == taxClassIndex
+  );
+    var arrTotalRevenueFiltered = window.dataTaxClass.total_revenue.filter((taxClass, index) => index == taxClassIndex);
+    if (selectedTaxClass == "All") {
+      arrTaxClassFiltered = window.dataTaxClass.tax_class;
+      arrTotalRevenueFiltered = window.dataTaxClass.total_revenue;
+    }
+    window.chartTaxClass.data.labels = arrTaxClassFiltered;
+    window.chartTaxClass.data.datasets[0].data = arrTotalRevenueFiltered;
+    window.chartTaxClass.data.datasets[0].label = "Monthly Average Revenue";
     window.chartTaxClass.update();
-  }  
+  }
+  
+  function sortTaxClass(strSort) {
+    let arrTaxClassChart = window.chartTaxClass.data.labels;
+    let arrTotalRevenueChart = window.chartTaxClass.data.datasets[0].data;
+    let arrSort = [];
+    
+    arrTotalRevenueChart.forEach((element, index) => {
+      arrSort.push({ taxClass: arrTaxClassChart[index], totalRevenue: element });
+    });
+    
+    if (strSort == "asc") {
+      arrSort.sort((a, b) => a.totalRevenue - b.totalRevenue);
+    } else {
+      arrSort.sort((a, b) => b.totalRevenue - a.totalRevenue);
+    }
+    
+    arrTaxClassChart = [];
+    arrTotalRevenueChart = [];
+    arrSort.forEach((element) => {
+      arrTaxClassChart.push(element.taxClass);
+      arrTotalRevenueChart.push(element.totalRevenue);
+    });
+    
+    window.chartTaxClass.data.labels = arrTaxClassChart;
+    window.chartTaxClass.data.datasets[0].data = arrTotalRevenueChart;
+    window.chartTaxClass.update();
+    }
+    
 
 function createChart(arrPassed, type) {
   window.megaChartSort = new Chart(chart6, {
