@@ -205,25 +205,18 @@
             <div class="chart-4">
               <div class="chart-4-filter-div">
                 <form onsubmit="updateTaxClassChart(event)">
-                  <label for="chart-4-taxclass">Select Tax Class </label>
-                  <select id="chart-4-taxclass" name="chart-4-taxclass">
+                  <label for="chart-4-taxclass">Select Tax Class: </label>
+                  <select id="chart-4-taxclass">
                   </select>
-                  <input type="submit" value="Filter"  id="chart-4-filter-apply">
                 </form>
+                <div class="chart-4-sort-div">
+                  <button id="btn-sort-ascending" onclick="sortTaxClass('asc')">Sort Ascending</button>
+                  <button id="btn-sort-descending" onclick="sortTaxClass('desc')">Sort Descending</button>
+                </div>
               </div>
               <canvas id="mychart_4">
               </canvas>
             </div>
-            <!-- <div class="chart-5">
-              <canvas id="mychart_5">
-                
-              </canvas>
-            </div>
-            <div class="chart-6">
-              <canvas id="mychart_6">
-                
-              </canvas>
-            </div> -->
           </div>
           <div class="chart-mega">
             <div class="chart-mega-1">
@@ -238,7 +231,6 @@
                 <button id="sortDescTransactions">Transaction Desc</button>
               </div>
               <canvas id="megachart">
-                
               </canvas>
             </div>
             <div class="chart-mega-2">
