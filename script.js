@@ -399,7 +399,7 @@ fetch("File Json/Total_Revenue_building_Category.json")
   });
 
 function createChart5(arrPassed5, type) {
-  new Chart(chart5, {
+  window.megaChart2Sort = new Chart (chart5,{
     type: "bar",
     data: {
       labels: arrPassed5.building_class_category,
@@ -428,6 +428,46 @@ function createChart5(arrPassed5, type) {
       },
     },
   });
+}
+
+document.getElementById("sortChartAsc").addEventListener("click", function() {
+  sortChartData("asc", "revenue");
+});
+
+document.getElementById("sortChartDesc").addEventListener("click", function() {
+  sortChartData("desc", "revenue");
+});
+
+function sortChartData(strSort, sortBy) {
+  let arrBuildingClassCategoryChart = window.megaChart2Sort.data.labels;
+  let arrTotalRevenueChart = window.megaChart2Sort.data.datasets[0].data;
+  let arrSort = [];
+
+  arrTotalRevenueChart.forEach((element, index) => {
+    arrSort.push({ 
+      building_class_category: arrBuildingClassCategoryChart[index], 
+      totalRevenue: element, 
+    });
+  });
+
+  if (sortBy === "revenue") {
+    if (strSort === "asc") {
+      arrSort.sort((a, b) => a.totalRevenue - b.totalRevenue);
+    } else {
+      arrSort.sort((a, b) => b.totalRevenue - a.totalRevenue);
+    }
+  }
+
+  arrBuildingClassCategoryChart = [];
+  arrTotalRevenueChart = [];
+  arrSort.forEach((element) => {
+    arrBuildingClassCategoryChart.push(element.building_class_category);
+    arrTotalRevenueChart.push(element.totalRevenue);
+  });
+
+  window.megaChart2Sort.data.labels = arrBuildingClassCategoryChart;
+  window.megaChart2Sort.data.datasets[0].data = arrTotalRevenueChart;
+  window.megaChart2Sort.update();
 }
 
 //MONTHLY AVERAGE REVENUE
