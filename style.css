@@ -647,7 +647,7 @@ button {
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto;
   margin-top: 5px;
-  margin-left: -27px;
+  margin-left: -15px;
   max-width: 100%;
   row-gap: 20px;
   column-gap: 40px;
@@ -656,13 +656,13 @@ button {
 }
 
 .chart-mini-1 {
-  width: 200px;
+  width: 190px;
   height: 130px;
   border: 2px solid #000;
 }
 
 .chart-mini-2 {
-  width: 200px;
+  width: 180px;
   height: 130px;
   border: 2px solid #000;
 }
@@ -691,7 +691,7 @@ button {
 .chart-mini-4,
 .chart-mini-5 {
   border-radius: 20px;
-  height: 130px;
+  height: 110px;
 }
 
 .chart-mini h3 {
@@ -701,7 +701,7 @@ button {
 }
 
 .chart-mini p {
-  margin-top: 20px;
+  margin-top: 10px;
   padding-bottom: 10px;
   font-size: 200%;
   font-weight: bolder;
