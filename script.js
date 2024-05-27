@@ -61,73 +61,74 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
     createChart2(objChart, "bar");
   });
 
-  function generateTaxClassOptions(dataTaxClassPassed){
-    const select = document.getElementById("chart-4-taxclass");
+function generateTaxClassOptions(dataTaxClassPassed) {
+  const select = document.getElementById("chart-4-taxclass");
 
+  const option = document.createElement("option");
+  option.value = "All";
+  option.textContent = "All";
+  select.appendChild(option);
+
+  let arrDataTaxClassPassed = dataTaxClassPassed.tax_class;
+
+  arrDataTaxClassPassed.forEach((taxClass, index) => {
     const option = document.createElement("option");
-    option.value = "All";
-    option.textContent = "All";
+    option.value = taxClass;
+    option.textContent = taxClass;
     select.appendChild(option);
+  });
+  select.addEventListener("change", updateTaxClassChart);
 
-    let arrDataTaxClassPassed = dataTaxClassPassed.tax_class;
-
-    arrDataTaxClassPassed.forEach((taxClass, index) => {
-      const option = document.createElement("option");
-      option.value = taxClass;
-      option.textContent = taxClass;
-      select.appendChild(option);
-});
-    select.addEventListener("change", updateTaxClassChart);
-
-    select.getElementsByTagName("option")[0].selected = "selected";
+  select.getElementsByTagName("option")[0].selected = "selected";
 }
-  
-  function updateTaxClassChart(e){
-    e.preventDefault();
-    const select = document.getElementById("chart-4-taxclass");
-    const selectedTaxClass = select.value;
-    const taxClassIndex = window.dataTaxClass.tax_class.indexOf(selectedTaxClass);
-    var arrTaxClassFiltered = window.dataTaxClass.tax_class.filter(
+
+function updateTaxClassChart(e) {
+  e.preventDefault();
+  const select = document.getElementById("chart-4-taxclass");
+  const selectedTaxClass = select.value;
+  const taxClassIndex = window.dataTaxClass.tax_class.indexOf(selectedTaxClass);
+  var arrTaxClassFiltered = window.dataTaxClass.tax_class.filter(
     (taxClass, index) => index == taxClassIndex
   );
-    var arrTotalRevenueFiltered = window.dataTaxClass.total_revenue.filter((taxClass, index) => index == taxClassIndex);
-    if (selectedTaxClass == "All") {
-      arrTaxClassFiltered = window.dataTaxClass.tax_class;
-      arrTotalRevenueFiltered = window.dataTaxClass.total_revenue;
-    }
-    window.chartTaxClass.data.labels = arrTaxClassFiltered;
-    window.chartTaxClass.data.datasets[0].data = arrTotalRevenueFiltered;
-    window.chartTaxClass.data.datasets[0].label = "Monthly Average Revenue";
-    window.chartTaxClass.update();
+  var arrTotalRevenueFiltered = window.dataTaxClass.total_revenue.filter(
+    (taxClass, index) => index == taxClassIndex
+  );
+  if (selectedTaxClass == "All") {
+    arrTaxClassFiltered = window.dataTaxClass.tax_class;
+    arrTotalRevenueFiltered = window.dataTaxClass.total_revenue;
   }
-  
-  function sortTaxClass(strSort) {
-    let arrTaxClassChart = window.chartTaxClass.data.labels;
-    let arrTotalRevenueChart = window.chartTaxClass.data.datasets[0].data;
-    let arrSort = [];
-    
-    arrTotalRevenueChart.forEach((element, index) => {
-      arrSort.push({ taxClass: arrTaxClassChart[index], totalRevenue: element });
-    });
-    
-    if (strSort == "asc") {
-      arrSort.sort((a, b) => a.totalRevenue - b.totalRevenue);
-    } else {
-      arrSort.sort((a, b) => b.totalRevenue - a.totalRevenue);
-    }
-    
-    arrTaxClassChart = [];
-    arrTotalRevenueChart = [];
-    arrSort.forEach((element) => {
-      arrTaxClassChart.push(element.taxClass);
-      arrTotalRevenueChart.push(element.totalRevenue);
-    });
-    
-    window.chartTaxClass.data.labels = arrTaxClassChart;
-    window.chartTaxClass.data.datasets[0].data = arrTotalRevenueChart;
-    window.chartTaxClass.update();
-    }
-    
+  window.chartTaxClass.data.labels = arrTaxClassFiltered;
+  window.chartTaxClass.data.datasets[0].data = arrTotalRevenueFiltered;
+  window.chartTaxClass.data.datasets[0].label = "Monthly Average Revenue";
+  window.chartTaxClass.update();
+}
+
+function sortTaxClass(strSort) {
+  let arrTaxClassChart = window.chartTaxClass.data.labels;
+  let arrTotalRevenueChart = window.chartTaxClass.data.datasets[0].data;
+  let arrSort = [];
+
+  arrTotalRevenueChart.forEach((element, index) => {
+    arrSort.push({ taxClass: arrTaxClassChart[index], totalRevenue: element });
+  });
+
+  if (strSort == "asc") {
+    arrSort.sort((a, b) => a.totalRevenue - b.totalRevenue);
+  } else {
+    arrSort.sort((a, b) => b.totalRevenue - a.totalRevenue);
+  }
+
+  arrTaxClassChart = [];
+  arrTotalRevenueChart = [];
+  arrSort.forEach((element) => {
+    arrTaxClassChart.push(element.taxClass);
+    arrTotalRevenueChart.push(element.totalRevenue);
+  });
+
+  window.chartTaxClass.data.labels = arrTaxClassChart;
+  window.chartTaxClass.data.datasets[0].data = arrTotalRevenueChart;
+  window.chartTaxClass.update();
+}
 
 function createChart(arrPassed, type) {
   window.megaChartSort = new Chart(chart6, {
@@ -190,21 +191,29 @@ function createChart(arrPassed, type) {
   });
 }
 
-document.getElementById("sortAscRevenue").addEventListener("click", function() {
-  sortChartData("asc", "revenue");
-});
+document
+  .getElementById("sortAscRevenue")
+  .addEventListener("click", function () {
+    sortChartData("asc", "revenue");
+  });
 
-document.getElementById("sortDescRevenue").addEventListener("click", function() {
-  sortChartData("desc", "revenue");
-});
+document
+  .getElementById("sortDescRevenue")
+  .addEventListener("click", function () {
+    sortChartData("desc", "revenue");
+  });
 
-document.getElementById("sortAscTransactions").addEventListener("click", function() {
-  sortChartData("asc", "transaction");
-});
+document
+  .getElementById("sortAscTransactions")
+  .addEventListener("click", function () {
+    sortChartData("asc", "transaction");
+  });
 
-document.getElementById("sortDescTransactions").addEventListener("click", function() {
-  sortChartData("desc", "transaction");
-});
+document
+  .getElementById("sortDescTransactions")
+  .addEventListener("click", function () {
+    sortChartData("desc", "transaction");
+  });
 
 function sortChartData(strSort, sortBy) {
   let arrNeighborhoodChart = window.megaChartSort.data.labels;
@@ -213,10 +222,10 @@ function sortChartData(strSort, sortBy) {
   let arrSort = [];
 
   arrTotalSalesChart.forEach((element, index) => {
-    arrSort.push({ 
-      neighborhood: arrNeighborhoodChart[index], 
-      totalSales: element, 
-      totalTransaction: arrTotalTransactionChart[index] 
+    arrSort.push({
+      neighborhood: arrNeighborhoodChart[index],
+      totalSales: element,
+      totalTransaction: arrTotalTransactionChart[index],
     });
   });
 
@@ -248,7 +257,6 @@ function sortChartData(strSort, sortBy) {
   window.megaChartSort.data.datasets[1].data = arrTotalTransactionChart;
   window.megaChartSort.update();
 }
-
 
 function createChart2(arrPassed2, type) {
   window.chartTaxClass = new Chart(chart4, {
@@ -336,18 +344,18 @@ function createQuarterlyChart(arrPassed, type) {
       plugins: {
         title: {
           display: true,
-          text: "Quarterly Sales Revenue",
+          text: "QUARTERLY SALES REVENUE",
         },
-      tooltip: {
-        callbacks : { 
-          label: function (context){
-            let label = 'Total Revenue: '+ context.raw ||'';
-            let index = context.dataIndex;
-            let totalTransactions = arrPassed.total_transactions[index];
-            return [label, 'Total Transactions: '+ totalTransactions];
-          }
-        }
-      }
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              let label = "Total Revenue: " + context.raw || "";
+              let index = context.dataIndex;
+              let totalTransactions = arrPassed.total_transactions[index];
+              return [label, "Total Transactions: " + totalTransactions];
+            },
+          },
+        },
       },
       scales: {
         y: {
@@ -399,7 +407,7 @@ fetch("File Json/Total_Revenue_building_Category.json")
   });
 
 function createChart5(arrPassed5, type) {
-  window.megaChart2Sort = new Chart (chart5,{
+  window.megaChart2Sort = new Chart(chart5, {
     type: "bar",
     data: {
       labels: arrPassed5.building_class_category,
@@ -423,18 +431,18 @@ function createChart5(arrPassed5, type) {
       plugins: {
         title: {
           display: true,
-          text: "Total Revenue By Building Category",
+          text: "TOTAL REVENUE BY BUILDING CATEGORY",
         },
       },
     },
   });
 }
 
-document.getElementById("sortChartAsc").addEventListener("click", function() {
+document.getElementById("sortChartAsc").addEventListener("click", function () {
   sortChartDataRevenue("asc", "revenue");
 });
 
-document.getElementById("sortChartDesc").addEventListener("click", function() {
+document.getElementById("sortChartDesc").addEventListener("click", function () {
   sortChartDataRevenue("desc", "revenue");
 });
 
@@ -444,9 +452,9 @@ function sortChartDataRevenue(strSort, sortBy) {
   let arrSort = [];
 
   arrTotalRevenueChart.forEach((element, index) => {
-    arrSort.push({ 
-      building_class_category: arrBuildingClassCategoryChart[index], 
-      totalRevenue: element, 
+    arrSort.push({
+      building_class_category: arrBuildingClassCategoryChart[index],
+      totalRevenue: element,
     });
   });
 
@@ -586,7 +594,7 @@ function createChart3(arrPassed, type) {
           text: "SALES COMPOSITION BUILDING CLASSIFICATION",
         },
         legend: {
-          position: "right",
+          position: "bottom",
         },
       },
     },
@@ -605,7 +613,7 @@ function createChart3(arrPassed, type) {
 // })
 // .then(function(data){
 //     console.log(data);
-   
+
 //     var arrQuarterYear = [];
 //     var arrTotalSales = [];
 //     data.forEach(element => {
@@ -648,7 +656,7 @@ function createChart3(arrPassed, type) {
 //         },
 //       scales: {
 //         y: {
-//           beginAtZero: true, 
+//           beginAtZero: true,
 //           display: false
 //         },
 //         Sales: {
