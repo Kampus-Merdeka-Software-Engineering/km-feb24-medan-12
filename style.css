@@ -633,6 +633,7 @@ button:hover {
   row-gap: 20px;
   column-gap: 40px;
   padding-left: 50px;
+  text-align: center;
 }
 
 .chart-mini-1 {
@@ -671,22 +672,20 @@ button:hover {
 .chart-mini-4,
 .chart-mini-5 {
   border-radius: 20px;
+  height: 130px;
 }
 
 .chart-mini h3 {
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 5%;
-  height: 50%;
-  font-size: medium;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .chart-mini p {
-  padding-left: 10%;
-  padding-right: 5%;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  font-size: 150%;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  font-size: 200%;
+  font-weight: bolder;
 }
 
 .chart-mega {
