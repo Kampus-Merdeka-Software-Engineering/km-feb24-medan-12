@@ -705,6 +705,25 @@ button:hover {
   border-radius: 25px;
 }
 
+#insightChartMega {
+  display: none;
+}
+
+.button-center-container{
+  display: flex;
+  justify-content: center;
+}
+
+.insightChartMegaBox {
+  display: flex;
+  justify-content: center;
+}
+
+#infoChartMega {
+  border: none;
+  color: blue;
+}
+
 .chart-mega-2 {
   margin-top: 20px;
   width: 1228px;
