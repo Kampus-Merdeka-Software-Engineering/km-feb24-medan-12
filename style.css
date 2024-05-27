@@ -478,13 +478,13 @@ body {
   display: flex;
   align-items: center;
   padding-left: 20px;
-  padding-top: 5px;
+  padding-top: -10px;
   padding-bottom: 20px;
   padding-right: 35px;
 }
 
 .filter-neighborhood {
-  margin-right: 20px;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -492,7 +492,7 @@ body {
 .from-date {
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .to-date {
@@ -514,14 +514,17 @@ body {
 
 #NEIGHBORHOOD {
   border-radius: 10px;
+  margin-left: 13px;
 }
 
 #start-date {
   border-radius: 10px;
+  margin-left: 13px;
 }
 
 #end-date {
   border-radius: 10px;
+  margin-left: 13px;
 }
 
 #label-btn {
@@ -534,6 +537,7 @@ body {
   border-radius: 10px;
   width: 80px;
   padding-top: 19px;
+  margin-top: 20px;
 }
 
 .sticky-button {
@@ -579,16 +583,14 @@ button:hover {
 
 .chart-3 {
   width: 600px;
-  height: auto;
+  height: 400px;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
 }
 
 #mychart_3 {
-  width: 300px;
-  height: 300px;
-  margin-left: 145px;
+  margin-left: 100px;
 }
 
 .chart-4 {
@@ -599,22 +601,6 @@ button:hover {
   border-radius: 25px;
 }
 
-/* .chart-5 {
-  width: 600px;
-  height: 300px;
-  padding: 10px;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
-  border-radius: 25px;
-}
-
-.chart-6 {
-  width: 600px;
-  height: 300px;
-  padding: 10px;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
-  border-radius: 25px;
-} */
-
 .chart-1,
 .chart-2,
 .chart-3,
@@ -622,6 +608,39 @@ button:hover {
 .chart-5,
 .chart-6 {
   border-radius: 20px;
+}
+.sortRevenue {
+  margin-top: 10px;
+}
+.sortTransactions {
+  margin-top: 10px;
+}
+.sortTotalRevenue {
+  margin-top: 10px;
+}
+.chart-4-filter-div {
+  margin-top: 10px;
+}
+label {
+  font-size: 13px;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+button {
+  font-size: 12px;
+  padding: 1px 2px 2px 3px;
+}
+
+#btn-sort-ascending {
+  margin-left: 15px;
+  margin-top: 8px;
+}
+#sortDescRevenue,
+#sortDescTransactions,
+#sortChartDesc,
+#btn-sort-descending {
+  margin-left: 6px;
 }
 
 .chart-mini {
@@ -638,31 +657,31 @@ button:hover {
 
 .chart-mini-1 {
   width: 200px;
-  height: 150px;
+  height: 130px;
   border: 2px solid #000;
 }
 
 .chart-mini-2 {
   width: 200px;
-  height: 150px;
+  height: 130px;
   border: 2px solid #000;
 }
 
 .chart-mini-3 {
   width: 170px;
-  height: 150px;
+  height: 130px;
   border: 2px solid #000;
 }
 
 .chart-mini-4 {
   width: 200px;
-  height: 150px;
+  height: 130px;
   border: 2px solid #000;
 }
 
 .chart-mini-5 {
   width: 200px;
-  height: 150px;
+  height: 130px;
   border: 2px solid #000;
 }
 
@@ -708,7 +727,7 @@ button:hover {
   display: none;
 }
 
-.button-center-container{
+.button-center-container {
   display: flex;
   justify-content: center;
 }
@@ -747,7 +766,7 @@ button:hover {
 }
 
 .footer-box {
-  padding-top: 10px;
+  padding-top: 25px;
 }
 
 /*footer*/
@@ -807,7 +826,7 @@ button:hover {
 
   .chart-mini-filter {
     margin-left: 10px;
-    margin-right: 10px
+    margin-right: 10px;
   }
 
   .filter {
@@ -845,7 +864,7 @@ button:hover {
 
   .buttons {
     width: 100%;
-  }  
+  }
   .button {
     padding-top: 13%;
   }
