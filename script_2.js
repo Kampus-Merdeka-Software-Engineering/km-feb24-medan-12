@@ -66,3 +66,13 @@ function loadData() {
 
 // Panggil fungsi loadData saat halaman dimuat
 document.addEventListener('DOMContentLoaded', loadData);
+
+
+document.getElementById("infoChartMega").addEventListener("click", function() {
+    var insight = document.getElementById("insightChartMega");
+    if (insight.style.display === "none") {
+        insight.style.display = "block";
+    } else {
+        insight.style.display = "none";
+    }
+});
