@@ -193,6 +193,15 @@
               </canvas>
             </div>
             <div class="chart-2">
+              <div class="chart-2-filter-div">
+                <form onsubmit="updateMonthlyRevenueChart(event)">
+                    <label for="start-month">Start Month:</label>
+                    <select id="start-month"></select>
+                    <label for="end-month">End Month:</label>
+                    <select id="end-month"></select>
+                    <input type="submit" value="Apply" id="chart-2-filter-apply">
+                </form>
+            </div>
               <canvas id="mychart_2">
                 
               </canvas>
