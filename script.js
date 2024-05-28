@@ -479,7 +479,8 @@ function sortChartDataRevenue(strSort, sortBy) {
 }
 
 //MONTHLY AVERAGE REVENUE
-const chart2 = document.getElementById("mychart_2");
+const chart2 = document.getElementById("mychart_2").getContext("2d");
+let chartMonthlyRevenue = null;
 
 fetch("File Json/Monthly_Average_Revenue.json")
   .then(function (response) {
@@ -488,32 +489,89 @@ fetch("File Json/Monthly_Average_Revenue.json")
     }
   })
   .then(function (data) {
-    console.log(data);
-    var arrYearMonth = [];
-    var arrAverageSalePrice = [];
-    data.forEach((element) => {
-      arrYearMonth.push(element.YEAR_MONTH);
-      arrAverageSalePrice.push(element.AVERAGE_SALE_PRICE);
-    });
-    console.log(arrYearMonth);
-    console.log(arrAverageSalePrice);
-    var objChart = {
-      YEAR_MONTH: arrYearMonth,
-      AVERAGE_SALE_PRICE: arrAverageSalePrice,
+    const arrYearMonth = data.map((item) => item.YEAR_MONTH);
+    const arrAverageSalePrice = data.map((item) => item.AVERAGE_SALE_PRICE);
+
+    const objChart = {
+      Year_month: arrYearMonth,
+      Avg_salesprice: arrAverageSalePrice,
     };
     console.log(objChart);
+    window.dataMonthlyRevenue = objChart;
+    generateMonthlyRevenueFilter(objChart);
     createChart7(objChart, "line");
   });
 
+  function generateMonthlyRevenueFilter(dataMonthlyRevenuePassed) {
+    const startSelect = document.getElementById("start-month");
+    const endSelect = document.getElementById("end-month");
+
+    dataMonthlyRevenuePassed.Year_month.forEach((Yearmonth, index) => {
+      const startOption = document.createElement("option");
+      startOption.value = Yearmonth;
+      startOption.textContent = Yearmonth;
+      startSelect.appendChild(startOption);
+
+      if (index === dataMonthlyRevenuePassed.Year_month.length - 1) {
+        const endOption = document.createElement("option");
+        endOption.value = Yearmonth;
+        endOption.textContent = Yearmonth;
+        endSelect.appendChild(endOption);
+        endOption.selected = true;
+      }
+    });
+
+    startSelect.addEventListener("change", function (event) {
+      const selectedStartMonth = event.target.value;
+      const startIndex = window.dataMonthlyRevenue.Year_month.indexOf(selectedStartMonth);
+
+      endSelect.innerHTML = "";
+
+      for (let i = startIndex; i < window.dataMonthlyRevenue.Year_month.length; i++) {
+        const endOption = document.createElement("option");
+        endOption.value = window.dataMonthlyRevenue.Year_month[i];
+        endOption.textContent = window.dataMonthlyRevenue.Year_month[i];
+        endSelect.appendChild(endOption);
+
+        if (i === window.dataMonthlyRevenue.Year_month.length - 1) {
+          endOption.selected = true;
+        }
+      }
+    });
+
+    startSelect.dispatchEvent(new Event("change"));
+  }
+
+  function updateMonthlyRevenueChart(e) {
+    e.preventDefault();
+
+    const startSelect = document.getElementById("start-month");
+    const endSelect = document.getElementById("end-month");
+
+    const from = startSelect.value;
+    const to = endSelect.value;
+
+    const fromIndex = window.dataMonthlyRevenue.Year_month.indexOf(from);
+    const toIndex = window.dataMonthlyRevenue.Year_month.indexOf(to);
+
+    const yearMonth = window.dataMonthlyRevenue.Year_month.slice(fromIndex, toIndex + 1);
+    const averageRevenue = window.dataMonthlyRevenue.Avg_salesprice.slice(fromIndex, toIndex + 1);
+
+    chartMonthlyRevenue.data.labels = yearMonth;
+    chartMonthlyRevenue.data.datasets[0].data = averageRevenue;
+    chartMonthlyRevenue.update();
+  }
+
 function createChart7(arrLine3, type) {
-  new Chart(chart2, {
+  chartMonthlyRevenue =  new Chart(chart2, {
+
     type: type,
     data: {
-      labels: arrLine3.YEAR_MONTH,
+      labels: arrLine3.Year_month,
       datasets: [
         {
           label: "Monthly_Average_Revenue",
-          data: arrLine3.AVERAGE_SALE_PRICE,
+          data: arrLine3.Avg_salesprice,
           fill: false,
           borderColor: "rgb(75, 192, 192)",
         },
