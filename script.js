@@ -502,69 +502,79 @@ fetch("File Json/Monthly_Average_Revenue.json")
     createChart7(objChart, "line");
   });
 
-  function generateMonthlyRevenueFilter(dataMonthlyRevenuePassed) {
-    const startSelect = document.getElementById("start-month");
-    const endSelect = document.getElementById("end-month");
+function generateMonthlyRevenueFilter(dataMonthlyRevenuePassed) {
+  const startSelect = document.getElementById("start-month");
+  const endSelect = document.getElementById("end-month");
 
-    dataMonthlyRevenuePassed.Year_month.forEach((Yearmonth, index) => {
-      const startOption = document.createElement("option");
-      startOption.value = Yearmonth;
-      startOption.textContent = Yearmonth;
-      startSelect.appendChild(startOption);
+  dataMonthlyRevenuePassed.Year_month.forEach((Yearmonth, index) => {
+    const startOption = document.createElement("option");
+    startOption.value = Yearmonth;
+    startOption.textContent = Yearmonth;
+    startSelect.appendChild(startOption);
 
-      if (index === dataMonthlyRevenuePassed.Year_month.length - 1) {
-        const endOption = document.createElement("option");
-        endOption.value = Yearmonth;
-        endOption.textContent = Yearmonth;
-        endSelect.appendChild(endOption);
+    if (index === dataMonthlyRevenuePassed.Year_month.length - 1) {
+      const endOption = document.createElement("option");
+      endOption.value = Yearmonth;
+      endOption.textContent = Yearmonth;
+      endSelect.appendChild(endOption);
+      endOption.selected = true;
+    }
+  });
+
+  startSelect.addEventListener("change", function (event) {
+    const selectedStartMonth = event.target.value;
+    const startIndex =
+      window.dataMonthlyRevenue.Year_month.indexOf(selectedStartMonth);
+
+    endSelect.innerHTML = "";
+
+    for (
+      let i = startIndex;
+      i < window.dataMonthlyRevenue.Year_month.length;
+      i++
+    ) {
+      const endOption = document.createElement("option");
+      endOption.value = window.dataMonthlyRevenue.Year_month[i];
+      endOption.textContent = window.dataMonthlyRevenue.Year_month[i];
+      endSelect.appendChild(endOption);
+
+      if (i === window.dataMonthlyRevenue.Year_month.length - 1) {
         endOption.selected = true;
       }
-    });
+    }
+  });
 
-    startSelect.addEventListener("change", function (event) {
-      const selectedStartMonth = event.target.value;
-      const startIndex = window.dataMonthlyRevenue.Year_month.indexOf(selectedStartMonth);
+  startSelect.dispatchEvent(new Event("change"));
+}
 
-      endSelect.innerHTML = "";
+function updateMonthlyRevenueChart(e) {
+  e.preventDefault();
 
-      for (let i = startIndex; i < window.dataMonthlyRevenue.Year_month.length; i++) {
-        const endOption = document.createElement("option");
-        endOption.value = window.dataMonthlyRevenue.Year_month[i];
-        endOption.textContent = window.dataMonthlyRevenue.Year_month[i];
-        endSelect.appendChild(endOption);
+  const startSelect = document.getElementById("start-month");
+  const endSelect = document.getElementById("end-month");
 
-        if (i === window.dataMonthlyRevenue.Year_month.length - 1) {
-          endOption.selected = true;
-        }
-      }
-    });
+  const from = startSelect.value;
+  const to = endSelect.value;
 
-    startSelect.dispatchEvent(new Event("change"));
-  }
+  const fromIndex = window.dataMonthlyRevenue.Year_month.indexOf(from);
+  const toIndex = window.dataMonthlyRevenue.Year_month.indexOf(to);
 
-  function updateMonthlyRevenueChart(e) {
-    e.preventDefault();
+  const yearMonth = window.dataMonthlyRevenue.Year_month.slice(
+    fromIndex,
+    toIndex + 1
+  );
+  const averageRevenue = window.dataMonthlyRevenue.Avg_salesprice.slice(
+    fromIndex,
+    toIndex + 1
+  );
 
-    const startSelect = document.getElementById("start-month");
-    const endSelect = document.getElementById("end-month");
-
-    const from = startSelect.value;
-    const to = endSelect.value;
-
-    const fromIndex = window.dataMonthlyRevenue.Year_month.indexOf(from);
-    const toIndex = window.dataMonthlyRevenue.Year_month.indexOf(to);
-
-    const yearMonth = window.dataMonthlyRevenue.Year_month.slice(fromIndex, toIndex + 1);
-    const averageRevenue = window.dataMonthlyRevenue.Avg_salesprice.slice(fromIndex, toIndex + 1);
-
-    chartMonthlyRevenue.data.labels = yearMonth;
-    chartMonthlyRevenue.data.datasets[0].data = averageRevenue;
-    chartMonthlyRevenue.update();
-  }
+  chartMonthlyRevenue.data.labels = yearMonth;
+  chartMonthlyRevenue.data.datasets[0].data = averageRevenue;
+  chartMonthlyRevenue.update();
+}
 
 function createChart7(arrLine3, type) {
-  chartMonthlyRevenue =  new Chart(chart2, {
-
+  chartMonthlyRevenue = new Chart(chart2, {
     type: type,
     data: {
       labels: arrLine3.Year_month,
