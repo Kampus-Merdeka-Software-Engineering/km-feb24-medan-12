@@ -68,11 +68,15 @@ function loadData() {
 document.addEventListener('DOMContentLoaded', loadData);
 
 
-document.getElementById("infoChartMega").addEventListener("click", function() {
-    var insight = document.getElementById("insightChartMega");
-    if (insight.style.display === "none") {
-        insight.style.display = "block";
-    } else {
-        insight.style.display = "none";
+function showHideInsight(e) {
+    var chart_mega = document.getElementById("insightChartMega");
+    
+    if(chart_mega.classList.contains('hidden')){
+      chart_mega.classList.remove('hidden');
+      chart_mega.classList.add('show');
     }
-});
+    else if(chart_mega.classList.contains('show')){
+        chart_mega.classList.remove('show');
+        chart_mega.classList.add('hidden');
+    }  
+  }
