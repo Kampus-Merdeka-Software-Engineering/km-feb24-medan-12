@@ -719,7 +719,7 @@ function createChart3(arrPassed, type) {
 
 function showHideInsight(e) {
   var x = document.getElementById("insightChartMega");
-
+  
   if(x.classList.contains('hidden')){
     x.classList.remove('hidden');
     x.classList.add('show');
