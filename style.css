@@ -742,8 +742,12 @@ button {
   border-radius: 25px;
 }
 
-#insightChartMega {
+#insightChartMega.hidden {
   display: none;
+}
+
+#insightChartMega.show {
+  display: block;
 }
 
 .button-center-container {
@@ -751,9 +755,12 @@ button {
   justify-content: center;
 }
 
-.insightChartMegaBox {
+#insightChartMega {
   display: flex;
   justify-content: center;
+  text-align: justify;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 #infoChartMega {
