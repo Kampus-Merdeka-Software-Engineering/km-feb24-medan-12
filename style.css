@@ -742,8 +742,12 @@ button {
   border-radius: 25px;
 }
 
-#insightChartMega {
+#insightChartMega.hidden {
   display: none;
+}
+
+#insightChartMega.show {
+  display: block;
 }
 
 .button-center-container {

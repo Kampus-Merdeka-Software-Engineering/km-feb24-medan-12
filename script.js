@@ -13,7 +13,6 @@ fetch("File Json/Total_revenue_transaction_neighborhood.json")
     }
   })
   .then(function (data) {
-    console.log(data);
     var arrTotalSales = [];
     var arrTotalTransaction = [];
     var arrNeighborhood = [];
@@ -22,14 +21,11 @@ fetch("File Json/Total_revenue_transaction_neighborhood.json")
       arrTotalTransaction.push(element.TOTAL_TRANSACTIONS);
       arrNeighborhood.push(element.NEIGHBORHOOD);
     });
-    console.log(arrTotalSales);
-    console.log(arrTotalTransaction);
     var objChart = {
       total_sales: arrTotalSales,
       total_transaction: arrTotalTransaction,
       neighborhood: arrNeighborhood,
     };
-    console.log(objChart);
     createChart(objChart, "bar");
   });
 
@@ -40,15 +36,12 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
     }
   })
   .then(function (data) {
-    console.log(data);
     var arrTotalRevenue = [];
     var arrTaxClass = [];
     data.forEach((element) => {
       arrTotalRevenue.push(element.TOTAL_REVENUE);
       arrTaxClass.push(element.TAX_CLASS);
     });
-    console.log(arrTaxClass);
-    console.log(arrTotalRevenue);
     var objChart = {
       tax_class: arrTaxClass,
       total_revenue: arrTotalRevenue,
@@ -57,7 +50,6 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
     window.dataTaxClass = objChart;
     generateTaxClassOptions(objChart);
 
-    console.log(objChart);
     createChart2(objChart, "bar");
   });
 
@@ -385,30 +377,38 @@ fetch("File Json/Total_Revenue_building_Category.json")
     }
   })
   .then(function (data) {
-    console.log(data);
     var arrTotalRevenue = [];
     var arrBuildingClassCategory = [];
     var arrRevenuePercentage = [];
-    data.forEach((element) => {
+    data.sort((a, b) => b.Total_Revenue - a.Total_Revenue);
+    var slicedData = data.slice(0, 10);
+
+    slicedData.forEach((element) => {
       arrTotalRevenue.push(element.Total_Revenue);
       arrBuildingClassCategory.push(element.BUILDING_CLASS_CATEGORY);
       arrRevenuePercentage.push(element.Revenue_Percentage);
     });
-    console.log(arrBuildingClassCategory);
-    console.log(arrTotalRevenue);
-    console.log(arrRevenuePercentage);
     var objChart = {
       building_class_category: arrBuildingClassCategory,
       total_revenue: arrTotalRevenue,
       revenue_percentage: arrRevenuePercentage,
     };
-    console.log(objChart);
     createChart5(objChart, "bar");
   });
 
 function createChart5(arrPassed5, type) {
+  let arrBgColors = [];
+  arrPassed5.total_revenue.forEach((element, index) => {
+    arrBgColors.push(
+      `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
+        Math.random() * 256
+      )}, ${Math.floor(Math.random() * 256)}, 0.8)`
+    );
+  });
+
   window.megaChart2Sort = new Chart(chart5, {
     type: "bar",
+    plugins: [ChartDataLabels],
     data: {
       labels: arrPassed5.building_class_category,
       datasets: [
@@ -416,7 +416,7 @@ function createChart5(arrPassed5, type) {
           label: "Total Revenue",
           data: arrPassed5.total_revenue,
           borderColor: "rgb(0, 0, 255)",
-          backgroundColor: "rgba(0, 0, 255, 0.1)",
+          backgroundColor: arrBgColors,
           borderWidth: 1,
         },
       ],
@@ -431,7 +431,54 @@ function createChart5(arrPassed5, type) {
       plugins: {
         title: {
           display: true,
-          text: "TOTAL REVENUE BY BUILDING CATEGORY",
+          text: "TOP 10 TOTAL REVENUE BY BUILDING CATEGORY",
+        },
+        tooltip: {
+          callbacks: {
+            label: function (tooltipItem, data) {
+              const formatterUsd = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              });
+              let sum = 0;
+              tooltipItem.dataset.data.forEach((data) => { sum += parseInt(data); });
+              let percentage = ((parseInt(tooltipItem.parsed.x) * 100) / sum).toFixed(5) + "%";
+              var priceValue = formatterUsd.format(tooltipItem.parsed.x);
+              var strDisplay = `Total Revenue: ${priceValue} | Percentage: (${percentage})`;
+
+              return strDisplay;
+            },
+          },
+        },
+        legend: {
+          position: "top",
+        },
+        datalabels: {
+          clip: true,
+          align: "end",
+          anchor: "end",
+          formatter: (value, ctx) => {
+            let sum = 0;
+            let dataArr = ctx.chart.data.datasets[0].data;
+            dataArr.map((data) => {
+              sum += parseInt(data);
+            });
+            let percentage = ((parseInt(value) * 100) / sum).toFixed(5) + "%";
+            const formatterUsd = new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            });
+
+            let usdValue = formatterUsd.format(value);
+            let strDisplay = `${usdValue} | (${percentage})`;
+
+            return strDisplay;
+          },
+          color: "#000",
         },
       },
     },
@@ -449,12 +496,14 @@ document.getElementById("sortChartDesc").addEventListener("click", function () {
 function sortChartDataRevenue(strSort, sortBy) {
   let arrBuildingClassCategoryChart = window.megaChart2Sort.data.labels;
   let arrTotalRevenueChart = window.megaChart2Sort.data.datasets[0].data;
+  let arrBackgroundColor = window.megaChart2Sort.data.datasets[0].backgroundColor;
   let arrSort = [];
 
   arrTotalRevenueChart.forEach((element, index) => {
     arrSort.push({
       building_class_category: arrBuildingClassCategoryChart[index],
       totalRevenue: element,
+      backgroundColor: arrBackgroundColor[index],
     });
   });
 
@@ -468,13 +517,16 @@ function sortChartDataRevenue(strSort, sortBy) {
 
   arrBuildingClassCategoryChart = [];
   arrTotalRevenueChart = [];
+  arrBackgroundColor = [];
   arrSort.forEach((element) => {
     arrBuildingClassCategoryChart.push(element.building_class_category);
     arrTotalRevenueChart.push(element.totalRevenue);
+    arrBackgroundColor.push(element.backgroundColor);
   });
 
   window.megaChart2Sort.data.labels = arrBuildingClassCategoryChart;
   window.megaChart2Sort.data.datasets[0].data = arrTotalRevenueChart;
+  window.megaChart2Sort.data.datasets[0].backgroundColor = arrBackgroundColor;
   window.megaChart2Sort.update();
 }
 
@@ -496,7 +548,7 @@ fetch("File Json/Monthly_Average_Revenue.json")
       Year_month: arrYearMonth,
       Avg_salesprice: arrAverageSalePrice,
     };
-    console.log(objChart);
+
     window.dataMonthlyRevenue = objChart;
     generateMonthlyRevenueFilter(objChart);
     createChart7(objChart, "line");
@@ -618,20 +670,16 @@ fetch("File Json/Sales_Composition_building_classification (1).json")
     }
   })
   .then(function (data) {
-    console.log(data);
     var arrBuildingClass = [];
     var arrTotalRevenue = [];
     data.forEach((element) => {
       arrTotalRevenue.push(element.TOTAL_REVENUE);
       arrBuildingClass.push(element.BUILDING_CLASS);
     });
-    console.log(arrBuildingClass);
-    console.log(arrTotalRevenue);
     var objChart = {
       total_revenue: arrTotalRevenue,
       building_class: arrBuildingClass,
     };
-    console.log(objChart);
     createChart3(objChart, "pie");
   });
 
@@ -669,70 +717,15 @@ function createChart3(arrPassed, type) {
   });
 }
 
-// Quarter Total (Sales Transaction)
-// const chart7 = document.getElementById('megachart');
+function showHideInsight(e) {
+  var x = document.getElementById("insightChartMega");
 
-// fetch('File Json/Quarter_Total_Transaction.json')
-// .then(function(response) {
-
-//     if(response.ok == true){
-//         return response.json();
-//     }
-// })
-// .then(function(data){
-//     console.log(data);
-
-//     var arrQuarterYear = [];
-//     var arrTotalSales = [];
-//     data.forEach(element => {
-//       arrQuarterYear.push(`Q${element.EXTRACTED_QUARTER} ${element.EXTRACTED_YEAR}`);
-//       arrTotalSales.push(element.TOTAL_SALES);
-//     });
-//     console.log(arrQuarterYear);
-//     console.log(arrTotalSales);
-//     var objChart = {
-//       quarter_year: arrQuarterYear,
-//       total_sales: arrTotalSales,
-//     };
-//     console.log(objChart);
-//     createChart8(objChart, 'line');
-// })
-
-// function createChart8(arrLine, type){
-
-//   new Chart(chart7, {
-//     type: type,
-//     data: {
-//       labels: arrLine.quarter_year,
-//       datasets: [{
-//         label: 'Transaction',
-//         data: arrLine.total_sales,
-//         borderWidth: 1,
-//         fill: false,
-//         tension: 0.4,
-//         yAxisID : "Sales"
-//       },
-//     ]
-//     },
-//     options: {
-//         plugins: {
-//             title: {
-//                 display: true,
-//                 text: 'Quarter Total Transaction'
-
-//             }
-//         },
-//       scales: {
-//         y: {
-//           beginAtZero: true,
-//           display: false
-//         },
-//         Sales: {
-//             axis: 'y',
-//             min: 0,
-//             max: 2000
-//         }
-//       }
-//     }
-//   });
-// }
+  if(x.classList.contains('hidden')){
+    x.classList.remove('hidden');
+    x.classList.add('show');
+  }
+  else if(x.classList.contains('show')){
+    x.classList.remove('show');
+    x.classList.add('hidden');
+  }  
+}

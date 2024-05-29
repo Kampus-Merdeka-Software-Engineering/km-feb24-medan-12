@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
 <body class="responsive-sidebar">
     <!--navigasi bar-->
@@ -243,10 +244,10 @@
               </canvas>
               <div>
                 <div class="button-center-container">
-                  <button id="infoChartMega">INSIGHT</button>
+                  <button id="infoChartMega" onclick="showHideInsight(event)">INSIGHT</button>
                 </div>
-                <div class="insightChartMegaBox">
-                  <p id="insightChartMega">TOP 10 TOTAL REVENUE & TRANSACTION BY NEIGHBORHOOD</p>
+                <div id="insightContainer" class="insightChartMegaBox">
+                  <p id="insightChartMega" class="hidden">TOP 10 TOTAL REVENUE & TRANSACTION BY NEIGHBORHOOD</p>
                 </div>
               </div>
             </div>
