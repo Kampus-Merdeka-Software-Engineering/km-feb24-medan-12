@@ -859,7 +859,7 @@ button {
     padding-left: 0px;
   }
   .main-content {
-    height: 220px;
+    height: auto;
   }
   form {
     width: 100%;
