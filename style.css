@@ -842,6 +842,9 @@ button {
 .insightChart2MegaBox {
   display: flex;
   justify-content: center;
+  text-align: justify;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 #infoChart2Mega {
