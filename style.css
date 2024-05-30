@@ -826,19 +826,25 @@ button {
   border-radius: 25px;
 }
 
-
-
-
-
-#insightChartMega2 {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-  padding-left: 100px;
-  padding-right: 100px;
+#insightChart2Mega.hidden {
+  display: none;
 }
 
-#infoChartMega2 {
+#insightChart2Mega.show {
+  display: block;
+}
+
+.button-center-container {
+  display: flex;
+  justify-content: center;
+}
+
+.insightChart2MegaBox {
+  display: flex;
+  justify-content: center;
+}
+
+#infoChart2Mega {
   border: none;
   color: blue;
 }

@@ -389,7 +389,10 @@ fetch("File Json/Total_Revenue_building_Category.json")
     var arrTotalRevenue = [];
     var arrBuildingClassCategory = [];
     var arrRevenuePercentage = [];
-    data.forEach((element) => {
+    data.sort((a, b) => b.Total_Revenue - a.Total_Revenue);
+    var slicedData = data.slice(0, 10);
+
+    slicedData.forEach((element) => {
       arrTotalRevenue.push(element.Total_Revenue);
       arrBuildingClassCategory.push(element.BUILDING_CLASS_CATEGORY);
       arrRevenuePercentage.push(element.Revenue_Percentage);
@@ -407,8 +410,18 @@ fetch("File Json/Total_Revenue_building_Category.json")
   });
 
 function createChart5(arrPassed5, type) {
+  let arrBgColors = [];
+  arrPassed5.total_revenue.forEach((element, index) => {
+    arrBgColors.push(
+      `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
+        Math.random() * 256
+      )}, ${Math.floor(Math.random() * 256)}, 0.8)`
+    );
+  });
+
   window.megaChart2Sort = new Chart(chart5, {
     type: "bar",
+    plugins: [ChartDataLabels],
     data: {
       labels: arrPassed5.building_class_category,
       datasets: [
@@ -416,7 +429,7 @@ function createChart5(arrPassed5, type) {
           label: "Total Revenue",
           data: arrPassed5.total_revenue,
           borderColor: "rgb(0, 0, 255)",
-          backgroundColor: "rgba(0, 0, 255, 0.1)",
+          backgroundColor: arrBgColors,
           borderWidth: 1,
         },
       ],
@@ -431,9 +444,56 @@ function createChart5(arrPassed5, type) {
       plugins: {
         title: {
           display: true,
-          text: "TOTAL REVENUE BY BUILDING CATEGORY",
+          text: "TOP 10 TOTAL REVENUE BY BUILDING CATEGORY",
         },
-      },
+        tooltip: {
+          callbacks: {
+            label: function (tooltipItem, data) {
+              const formatterUsd = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              });
+              let sum = 0;
+              tooltipItem.dataset.data.forEach((data) => { sum += parseInt(data); });
+              let percentage = ((parseInt(tooltipItem.parsed.x) * 100) / sum).toFixed(3) + "%";
+              var priceValue = formatterUsd.format(tooltipItem.parsed.x);
+              var strDisplay = `Total Revenue: ${priceValue} | Percentage: (${percentage})`;
+
+              return strDisplay;
+            },
+          },
+        },
+        legend: {
+          position: "top",
+        },
+        datalabels: {
+          clip: true,
+          align: "end",
+          anchor: "end",
+          formatter: (value, ctx) => {
+            let sum = 0;
+            let dataArr = ctx.chart.data.datasets[0].data;
+            dataArr.map((data) => {
+              sum += parseInt(data);
+            });
+            let percentage = ((parseInt(value) * 100) / sum).toFixed(5) + "%";
+            const formatterUsd = new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            });
+
+            let usdValue = formatterUsd.format(value);
+            let strDisplay = `${usdValue} | (${percentage})`;
+
+            return strDisplay;
+          },
+          color: "#000",
+        },
+      },  
     },
   });
 }

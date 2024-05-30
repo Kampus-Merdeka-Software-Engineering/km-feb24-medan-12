@@ -136,8 +136,8 @@ function showHideQuarter(e) {
 }
 
 //INSIGHT BUTTON REVENUE BY BUILDING CATEGORY
-function showHideInsight(event) {
-  var x = document.getElementById("insightChartMega2");
+function showHideInsight2(e) {
+  var x = document.getElementById("insightChart2Mega");
   
   if(x.classList.contains('hidden')){
     x.classList.remove('hidden');
