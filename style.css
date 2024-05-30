@@ -583,14 +583,37 @@ button:hover {
 
 .chart-3 {
   width: 600px;
-  height: 400px;
+  height: auto;
   padding: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
 }
 
 #mychart_3 {
-  margin-left: 100px;
+  margin-left: 50px;
+}
+#insightPieChart.hidden {
+  display: none;
+}
+
+#insightPieChart.show {
+  display: block;
+}
+
+.button-piechart {
+  display: flex;
+  justify-content: center;
+}
+
+#insightPieChart {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+#infoPieChart {
+  border: none;
+  color: rgb(199, 68, 142);
 }
 
 .chart-4 {
