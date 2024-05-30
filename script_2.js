@@ -122,3 +122,15 @@ function showHide(e) {
     chart_pie.classList.add("hidden");
   }
 }
+
+function showHideQuarter(e) {
+  var chart_Quarter = document.getElementById("insightQuarterlyChart");
+
+  if (chart_Quarter.classList.contains("hidden")) {
+    chart_Quarter.classList.remove("hidden");
+    chart_Quarter.classList.add("show");
+  } else if (chart_Quarter.classList.contains("show")) {
+    chart_Quarter.classList.remove("show");
+    chart_Quarter.classList.add("hidden");
+  }
+}

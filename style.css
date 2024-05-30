@@ -616,6 +616,31 @@ button:hover {
   color: rgb(199, 68, 142);
 }
 
+
+#insightQuarterlyChart.hidden {
+  display: none;
+}
+
+#insightQuarterlyChart.show {
+  display: block;
+}
+
+.button-Quarterly {
+  display: flex;
+  justify-content: center;
+}
+
+#insightQuarterlyChart {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+#infoQuarterlyChart {
+  border: none;
+  color: rgb(199, 68, 142);
+}
+
 .chart-4 {
   width: 600px;
   height: auto;
