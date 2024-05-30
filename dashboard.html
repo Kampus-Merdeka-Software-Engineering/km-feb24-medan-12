@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Dashboard Manhattan Property Sales</title>
@@ -18,8 +18,8 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body class="responsive-sidebar">
+</head>
+<body class="responsive-sidebar">
     <!--navigasi bar-->
     <nav class="sidebar">
       <header>
@@ -43,7 +43,8 @@
               </a>
             </li>
             <li class="nav-list">
-              <a href="dataset.html"> <i class="bx bx-data icon"></i></a>
+              <a href="dataset.html">
+                <i class="bx bx-data icon"></i></a>
             </li>
           </ul>
         </div>
@@ -51,138 +52,112 @@
     </nav>
     <!--section untuk bagian utama dari dashboard-->
     <main class="main">
-      <!--Header-->
-      <div class="header">
-        <h1>NYC Property Sales Dashboard</h1>
-      </div>
-      <!--navbar untuk mobile-->
-      <nav class="sidebar-mobile">
-        <header>
-          <div class="image-text">
-            <span class="image">
-              <img src="img/logo.jpg" alt="logo" />
-            </span>
-          </div>
-        </header>
-        <div class="menubar">
-          <div class="menu-links">
-            <ul class="menu-links">
-              <li class="nav-list">
-                <a href="index.html">
-                  <i class="bx bx-home-alt icon"></i>
-                </a>
-              </li>
-              <li class="nav-list">
-                <a href="dashboard.html">
-                  <i class="bx bxs-dashboard icon"></i>
-                </a>
-              </li>
-              <li class="nav-list">
-                <a href="dataset.html">
-                  <i class="bx bx-data icon"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+        <!--Header-->
+        <div class="header">
+          <h1>NYC Property Sales Dashboard</h1>
         </div>
-      </nav>
-      <!--section untuk menampung bagian form-->
-      <div class="main-content">
-        <div class="chart-mini-filter">
-          <!--section form-->
-          <div class="user-interaction">
-            <!--FORM-->
-            <form id="filter-form" action="#" , method="post">
-              <div class="filter">
-                <!--Section untuk select "NEIGHBORHOOD"-->
-                <div class="filter-neighborhood">
-                  <label id="label-NEIGHBORHOOD" for="NEIGHBORHOOD"
-                    >NEIGHBORHOOD</label
-                  >
-                  <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
-                    <option value="ALPHABET CITY">ALPHABET CITY</option>
-                    <option value="CHELSEA">CHELSEA</option>
-                    <option value="CHINATOWN">CHINATOWN</option>
-                    <option value="CIVIC CENTER">CIVIC CENTER</option>
-                    <option value="CLINTON">CLINTON</option>
-                    <option value="EAST VILLAGE">EAST VILLAGE</option>
-                    <option value="FASHION">FASHION</option>
-                    <option value="FINANCIAL">FINANCIAL</option>
-                    <option value="FLATIRON">FLATIRON</option>
-                    <option value="GRAMERCY">GRAMERCY</option>
-                    <option value="GREENWICH VILLAGE CENTRAL">
-                      GREENWICH VILLAGE-CENTRAL
-                    </option>
-                    <option value="GREENWICH VILLAGE WEST">
-                      GREENWICH VILLAGE-WEST
-                    </option>
-                    <option value="HARLEM CENTRAL">HARLEM-CENTRAL</option>
-                    <option value="HARLEM EAST">HARLEM-EAST</option>
-                    <option value="HARLEM UPPER">HARLEM-UPPER</option>
-                    <option value="HARLEM WEST">HARLEM-WEST</option>
-                    <option value="INWOOD">INWOOD</option>
-                    <option value="JAVITS CENTER">JAVITS CENTER</option>
-                    <option value="KIPS BAY">KIPS BAY</option>
-                    <option value="LITTLE ITALY">LITTLE ITALY</option>
-                    <option value="LOWER EAST SIDE">LOWER EAST SIDE</option>
-                    <option value="MANHATTAN VALLEY">MANHATTAN VALLEY</option>
-                    <option value="MIDTOWN CBD">MIDTOWN CBD</option>
-                    <option value="MIDTOWN EAST">MIDTOWN EAST</option>
-                    <option value="MIDTOWN WEST">MIDTOWN WEST</option>
-                    <option value="MORNINGSIDE HEIGHTS">
-                      MORNINGSIDE HEIGHTS
-                    </option>
-                    <option value="MURRAY HILL">MURRAY HILL</option>
-                    <option value="ROOSEVELT ISLAND">ROOSEVELT ISLAND</option>
-                    <option value="SOHO">SOHO</option>
-                    <option value="SOUTHBRIDGE">SOUTHBRIDGE</option>
-                    <option value="TRIBECA">TRIBECA</option>
-                    <option value="UPPER EAST SIDE (59 79)">
-                      UPPER EAST SIDE (59-79)
-                    </option>
-                    <option value="UPPER EAST SIDE (79 96)">
-                      UPPER EAST SIDE (79-96)
-                    </option>
-                    <option value="UPPER EAST SIDE (96 110)">
-                      UPPER EAST SIDE (96-110)
-                    </option>
-                    <option value="UPPER WEST SIDE (59 79)">
-                      UPPER WEST SIDE (59-79)
-                    </option>
-                    <option value="UPPER WEST SIDE (79 96)">
-                      UPPER WEST SIDE (79-96)
-                    </option>
-                    <option value="UPPER WEST SIDE (96 116)">
-                      UPPER WEST SIDE (96-116)
-                    </option>
-                    <option value="WASHINGTON HEIGHTS LOWER">
-                      WASHINGTON HEIGHTS LOWER
-                    </option>
-                    <option value="WASHINGTON HEIGHTS UPPER">
-                      WASHINGTON HEIGHTS UPPER
-                    </option>
-                    <option value="">ALL</option>
-                  </select>
-                </div>
-                <!--section untuk tanggal-->
-                <div class="from-date">
-                  <label id="date" for="start-date">FROM:</label>
-                  <input type="date" id="start-date" name="start-date" />
-                </div>
-                <div class="to-date">
-                  <label id="date" for="end-date">TO:</label>
-                  <input type="date" id="end-date" name="end-date" />
-                </div>
-                <!--Tombol untuk submit filter-->
-                <div class="buttons">
-                  <label id="label-btn" for="stickyButton">tombol</label>
-                  <button id="stickyButton" class="sticky-button" type="submit">
-                    FILTER
-                  </button>
-                </div>
-              </div>
-            </form>
+        <!--navbar untuk mobile-->
+        <nav class="sidebar-mobile">
+          <header>
+            <div class="image-text">
+              <span class="image">
+                <img src="img/logo.jpg" alt="logo" />
+              </span>
+            </div>
+          </header>
+          <div class="menubar">
+            <div class="menu-links">
+              <ul class="menu-links">
+                <li class="nav-list">
+                  <a href="index.html">
+                    <i class="bx bx-home-alt icon"></i>
+                  </a>
+                </li>
+                <li class="nav-list">
+                  <a href="dashboard.html">
+                    <i class="bx bxs-dashboard icon"></i>
+                  </a>
+                </li>
+                <li class="nav-list">
+                  <a href="dataset.html">
+                    <i class="bx bx-data icon"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
+        </nav>
+        <!--section untuk menampung bagian form-->
+        <div class="main-content">
+          <div class="chart-mini-filter">
+              <!--section form-->
+              <div class = "user-interaction">
+                <!--FORM-->
+                <form id = "filter-form" action="#", method="post">
+                  <div class="filter">
+                    <!--Section untuk select "NEIGHBORHOOD"-->
+                    <div class="filter-neighborhood">
+                      <label id="label-NEIGHBORHOOD" for="NEIGHBORHOOD">NEIGHBORHOOD</label>
+                      <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
+                        <option value="ALPHABET CITY">ALPHABET CITY</option>
+                        <option value="CHELSEA">CHELSEA</option>
+                        <option value="CHINATOWN">CHINATOWN</option>
+                        <option value="CIVIC CENTER">CIVIC CENTER</option>
+                        <option value="CLINTON">CLINTON</option>
+                        <option value="EAST VILLAGE">EAST VILLAGE</option>
+                        <option value="FASHION">FASHION</option>
+                        <option value="FINANCIAL">FINANCIAL</option>
+                        <option value="FLATIRON">FLATIRON</option>
+                        <option value="GRAMERCY">GRAMERCY</option>
+                        <option value="GREENWICH VILLAGE CENTRAL">GREENWICH VILLAGE-CENTRAL</option>
+                        <option value="GREENWICH VILLAGE WEST">GREENWICH VILLAGE-WEST</option>
+                        <option value="HARLEM CENTRAL">HARLEM-CENTRAL</option>
+                        <option value="HARLEM EAST">HARLEM-EAST</option>
+                        <option value="HARLEM UPPER">HARLEM-UPPER</option>
+                        <option value="HARLEM WEST">HARLEM-WEST</option>
+                        <option value="INWOOD">INWOOD</option>
+                        <option value="JAVITS CENTER">JAVITS CENTER</option>
+                        <option value="KIPS BAY">KIPS BAY</option>
+                        <option value="LITTLE ITALY">LITTLE ITALY</option>
+                        <option value="LOWER EAST SIDE">LOWER EAST SIDE</option>
+                        <option value="MANHATTAN VALLEY">MANHATTAN VALLEY</option>
+                        <option value="MIDTOWN CBD">MIDTOWN CBD</option>
+                        <option value="MIDTOWN EAST">MIDTOWN EAST</option>
+                        <option value="MIDTOWN WEST">MIDTOWN WEST</option>
+                        <option value="MORNINGSIDE HEIGHTS">MORNINGSIDE HEIGHTS</option>
+                        <option value="MURRAY HILL">MURRAY HILL</option>
+                        <option value="ROOSEVELT ISLAND">ROOSEVELT ISLAND</option>
+                        <option value="SOHO">SOHO</option>
+                        <option value="SOUTHBRIDGE">SOUTHBRIDGE</option>
+                        <option value="TRIBECA">TRIBECA</option>
+                        <option value="UPPER EAST SIDE (59 79)">UPPER EAST SIDE (59-79)</option>
+                        <option value="UPPER EAST SIDE (79 96)">UPPER EAST SIDE (79-96)</option>
+                        <option value="UPPER EAST SIDE (96 110)">UPPER EAST SIDE (96-110)</option>
+                        <option value="UPPER WEST SIDE (59 79)">UPPER WEST SIDE (59-79)</option>
+                        <option value="UPPER WEST SIDE (79 96)">UPPER WEST SIDE (79-96)</option>
+                        <option value="UPPER WEST SIDE (96 116)">UPPER WEST SIDE (96-116)</option>
+                        <option value="WASHINGTON HEIGHTS LOWER">WASHINGTON HEIGHTS LOWER</option>
+                        <option value="WASHINGTON HEIGHTS UPPER">WASHINGTON HEIGHTS UPPER</option>
+                        <option value="">ALL</option>
+                      </select>
+                    </div>
+                    <!--section untuk tanggal-->
+                    <div class="from-date">
+                      <label id="date" for="start-date">FROM:</label>
+                      <input type="date" id="start-date" name="start-date">
+                    </div>
+                    <div class="to-date">
+                      <label id="date" for="end-date">TO:</label>
+                      <input type="date" id="end-date" name="end-date">
+                    </div>
+                    <!--Tombol untuk submit filter-->
+                    <div class="buttons">
+                      <label id="label-btn" for="stickyButton">tombol</label>
+                      <button id="stickyButton" class="sticky-button" type="submit">FILTER</button>
+                    </div>
+                  </div>
+                </form>
+                </div>
           <div class="chart-mini">
             <div class="chart-mini-1">
               <h3>Total revenue</h3>
@@ -193,7 +168,9 @@
               <p id="total-transaction"></p>
             </div>
             <div class="chart-mini-3">
-              <h3>Average Sales</h3>
+              <h3>
+                Average Sales
+              </h3>
               <p id="average-sales"></p>
             </div>
             <div class="chart-mini-4">
@@ -205,136 +182,118 @@
               <p id="total-residential"></p>
             </div>
           </div>
+          </div>
         </div>
-      </div>
-      <div class="chart-area">
-        <!--section untuk chart ringkasan yang berupa angka-->
-        <!--section untuk chart berupa grafik-->
-        <div class="chart">
-          <div class="chart-1">
-            <canvas id="mychart_1"> </canvas>
-          </div>
-          <div class="chart-2">
-            <div class="chart-2-filter-div">
-              <form onsubmit="updateMonthlyRevenueChart(event)">
-                <label for="start-month">Start Month:</label>
-                <select id="start-month"></select>
-                <label for="end-month">End Month:</label>
-                <select id="end-month"></select>
-                <input type="submit" value="Apply" id="chart-2-filter-apply" />
-              </form>
+        <div class="chart-area">
+          <!--section untuk chart ringkasan yang berupa angka-->
+          <!--section untuk chart berupa grafik-->
+          <div class="chart">
+            <div class="chart-1">
+              <canvas id="mychart_1">
+                <P> TEST </P>
+              </canvas>
             </div>
-            <canvas id="mychart_2"> </canvas>
-          </div>
-          <div class="chart-3">
-            <canvas id="mychart_3"> </canvas>
-              <div class="button-piechart">
-                <button id="infoPieChart" onclick="showHide(event)">
-                  Insight
-                </button>
-              </div>
-              <div id="insightChart" class="insightPieChartBox">
-                <p id="insightPieChart" class="hidden">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nulla?
-                </p>
-              </div>
+            <div class="chart-2">
+              <div class="chart-2-filter-div">
+                <form onsubmit="updateMonthlyRevenueChart(event)">
+                    <label for="start-month">Start Month:</label>
+                    <select id="start-month"></select>
+                    <label for="end-month">End Month:</label>
+                    <select id="end-month"></select>
+                    <input type="submit" value="Apply" id="chart-2-filter-apply">
+                </form>
+            </div>
+              <canvas id="mychart_2">
+                
+              </canvas>
+            </div>
+            <div class="chart-3">
+              <canvas id="mychart_3">
+                
+              </canvas>
             </div>
             <div class="chart-4">
               <div class="chart-4-filter-div">
                 <form onsubmit="updateTaxClassChart(event)">
                   <label for="chart-4-taxclass">Select Tax Class: </label>
-                  <select id="chart-4-taxclass"></select>
+                  <select id="chart-4-taxclass">
+                  </select>
                 </form>
                 <div class="chart-4-sort-div">
-                  <button id="btn-sort-ascending" onclick="sortTaxClass('asc')">
-                    Sort Ascending
-                  </button>
-                  <button
-                    id="btn-sort-descending"
-                    onclick="sortTaxClass('desc')"
-                  >
-                    Sort Descending
-                  </button>
+                  <button id="btn-sort-ascending" onclick="sortTaxClass('asc')">Sort Ascending</button>
+                  <button id="btn-sort-descending" onclick="sortTaxClass('desc')">Sort Descending</button>
                 </div>
               </div>
-              <canvas id="mychart_4"> </canvas>
+              <canvas id="mychart_4">
+              </canvas>
             </div>
           </div>
           <div class="chart-mega">
             <div class="chart-mega-1">
-              <div class="sortRevenue">
+              <div class = "sortRevenue">
                 <label for="sortAscRevenue">Sort by Revenue : </label>
                 <button id="sortAscRevenue">Revenue Asc</button>
                 <button id="sortDescRevenue">Revenue Desc</button>
               </div>
-              <div class="sortTransactions">
+              <div class = "sortTransactions">
                 <label for="sortAscTransactions">Sort by Transaction : </label>
                 <button id="sortAscTransactions">Transaction Asc</button>
                 <button id="sortDescTransactions">Transaction Desc</button>
               </div>
-              <canvas id="megachart"> </canvas>
+              <canvas id="megachart">
+              </canvas>
               <div>
                 <div class="button-center-container">
-                  <button id="infoChartMega" onclick="showHideInsight(event)">
-                    INSIGHT
-                  </button>
+                  <button id="infoChartMega" onclick="showHideInsight(event)">INSIGHT</button>
                 </div>
                 <div id="insightContainer" class="insightChartMegaBox">
-                  <p id="insightChartMega" class="hidden">
-                    Chart di atas menunjukkan
-                    <b
-                      >Perbedaan Jumlah Pendapatan dan Transaksi Penjualan
-                      Properti Berdasarkan Neighborhood di Manhattan, New
-                      York</b
-                    >
-                    menunjukkan bahwa <b>Harlem-Central</b> memiliki pendapatan
-                    tertinggi dengan <b>557 transaksi penjualan</b>.
-                    <b>Midtown West</b> memiliki pendapatan tertinggi kedua dan
-                    jumlah transaksi terbanyak, yaitu <b>614</b>.
-                    <b>Tribeca</b> mencatat pendapatan terkecil dengan
-                    <b>308 transaksi</b>, sedangkan <b>Clinton</b> memiliki
-                    jumlah transaksi paling sedikit, yaitu <b>235 transaksi</b>.
-                  </p>
+                  <p id="insightChartMega" class="hidden">Chart di atas menunjukkan <b>Perbedaan Jumlah Pendapatan dan Transaksi Penjualan Properti Berdasarkan Neighborhood di Manhattan, New York</b> 
+                    menunjukkan bahwa <b>Harlem-Central</b> memiliki pendapatan tertinggi dengan <b>557 transaksi penjualan</b>. 
+                    <b>Midtown West</b> memiliki pendapatan tertinggi kedua dan jumlah transaksi terbanyak, yaitu <b>614</b>. 
+                    <b>Tribeca</b> mencatat pendapatan terkecil dengan <b>308 transaksi</b>, 
+                    sedangkan <b>Clinton</b> memiliki jumlah transaksi paling sedikit, yaitu <b>235 transaksi</b>.</p>
                 </div>
               </div>
             </div>
             <div class="chart-mega-2">
-              <div class="sortTotalRevenue">
+              <div class = "sortTotalRevenue">
                 <label for="sortAsc">Sort by Revenue : </label>
                 <button id="sortChartAsc">Sort Ascending</button>
                 <button id="sortChartDesc">Sort Descending</button>
               </div>
-              <canvas id="megachart_2"> </canvas>
+            <canvas id="megachart_2">
+              
+            </canvas>
             </div>
           </div>
         </div>
-      </div>
-      <!--footer-->
-      <footer class="footer">
-        <div class="footer-box">
-          <h2>Manhattan Sales Dashboard</h2>
-          <p>Follow our social media:</p>
-          <div class="social">
-            <a href="https://www.linkedin.com/school/revou/"
-              ><i class="bx bxl-linkedin"></i
-            ></a>
-            <a href="#"><i class="bx bxl-twitter"></i></a>
-            <a href="https://www.instagram.com/revou_id/"
-              ><i class="bx bxl-instagram"></i
-            ></a>
-            <a
-              href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-medan-12"
-              ><i class="bx bxl-github"></i
-            ></a>
-          </div>
         </div>
-      </footer>
-      <div class="copyright">
-        <p>&#169; Medan-Team 12</p>
-      </div>
-    </main>
+        <!--footer-->
+        <footer class="footer">
+          <div class="footer-box">
+            <h2>Manhattan Sales Dashboard</h2>
+            <p>Follow our social media:</p>
+            <div class="social">
+              <a href="https://www.linkedin.com/school/revou/"
+                ><i class="bx bxl-linkedin"></i
+              ></a>
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.instagram.com/revou_id/"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+              <a
+                href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-medan-12"
+                ><i class="bx bxl-github"></i
+              ></a>
+            </div>
+          </div>
+        </footer>
+        <div class="copyright">
+          <p>&#169; Medan-Team 12</p>
+        </div>
+      </main>    
     <!--file javascript-->
     <script src="script.js"></script>
     <script src="script_2.js"></script>
-  </body>
+</body>
 </html>
