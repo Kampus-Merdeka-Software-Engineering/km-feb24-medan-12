@@ -134,3 +134,17 @@ function showHideQuarter(e) {
     chart_Quarter.classList.add("hidden");
   }
 }
+
+//INSIGHT BUTTON REVENUE BY BUILDING CATEGORY
+function showHideInsight(event) {
+  var x = document.getElementById("insightChartMega2");
+  
+  if(x.classList.contains('hidden')){
+    x.classList.remove('hidden');
+    x.classList.add('show');
+  }
+  else if(x.classList.contains('show')){
+    x.classList.remove('show');
+    x.classList.add('hidden');
+  }  
+}

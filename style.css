@@ -826,6 +826,23 @@ button {
   border-radius: 25px;
 }
 
+
+
+
+
+#insightChartMega2 {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+#infoChartMega2 {
+  border: none;
+  color: blue;
+}
+
 .main {
   position: absolute;
   height: 100vh;
