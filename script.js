@@ -509,12 +509,14 @@ document.getElementById("sortChartDesc").addEventListener("click", function () {
 function sortChartDataRevenue(strSort, sortBy) {
   let arrBuildingClassCategoryChart = window.megaChart2Sort.data.labels;
   let arrTotalRevenueChart = window.megaChart2Sort.data.datasets[0].data;
+  let arrBackgroundColor = window.megaChart2Sort.data.datasets[0].backgroundColor;
   let arrSort = [];
 
   arrTotalRevenueChart.forEach((element, index) => {
     arrSort.push({
       building_class_category: arrBuildingClassCategoryChart[index],
       totalRevenue: element,
+      backgroundColor: arrBackgroundColor[index],
     });
   });
 
@@ -528,13 +530,16 @@ function sortChartDataRevenue(strSort, sortBy) {
 
   arrBuildingClassCategoryChart = [];
   arrTotalRevenueChart = [];
+  arrBackgroundColor = [];
   arrSort.forEach((element) => {
     arrBuildingClassCategoryChart.push(element.building_class_category);
     arrTotalRevenueChart.push(element.totalRevenue);
+    arrBackgroundColor.push(element.backgroundColor);
   });
 
   window.megaChart2Sort.data.labels = arrBuildingClassCategoryChart;
   window.megaChart2Sort.data.datasets[0].data = arrTotalRevenueChart;
+  window.megaChart2Sort.data.datasets[0].backgroundColor = arrBackgroundColor;
   window.megaChart2Sort.update();
 }
 
