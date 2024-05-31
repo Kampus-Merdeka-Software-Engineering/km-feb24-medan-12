@@ -551,15 +551,14 @@ button:hover {
 }
 
 .chart-area {
-  padding-left: 3%;
+  padding-left: 65px;
   max-width: 100%;
-  margin-bottom: 5%;
+  margin-bottom: 20px;
 }
 .chart {
   display: inline-grid;
   grid-template-columns: auto auto;
   margin-top: 20px;
-  margin-left: 20px;
   max-width: 100%;
   row-gap: 20px;
   column-gap: 30px;
@@ -852,8 +851,9 @@ button {
 .chart-mega {
   display: flex;
   flex-direction: column;
-  padding-left: 35px;
-  margin-top: 20px;
+  padding-left: 75px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .chart-mega-1 {
@@ -1134,7 +1134,7 @@ button {
     margin-top: 20px;
     padding-bottom: 20px;
     border-radius: 25px;
-    width: fit-content;
+    width: auto;
   }
 
   form {
