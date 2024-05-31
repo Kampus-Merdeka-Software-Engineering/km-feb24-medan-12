@@ -148,3 +148,17 @@ function showHideInsight2(e) {
     x.classList.add('hidden');
   }  
 }
+
+//insight monthly average revenue
+function showHide(e) {
+  var chart_line = document.getElementById("insightLineChart");
+
+  if (chart_line.classList.contains("hidden")) {
+    chart_line.classList.remove("hidden");
+    chart_line.classList.add("show");
+  } else if (chart_line.classList.contains("show")) {
+    chart_line.classList.remove("show");
+    chart_line.classList.add("hidden");
+  }
+}
+
