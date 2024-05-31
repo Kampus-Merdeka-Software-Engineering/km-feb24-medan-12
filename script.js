@@ -647,8 +647,11 @@ function createChart5(arrPassed5, type) {
                 maximumFractionDigits: 0,
               });
               let sum = 0;
-              tooltipItem.dataset.data.forEach((data) => { sum += parseInt(data); });
-              let percentage = ((parseInt(tooltipItem.parsed.x) * 100) / sum).toFixed(3) + "%";
+              tooltipItem.dataset.data.forEach((data) => {
+                sum += parseInt(data);
+              });
+              let percentage =
+                ((parseInt(tooltipItem.parsed.x) * 100) / sum).toFixed(3) + "%";
               var priceValue = formatterUsd.format(tooltipItem.parsed.x);
               var strDisplay = `Total Revenue: ${priceValue} | Percentage: (${percentage})`;
 
@@ -684,7 +687,7 @@ function createChart5(arrPassed5, type) {
           },
           color: "#000",
         },
-      },  
+      },
     },
   });
 }
@@ -700,7 +703,8 @@ document.getElementById("sortChartDesc").addEventListener("click", function () {
 function sortChartDataRevenue(strSort, sortBy) {
   let arrBuildingClassCategoryChart = window.megaChart2Sort.data.labels;
   let arrTotalRevenueChart = window.megaChart2Sort.data.datasets[0].data;
-  let arrBackgroundColor = window.megaChart2Sort.data.datasets[0].backgroundColor;
+  let arrBackgroundColor =
+    window.megaChart2Sort.data.datasets[0].backgroundColor;
   let arrSort = [];
 
   arrTotalRevenueChart.forEach((element, index) => {

@@ -584,17 +584,29 @@ button:hover {
 .button-Quarterly {
   display: flex;
   justify-content: center;
+  margin-top: 22px;
 }
 
 #insightQuarterlyChart {
   display: flex;
   justify-content: center;
   text-align: justify;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #infoQuarterlyChart {
   border: none;
-  color: rgb(199, 68, 142);
+  color: #fff;
+  background-color: #1c1616;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
 }
 
 .chart-2 {
@@ -619,53 +631,41 @@ button:hover {
 .button-linechart {
   display: flex;
   justify-content: center;
+  margin-top: 15px;
 }
 
 #insightLineChart {
   display: flex;
   justify-content: center;
   text-align: justify;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #infoLineChart {
   border: none;
-  color: rgb(199, 68, 142);
+  color: #fff;
+  background-color: #1c1616;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
 }
 
-
-#insightLineChart.hidden {
-  display: none;
-}
-
-#insightLineChart.show {
-  display: block;
-}
-
-.button-linechart {
-  display: flex;
-  justify-content: center;
-}
-
-#insightLineChart {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-}
-
-#infoLineChart {
-  border: none;
-  color: rgb(199, 68, 142);
-}
 .chart-3 {
   width: 600px;
   height: auto;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
 }
 
 #mychart_3 {
-  margin-left: 50px;
+  margin-left: 20px;
 }
 #insightPieChart.hidden {
   display: none;
@@ -678,17 +678,29 @@ button:hover {
 .button-piechart {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 #insightPieChart {
   display: flex;
   justify-content: center;
   text-align: justify;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #infoPieChart {
   border: none;
-  color: rgb(199, 68, 142);
+  color: #fff;
+  background-color: #1c1616;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
 }
 
 .chart-4 {
@@ -699,29 +711,41 @@ button:hover {
   border-radius: 25px;
 }
 
-#insightChartTaxClass.hidden{
+#insightChartTaxClass.hidden {
   display: none;
 }
 
-#insightChartTaxClass.show{
+#insightChartTaxClass.show {
   display: flex;
   justify-content: center;
 }
 
-.buttonInsight-Taxclass{
+.buttonInsight-Taxclass {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
-#insightPieChart{
+#insightChartTaxClass {
   display: flex;
   justify-content: center;
-  text-align: center;
+  text-align: justify;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-#infoChartTaxClass{
+#infoChartTaxClass {
   border: none;
-  color: rgb(199, 68, 142);
+  color: #fff;
+  background-color: #1c1616;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
 }
 
 .chart-1,
@@ -877,19 +901,29 @@ button {
 .button-center-container {
   display: flex;
   justify-content: center;
+  margin-left: 15px;
 }
 
 #insightChartMega {
   display: flex;
   justify-content: center;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: justify;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 #infoChartMega {
   border: none;
-  color: blue;
+  color: #fff;
+  background-color: #1c1616;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
 }
 
 .chart-mega-2 {
@@ -913,19 +947,28 @@ button {
 .button-center-container {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .insightChart2MegaBox {
   display: flex;
   justify-content: center;
   text-align: justify;
-  padding-left: 100px;
-  padding-right: 100px;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #infoChart2Mega {
   border: none;
-  color: blue;
+  color: #fff;
+  background-color: #1c1616;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
 }
 
 .main {
@@ -1003,7 +1046,7 @@ button {
   .chart-mini-filter {
     margin-left: 10px;
     margin-right: 10px;
-    width:95%;
+    width: 95%;
   }
 
   .filter {
