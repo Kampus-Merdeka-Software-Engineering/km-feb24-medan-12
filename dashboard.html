@@ -212,11 +212,10 @@
                 </form>
             </div>
               <canvas id="mychart_2">
-                
               </canvas>
               <div>
                 <div class="button-linechart">
-                  <button id="infoLineChart" onclick="showHide(event)">Insight</button>
+                  <button id="infoLineChart" onclick="showHideMonthly(event)">Insight</button>
                 </div>
                 <div id="insightChart" class="insightLineChartBox">
                   <p id="insightLineChart" class="hidden">Chart diatas menunjukkan pada bulan 
@@ -232,7 +231,7 @@
               </canvas>
                 <div>
                   <div class="button-piechart">
-                    <button id="infoPieChart" onclick="showHide(event)">Insight</button>
+                    <button id="infoPieChart" onclick="showHideComposition(event)">Insight</button>
                   </div>
                   <div id="insightChart" class="insightPieChartBox">
                     <p id="insightPieChart" class="hidden">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio possimus officia eaque.
@@ -253,6 +252,15 @@
               </div>
               <canvas id="mychart_4">
               </canvas>
+              <div>
+                <div class="buttonInsight-Taxclass">
+                  <button id="infoChartTaxClass" onclick="showHideTaxClass(event)">INSIGHT</button>
+                </div>
+                <div id="insightTaxClass" class="insightChartTaxClass">
+                  <p id= "insightChartTaxClass" class="hidden"></p>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
           <div class="chart-mega">
