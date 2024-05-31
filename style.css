@@ -466,6 +466,7 @@ body {
   padding: 25px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
   border-radius: 25px;
+  width: 1235px;
 }
 
 .user-interaction {
