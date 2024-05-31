@@ -1131,18 +1131,18 @@ button {
     margin-top: 20px;
     padding-bottom: 20px;
     border-radius: 25px;
-    width: auto;
+    width: 98%;
   }
 
   form {
     width: 100%;
   }
   .filter {
-    width: 90%;
+    width: 100%;
     display: flex;
     font-size: 80%;
     align-items: start;
-    padding-left: 10px;
+    padding-left: 0;
   }
   .filter-neighborhood {
     width: 50%;
@@ -1187,10 +1187,11 @@ button {
   .chart-mini-4,
   .chart-mini-5 {
     width: 100%;
+    height: auto;
   }
 
   .chart-mini h3 {
-    font-size: 100%;
+    font-size: 80%;
     padding-left: 5%;
   }
 
