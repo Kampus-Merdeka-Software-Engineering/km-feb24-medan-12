@@ -99,6 +99,7 @@ function loadData() {
 // Panggil fungsi loadData saat halaman dimuat
 document.addEventListener("DOMContentLoaded", loadData);
 
+// Insight Chart Total Revenue by Neighbourhood
 function showHideInsight(e) {
   var chart_mega = document.getElementById("insightChartMega");
 
@@ -111,7 +112,8 @@ function showHideInsight(e) {
   }
 }
 
-function showHide(e) {
+// Insight Chart Sales Composition
+function showHideComposition(e) {
   var chart_pie = document.getElementById("insightPieChart");
 
   if (chart_pie.classList.contains("hidden")) {
@@ -123,6 +125,7 @@ function showHide(e) {
   }
 }
 
+// Insight Chart Quarterly Sales Revenue
 function showHideQuarter(e) {
   var chart_Quarter = document.getElementById("insightQuarterlyChart");
 
@@ -149,8 +152,8 @@ function showHideInsight2(e) {
   }  
 }
 
-//insight monthly average revenue
-function showHide(e) {
+//insight Chart Monthly Average Revenue
+function showHideMonthly(e) {
   var chart_line = document.getElementById("insightLineChart");
 
   if (chart_line.classList.contains("hidden")) {
@@ -162,3 +165,33 @@ function showHide(e) {
   }
 }
 
+//Insight Chart Total Revenue by Tax Class
+function showHideTaxClass(e) {
+  var taxC = document.getElementById("insightChartTaxClass");
+
+  if(taxC.classList.contains('hidden')){
+    taxC.classList.remove('hidden');
+    taxC.classList.add('show');
+  }
+  else if(taxC.classList.contains('show')){
+    taxC.classList.remove('show');
+    taxC.classList.add('hidden');
+  }
+    const select = document.getElementById("chart-4-taxclass");
+    const selectedTaxClass = select.value;
+    const taxClassIndex = window.dataTaxClass.tax_class.indexOf(selectedTaxClass);
+    const revenue = window.dataTaxClass.total_revenue[taxClassIndex];
+
+    let insightMessage = "";
+    if (selectedTaxClass === "All") {
+        insightMessage = `Terdapat perbedaan pendapatan yang signifikan tax class 2 lebih tinggi daripada tax class 1 dengan selisih lebih dari US$ 4 Milyar.`;
+    } else if (selectedTaxClass === "2") {
+        insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total tertinggi, yaitu US$ ${revenue}.`;
+    } else if (selectedTaxClass === "4") {
+        insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total kedua tertinggi, yaitu US$ ${revenue}.`;
+    } else if (selectedTaxClass === "1") {
+        insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total terendah, yaitu US$ ${revenue}.`;
+    }
+
+    taxC.textContent = insightMessage;
+}
