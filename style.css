@@ -581,6 +581,57 @@ button:hover {
   border-radius: 25px;
 }
 
+#mychart_2 {
+  margin-left: 50px;
+}
+#insightLineChart.hidden {
+  display: none;
+}
+
+#insightLineChart.show {
+  display: block;
+}
+
+.button-linechart {
+  display: flex;
+  justify-content: center;
+}
+
+#insightLineChart {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+#infoLineChart {
+  border: none;
+  color: rgb(199, 68, 142);
+}
+
+
+#insightLineChart.hidden {
+  display: none;
+}
+
+#insightLineChart.show {
+  display: block;
+}
+
+.button-linechart {
+  display: flex;
+  justify-content: center;
+}
+
+#insightLineChart {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+#infoLineChart {
+  border: none;
+  color: rgb(199, 68, 142);
+}
 .chart-3 {
   width: 600px;
   height: auto;
