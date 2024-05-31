@@ -1003,6 +1003,7 @@ button {
   .chart-mini-filter {
     margin-left: 10px;
     margin-right: 10px;
+    width:95%;
   }
 
   .filter {
@@ -1051,20 +1052,19 @@ button {
     width: 100%;
     height: 35px;
   }
-  .main-content {
-    height: 1100px;
-  }
+
   .user-interaction {
     height: 100%;
   }
 
   .chart-area {
-    padding-left: 0;
+    padding-left: 20px;
   }
   .chart-mini {
     display: flex;
     flex-direction: column;
     padding-left: 5%;
+    align-items: center;
   }
 
   .chart-mini-1,
@@ -1072,7 +1072,7 @@ button {
   .chart-mini-3,
   .chart-mini-4,
   .chart-mini-5 {
-    width: 50%;
+    width: 80%;
     height: 40%;
   }
 
@@ -1089,7 +1089,7 @@ button {
   }
   .chart-mega {
     padding-left: 20px;
-    margin-left: 0px;
+    padding-bottom: 15px;
   }
   .chart-1,
   .chart-2,
@@ -1102,10 +1102,6 @@ button {
     width: 95%;
     margin-left: 0;
   }
-  .footer {
-    padding-top: 25px;
-  }
-
   #chart-3 {
     width: 300px;
     height: 300px;
