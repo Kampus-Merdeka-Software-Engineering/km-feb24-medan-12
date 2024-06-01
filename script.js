@@ -677,7 +677,15 @@ function createChart5(arrPassed5, type) {
       scales: {
         x: {
           type: "logarithmic",
+          display: function(context) {
+            return context.chart.width >= 600; 
+          }
         },
+        y: {
+          display: function(context) {
+            return context.chart.width >= 600;
+          }
+        }
       },
       plugins: {
         title: {
