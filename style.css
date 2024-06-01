@@ -992,6 +992,11 @@ button {
 .sidebar-mobile {
   display: none;
 }
+.chart-1-container, .chart-2-container,
+.chart-3-container, .chart-4-container {
+  width: 100%;
+  height: auto;
+}
 
 .megachart-container {
   width: 100%;
@@ -1184,6 +1189,11 @@ button {
     margin-left: 5%;
     margin-top: 5%;
   }
+  .chart-1-container, .chart-2-container,
+  .chart-3-container, .chart-4-container {
+  width: 100%;
+  height: 400px;
+}
   .megachart-container {
     width: 100%;
     height: 400px;
