@@ -1071,16 +1071,19 @@ button {
   .filter-neighborhood {
     width: 100%;
     align-items: center;
+    padding-right: 0px;
   }
   .from-date {
     width: 100%;
     margin-top: 5px;
     align-items: center;
+    padding-right: 0px;
   }
   .to-date {
     width: 100%;
     margin-top: 5px;
     align-items: center;
+    padding-right: 0px;
   }
   #NEIGHBORHOOD,
   #start-date,
@@ -1092,7 +1095,6 @@ button {
     border-left-width: 2px;
     border-bottom-width: 2px;
     border-right-width: 2px;
-
   }
 
   .buttons {
@@ -1119,7 +1121,8 @@ button {
   .chart-mini {
     display: inline-grid;
     grid-template-columns: auto auto;
-    padding-left: 5%;
+    padding-left: 7%;
+    gap: 20px;
   }
 
   .chart-mini-1,
@@ -1140,7 +1143,6 @@ button {
 
   .chart-mini p {
     font-size: 150%;
-    margin-top: 15px;
   }
   .chart {
     display: flex;
