@@ -663,6 +663,8 @@ function createChart5(arrPassed5, type) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       indexAxis: "y",
       scales: {
         x: {
@@ -774,3 +776,12 @@ function sortChartDataRevenue(strSort, sortBy) {
   window.megaChart2Sort.data.datasets[0].backgroundColor = arrBackgroundColor;
   window.megaChart2Sort.update();
 }
+
+
+
+
+
+
+
+
+
