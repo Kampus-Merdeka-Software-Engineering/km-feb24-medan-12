@@ -998,6 +998,15 @@ button {
   height: 800px;
 }
 
+.sortChartMega {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.buttonSortRevenue, .buttonSortTransaction {
+  padding-left: 15px;
+}
+
 /*media screen untuk ukuran mobile*/
 @media (min-width: 320px) and (max-width: 720px) {
   .sidebar {
