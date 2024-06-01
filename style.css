@@ -1053,10 +1053,6 @@ button {
     margin-right: 10px;
     width: 95%;
   }
-
-  .filter {
-    padding-left: 0px;
-  }
   .main-content {
     height: auto;
   }
@@ -1069,22 +1065,34 @@ button {
     flex-direction: column;
     font-size: 80%;
     align-items: start;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .filter-neighborhood {
-    width: 70%;
+    width: 100%;
+    align-items: center;
   }
   .from-date {
-    width: 70%;
+    width: 100%;
     margin-top: 5px;
+    align-items: center;
   }
   .to-date {
-    width: 70%;
+    width: 100%;
     margin-top: 5px;
+    align-items: center;
   }
   #NEIGHBORHOOD,
   #start-date,
   #end-date {
     height: 30px;
+    width: 80%;
+    margin-left: 0px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+
   }
 
   .buttons {
@@ -1109,10 +1117,9 @@ button {
     padding-left: 20px;
   }
   .chart-mini {
-    display: flex;
-    flex-direction: column;
+    display: inline-grid;
+    grid-template-columns: auto auto;
     padding-left: 5%;
-    align-items: center;
   }
 
   .chart-mini-1,
@@ -1120,16 +1127,20 @@ button {
   .chart-mini-3,
   .chart-mini-4,
   .chart-mini-5 {
-    width: 80%;
-    height: 40%;
+    width: 100%;
+    height: auto;
   }
 
   .chart-mini h3 {
-    font-size: 125%;
+    font-size: 90%;
+    height: 40px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
 
   .chart-mini p {
-    font-size: 125%;
+    font-size: 150%;
+    margin-top: 15px;
   }
   .chart {
     display: flex;
