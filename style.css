@@ -1189,6 +1189,9 @@ button {
     margin-left: 5%;
     margin-top: 5%;
   }
+  #mychart_2 {
+    margin-left: 0px;
+  }
   .chart-1-container, .chart-2-container,
   .chart-3-container, .chart-4-container {
   width: 100%;
