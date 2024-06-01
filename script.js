@@ -52,6 +52,8 @@ function createQuarterlyChart(arrPassed, type) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         title: {
           display: true,
@@ -196,6 +198,8 @@ function createChart7(arrLine3, type) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         title: {
           display: true,
@@ -264,6 +268,8 @@ function createChart3(arrPassed, type) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         title: {
           display: true,
@@ -393,6 +399,8 @@ function createChart2(arrPassed2, type) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         title: {
           display: true,
