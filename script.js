@@ -439,6 +439,20 @@ fetch("File Json/Total_revenue_transaction_neighborhood.json")
   });
 
 function createChart(arrPassed, type) {
+  const updateChartScales = (chart, isMobile) => {
+    if (isMobile) {
+      chart.options.scales.sales.display = false;
+      chart.options.scales.transaction.display = false;
+      chart.options.scales.x.ticks.maxRotation = 90;
+      chart.options.scales.x.ticks.minRotation = 90;
+    } else {
+      chart.options.scales.sales.display = true;
+      chart.options.scales.transaction.display = true;
+    }
+    chart.update();
+  };
+
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
   window.megaChartSort = new Chart(chart6, {
     type: type,
     data: {
@@ -459,6 +473,8 @@ function createChart(arrPassed, type) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         title: {
           display: true,
@@ -469,6 +485,12 @@ function createChart(arrPassed, type) {
         padding: {},
       },
       scales: {
+        x: {
+          ticks: {
+            maxRotation: isMobile ? 90 : 45, // Initial rotation based on screen size
+            minRotation: isMobile ? 90 : 45,
+          },
+        },
         y: {
           beginAtZero: true,
           display: false,
@@ -478,6 +500,7 @@ function createChart(arrPassed, type) {
           position: "left",
           min: 0,
           max: 400000000,
+          display: !isMobile,
           title: {
             display: true,
             text: "Total Sales",
@@ -488,7 +511,7 @@ function createChart(arrPassed, type) {
           position: "right",
           min: 0,
           max: 1000,
-          display: true,
+          display: !isMobile,
           title: {
             display: true,
             text: "Total Transactions",
