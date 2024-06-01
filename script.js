@@ -438,92 +438,9 @@ fetch("File Json/Total_revenue_transaction_neighborhood.json")
     createChart(objChart, "bar");
   });
 
-/*function createChart(arrPassed, type) {
-  const updateChartScales = (chart, isMobile) => {
-    if (isMobile) {
-      chart.options.scales.sales.display = false;
-      chart.options.scales.transaction.display = false;
-      chart.options.scales.x.ticks.maxRotation = 90;
-      chart.options.scales.x.ticks.minRotation = 90;
-    } else {
-      chart.options.scales.sales.display = true;
-      chart.options.scales.transaction.display = true;
-    }
-    chart.update();
-  };
+let megaChartSort; // Deklarasikan variabel chart di luar fungsi agar dapat diakses di luar fungsi juga
 
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
-  window.megaChartSort = new Chart(chart6, {
-    type: type,
-    data: {
-      labels: arrPassed.neighborhood,
-      datasets: [
-        {
-          label: "Total Sales",
-          data: arrPassed.total_sales,
-          borderWidth: 1,
-          yAxisID: "sales",
-        },
-        {
-          label: "Transactions",
-          data: arrPassed.total_transaction,
-          borderWidth: 1,
-          yAxisID: "transaction",
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        title: {
-          display: true,
-          text: "TOP 10 TOTAL REVENUE & TRANSACTION BY NEIGHBORHOOD",
-        },
-      },
-      layout: {
-        padding: {},
-      },
-      scales: {
-        x: {
-          ticks: {
-            maxRotation: isMobile ? 90 : 45, // Initial rotation based on screen size
-            minRotation: isMobile ? 90 : 45,
-          },
-        },
-        y: {
-          beginAtZero: true,
-          display: false,
-        },
-        sales: {
-          type: "linear",
-          position: "left",
-          min: 0,
-          max: 400000000,
-          display: !isMobile,
-          title: {
-            display: true,
-            text: "Total Sales",
-          },
-        },
-        transaction: {
-          type: "linear",
-          position: "right",
-          min: 0,
-          max: 1000,
-          display: !isMobile,
-          title: {
-            display: true,
-            text: "Total Transactions",
-          },
-        },
-      },
-    },
-  });
-}*/
 function createChart(arrPassed, type) {
-  let megaChartSort; // Deklarasikan variabel chart di luar fungsi agar dapat diakses di luar fungsi juga
-
   const updateChartScales = (chart, isMobile) => {
     if (isMobile) {
       chart.options.scales.sales.display = false;
@@ -618,7 +535,6 @@ function createChart(arrPassed, type) {
   updateChartScales(megaChartSort, isMobile());
 }
 
-
 document
   .getElementById("sortAscRevenue")
   .addEventListener("click", function () {
@@ -644,9 +560,9 @@ document
   });
 
 function sortChartData(strSort, sortBy) {
-  let arrNeighborhoodChart = window.megaChartSort.data.labels;
-  let arrTotalSalesChart = window.megaChartSort.data.datasets[0].data;
-  let arrTotalTransactionChart = window.megaChartSort.data.datasets[1].data;
+  let arrNeighborhoodChart = megaChartSort.data.labels;
+  let arrTotalSalesChart = megaChartSort.data.datasets[0].data;
+  let arrTotalTransactionChart = megaChartSort.data.datasets[1].data;
   let arrSort = [];
 
   arrTotalSalesChart.forEach((element, index) => {
@@ -680,11 +596,12 @@ function sortChartData(strSort, sortBy) {
     arrTotalTransactionChart.push(element.totalTransaction);
   });
 
-  window.megaChartSort.data.labels = arrNeighborhoodChart;
-  window.megaChartSort.data.datasets[0].data = arrTotalSalesChart;
-  window.megaChartSort.data.datasets[1].data = arrTotalTransactionChart;
-  window.megaChartSort.update();
+  megaChartSort.data.labels = arrNeighborhoodChart;
+  megaChartSort.data.datasets[0].data = arrTotalSalesChart;
+  megaChartSort.data.datasets[1].data = arrTotalTransactionChart;
+  megaChartSort.update();
 }
+
 
 //Total Revenue By Building Category
 const chart5 = document.getElementById("megachart_2");
