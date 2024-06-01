@@ -1188,6 +1188,11 @@ button {
   .sortTotalRevenue label {
     display: none;
   }
+  .sortChartMega {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 /*media screen untuk ukuran tablet*/
