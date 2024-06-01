@@ -382,10 +382,12 @@
         <div class="chart-mega-2">
           <div class="sortTotalRevenue">
             <label id="sortAscMega" for="sortAsc">Sort by Revenue : </label>
-            <button id="sortChartAsc">Sort Ascending</button>
-            <button id="sortChartDesc">Sort Descending</button>
+            <button id="sortChartAsc" onclick="sortChartDataRevenue('revenue','asc')">Sort Ascending</button>
+            <button id="sortChartDesc" onclick="sortChartDataRevenue('revenue','desc')">Sort Descending</button>
           </div>
+          <div class="megachart-2-container">
           <canvas id="megachart_2"> </canvas>
+          </div>
           <div>
             <div class="button-center-container">
               <button id="infoChart2Mega" onclick="showHideInsight2(event)">
