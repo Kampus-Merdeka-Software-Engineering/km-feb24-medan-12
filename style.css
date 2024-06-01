@@ -1156,14 +1156,15 @@ button {
   }
 
   .chart-mini h3 {
-    font-size: 90%;
-    height: 45px;
+    font-size: 85%;
+    height: 40px;
     padding-left: 3px;
     padding-right: 3px;
   }
 
   .chart-mini p {
     font-size: 150%;
+    margin-top: 3%;
   }
   .chart {
     display: flex;
