@@ -1222,6 +1222,24 @@ button {
     padding-left: 30px;
     padding-right: 30px;
   }
+  .form-chart-2 {
+    display:flex;
+    flex-direction: column;
+  }
+  label.chart-2-startmonth {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  label.chart-2-endmonth {
+    margin-top: 0;
+    margin-left: 0px;
+  }
+  #start-month, #end-month, #chart-2-filter-apply {
+    width: 50%;
+  }
+  #chart-2-filter-apply {
+    margin-left: 0;
+  }
 }
 
 /*media screen untuk ukuran tablet*/
