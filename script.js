@@ -438,7 +438,7 @@ fetch("File Json/Total_revenue_transaction_neighborhood.json")
     createChart(objChart, "bar");
   });
 
-function createChart(arrPassed, type) {
+/*function createChart(arrPassed, type) {
   const updateChartScales = (chart, isMobile) => {
     if (isMobile) {
       chart.options.scales.sales.display = false;
@@ -520,7 +520,104 @@ function createChart(arrPassed, type) {
       },
     },
   });
+}*/
+function createChart(arrPassed, type) {
+  let megaChartSort; // Deklarasikan variabel chart di luar fungsi agar dapat diakses di luar fungsi juga
+
+  const updateChartScales = (chart, isMobile) => {
+    if (isMobile) {
+      chart.options.scales.sales.display = false;
+      chart.options.scales.transaction.display = false;
+      chart.options.scales.x.ticks.maxRotation = 90;
+      chart.options.scales.x.ticks.minRotation = 90;
+    } else {
+      chart.options.scales.sales.display = true;
+      chart.options.scales.transaction.display = true;
+      chart.options.scales.x.ticks.maxRotation = 45;
+      chart.options.scales.x.ticks.minRotation = 45;
+    }
+    chart.update(); // Perbarui grafik setelah memperbarui opsi
+  };
+
+  const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
+
+  megaChartSort = new Chart(chart6, {
+    type: type,
+    data: {
+      labels: arrPassed.neighborhood,
+      datasets: [
+        {
+          label: "Total Sales",
+          data: arrPassed.total_sales,
+          borderWidth: 1,
+          yAxisID: "sales",
+        },
+        {
+          label: "Transactions",
+          data: arrPassed.total_transaction,
+          borderWidth: 1,
+          yAxisID: "transaction",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: "TOP 10 TOTAL REVENUE & TRANSACTION BY NEIGHBORHOOD",
+        },
+      },
+      layout: {
+        padding: {},
+      },
+      scales: {
+        x: {
+          ticks: {
+            maxRotation: isMobile() ? 90 : 45,
+            minRotation: isMobile() ? 90 : 45,
+          },
+        },
+        y: {
+          beginAtZero: true,
+          display: false,
+        },
+        sales: {
+          type: "linear",
+          position: "left",
+          min: 0,
+          max: 400000000,
+          display: !isMobile(),
+          title: {
+            display: true,
+            text: "Total Sales",
+          },
+        },
+        transaction: {
+          type: "linear",
+          position: "right",
+          min: 0,
+          max: 1000,
+          display: !isMobile(),
+          title: {
+            display: true,
+            text: "Total Transactions",
+          },
+        },
+      },
+    },
+  });
+
+  // Event listener untuk mendeteksi perubahan ukuran layar
+  window.addEventListener("resize", () => {
+    updateChartScales(megaChartSort, isMobile());
+  });
+
+  // Panggil fungsi updateChartScales untuk mengatur skala grafik pada saat pertama kali dimuat
+  updateChartScales(megaChartSort, isMobile());
 }
+
 
 document
   .getElementById("sortAscRevenue")
