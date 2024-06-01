@@ -993,6 +993,11 @@ button {
   display: none;
 }
 
+.megachart-container {
+  width: 100%;
+  height: 800px;
+}
+
 /*media screen untuk ukuran mobile*/
 @media (min-width: 320px) and (max-width: 720px) {
   .sidebar {
@@ -1150,6 +1155,10 @@ button {
     height: 300px;
     margin-left: 5%;
     margin-top: 5%;
+  }
+  .megachart-container {
+    width: 100%;
+    height: 400px;
   }
 }
 
