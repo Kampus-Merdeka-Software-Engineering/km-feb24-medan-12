@@ -1233,13 +1233,16 @@ button {
     display:flex;
     flex-direction: column;
   }
-  label.chart-2-startmonth {
+  label.start-month {
     margin-left: 0px;
     margin-top: 8px;
   }
-  label.chart-2-endmonth {
+  label.end-month {
     margin-top: 0;
     margin-left: 0px;
+  }
+  #chart-2-filter-apply {
+    margin-top: 5px;
   }
   #start-month, #end-month, #chart-2-filter-apply {
     width: 50%;
@@ -1247,6 +1250,7 @@ button {
   #chart-2-filter-apply {
     margin-left: 0;
   }
+
 }
 
 /*media screen untuk ukuran tablet*/
