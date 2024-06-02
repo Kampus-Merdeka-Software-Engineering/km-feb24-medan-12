@@ -153,17 +153,17 @@ function showHideInsight2(e) {
 }
 
 //insight Chart Monthly Average Revenue
-function showHideMonthly(e) {
-  var chart_line = document.getElementById("insightLineChart");
+//function showHideMonthly(e) {
+//   var chart_line = document.getElementById("insightLineChart");
 
-  if (chart_line.classList.contains("hidden")) {
-    chart_line.classList.remove("hidden");
-    chart_line.classList.add("show");
-  } else if (chart_line.classList.contains("show")) {
-    chart_line.classList.remove("show");
-    chart_line.classList.add("hidden");
-  }
-}
+//   if (chart_line.classList.contains("hidden")) {
+//     chart_line.classList.remove("hidden");
+//     chart_line.classList.add("show");
+//   } else if (chart_line.classList.contains("show")) {
+//     chart_line.classList.remove("show");
+//     chart_line.classList.add("hidden");
+//   }
+// }
 
 //Insight Chart Total Revenue by Tax Class
 function showHideTaxClass(e) {
