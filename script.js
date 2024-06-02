@@ -177,12 +177,49 @@ function updateMonthlyRevenueChart(e) {
     fromIndex,
     toIndex + 1
   );
-
+  let paragraphInsights = document.getElementsByClassName("insightLineChartFilter");
+  Array.from(paragraphInsights).forEach((element) => {
+    if (
+      yearMonth.includes(element.dataset.rangeFrom) &&
+      yearMonth.includes(element.dataset.rangeTo)
+    ) {
+      element.classList.remove("hidden");
+      element.classList.add("show");
+    }
+    else {
+      element.classList.remove("show");
+      element.classList.add("hidden");
+    }
+  });
   chartMonthlyRevenue.data.labels = yearMonth;
   chartMonthlyRevenue.data.datasets[0].data = averageRevenue;
   chartMonthlyRevenue.update();
 }
+function showHideInsight(e) {
+  var x = document.getElementById("insightChartMega");
+  
+  if(x.classList.contains('hidden')){
+    x.classList.remove('hidden');
+    x.classList.add('show');
+  }
+  else if(x.classList.contains('show')){
+    x.classList.remove('show');
+    x.classList.add('hidden');
+  }  
+}
 
+function showHideMonthly(e) {
+  var x = document.getElementById("insightChartLine");
+  
+  if(x.classList.contains('hidden')){
+    x.classList.remove('hidden');
+    x.classList.add('show');
+  }
+  else if(x.classList.contains('show')){
+    x.classList.remove('show');
+    x.classList.add('hidden');
+  }  
+}
 function createChart7(arrLine3, type) {
   chartMonthlyRevenue = new Chart(chart2, {
     type: type,
