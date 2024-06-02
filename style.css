@@ -898,6 +898,13 @@ button {
   display: block;
 }
 
+#insightChartLine.hidden{
+  display: none;
+}
+#insightChartLine.show {
+  display: block;
+}
+
 .button-center-container {
   display: flex;
   justify-content: center;
@@ -1574,4 +1581,10 @@ a {
   border-radius: 10px;
   background-color: #211515;
   margin-top: 24px;
+}
+.insightLineChartFilter.hidden {
+  display: none;
+}
+.insightLineChartFilter.show {
+  display: block;
 }
