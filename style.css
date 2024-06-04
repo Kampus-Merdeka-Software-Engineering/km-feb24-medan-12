@@ -807,7 +807,7 @@ button {
   margin-left: 10px;
 }
 
-.chart-mini {
+.chartCard {
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto;
   margin-top: 5px;
@@ -858,13 +858,13 @@ button {
   height: 110px;
 }
 
-.chart-mini h3 {
+.chartCard h3 {
   margin-top: 10px;
   font-size: 15px;
   font-weight: 500;
 }
 
-.chart-mini p {
+.chartCard p {
   margin-top: 10px;
   padding-bottom: 10px;
   font-size: 190%;
@@ -1145,7 +1145,7 @@ button {
   .chart-area {
     padding-left: 20px;
   }
-  .chart-mini {
+  .chartCard {
     display: inline-grid;
     grid-template-columns: auto auto;
     padding-left: 7%;
@@ -1161,14 +1161,14 @@ button {
     height: auto;
   }
 
-  .chart-mini h3 {
+  .chartCard h3 {
     font-size: 85%;
     height: 40px;
     padding-left: 3px;
     padding-right: 3px;
   }
 
-  .chart-mini p {
+  .chartCard p {
     font-size: 150%;
     margin-top: 3%;
   }
@@ -1188,12 +1188,6 @@ button {
   .chart-mega-2 {
     width: 95%;
     margin-left: 0;
-  }
-  #chart-3 {
-    width: 300px;
-    height: 300px;
-    margin-left: 5%;
-    margin-top: 5%;
   }
   #chartMonthly {
     margin-left: 0px;
@@ -1313,7 +1307,7 @@ button {
     padding-left: 0px;
   }
 
-  .chart-mini {
+  .chartCard {
     width: 100%;
     padding-left: 5px;
     padding-right: 5px;
@@ -1330,12 +1324,12 @@ button {
     height: auto;
   }
 
-  .chart-mini h3 {
+  .chartCard h3 {
     font-size: 80%;
     padding-left: 5%;
   }
 
-  .chart-mini p {
+  .chartCard p {
     font-size: 100%;
     padding-left: 4%;
   }
