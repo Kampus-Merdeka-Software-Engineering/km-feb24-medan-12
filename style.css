@@ -161,105 +161,6 @@ section {
   background: #f6bf19;
 }
 
-/* Dataset */
-.text-container {
-  margin-top: 50px;
-  margin-left: -80px;
-  position: relative;
-  height: 100vh;
-  left: 350px;
-  width: calc(100% - 350px);
-  align-items: center;
-  justify-content: left;
-  min-height: 100vh;
-  transition: all 0.2s ease;
-  text-align: left;
-}
-
-.text-container h1 {
-  font-size: 40px;
-  color: #2c1a1a;
-  margin-top: -20px;
-  margin-bottom: 40px;
-  padding: 5px 3px;
-}
-
-.text-container p:nth-child(2) {
-  font-size: 18px;
-  color: #2c1a1a;
-  font-weight: bold;
-  padding: 1rem;
-}
-
-.text-container p:nth-child(3) {
-  margin-left: 20px;
-  margin-right: 150px;
-  color: #2c1a1a;
-}
-
-/*Dashboard section*/
-.dashboard-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-  gap: 1.5rem;
-  margin-top: 1rem;
-  position: relative;
-  top: 5px;
-  justify-content: center;
-  margin-left: -40px;
-}
-.dashboard-container .box {
-  padding: 25px;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
-  border-radius: 0.5rem;
-  text-align: center;
-  background: whitesmoke;
-  margin-left: 50px;
-}
-.dashboard .heading h2 {
-  position: relative;
-  margin-top: 5px;
-  font-size: 2.5rem;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.dahsboard-container .box p {
-  font-size: 0.938rem;
-}
-.dashboard-container .box h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0.5rem 0 0.5rem;
-}
-
-.dashboard-container .box:hover {
-  background: #d7c4aa;
-  transition: 0.2s all linear;
-}
-
-/*Dataset*/
-.about {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
-  gap: 1.5rem;
-  margin-top: 50px;
-}
-.about-img img {
-  border-radius: 0.5rem;
-  width: 350px;
-  height: 250px;
-}
-.about-text h2 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-}
-.about-text p {
-  font-size: 0.938rem;
-  margin: 0.5rem 0 1.1rem;
-  text-align: justify;
-}
-
 /*Footer*/
 .footer {
   display: flex;
@@ -276,6 +177,7 @@ section {
   font-weight: 600;
   margin-bottom: 10px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .footer-box p {
@@ -284,6 +186,19 @@ section {
   text-align: center;
 }
 
+.footer-box1 h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: -5px;
+}
+
+.footer-box1 p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
 .social {
   display: flex;
   align-items: center;
@@ -573,6 +488,10 @@ button:hover {
   border-radius: 25px;
 }
 
+#chartQuarterly {
+  margin-top: 30px;
+}
+
 #insightQuarterlyChart.hidden {
   display: none;
 }
@@ -585,6 +504,7 @@ button:hover {
   display: flex;
   justify-content: center;
   margin-top: 22px;
+  margin-bottom: 5px;
 }
 
 #insightQuarterlyChart {
@@ -618,7 +538,7 @@ button:hover {
 }
 
 #chartMonthly {
-  margin-left: 50px;
+  margin-left: 30px;
 }
 #insightLineChart.hidden {
   display: none;
@@ -634,7 +554,7 @@ button:hover {
   margin-top: 15px;
 }
 
-#insightLineChart {
+#insightChartLine {
   display: flex;
   justify-content: center;
   text-align: justify;
@@ -664,8 +584,8 @@ button:hover {
   border-radius: 25px;
 }
 
-#mychart_3 {
-  margin-left: 20px;
+#chartComposition {
+  margin-top: 45px;
 }
 #insightPieChart.hidden {
   display: none;
@@ -678,7 +598,7 @@ button:hover {
 .button-piechart {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 #insightPieChart {
@@ -896,7 +816,7 @@ button {
   display: block;
 }
 
-#insightChartLine.hidden{
+#insightChartLine.hidden {
   display: none;
 }
 #insightChartLine.show {
@@ -989,18 +909,15 @@ button {
   display: inline-flexbox;
 }
 
-.footer-box {
-  padding-top: 25px;
-}
-
-
 /*footer*/
 .sidebar-mobile {
   display: none;
 }
 
-.chartQuarterlyContainer, .chartMonthlyContainer,
-.chartCompositionContainer, .chartTaxClassContainer {
+.chartQuarterlyContainer,
+.chartMonthlyContainer,
+.chartCompositionContainer,
+.chartTaxClassContainer {
   width: 100%;
   height: 500px;
 }
@@ -1020,7 +937,8 @@ button {
   flex-direction: row;
   gap: 20px;
 }
-.buttonSortRevenue, .buttonSortTransaction {
+.buttonSortRevenue,
+.buttonSortTransaction {
   padding-left: 15px;
 }
 
@@ -1192,11 +1110,13 @@ button {
   #chartMonthly {
     margin-left: 0px;
   }
-  .chartQuarterlyContainer, .chartMonthlyContainer,
-  .chartCompositionContainer, .chartTaxClassContainer {
-  width: 100%;
-  height: 400px;
-}
+  .chartQuarterlyContainer,
+  .chartMonthlyContainer,
+  .chartCompositionContainer,
+  .chartTaxClassContainer {
+    width: 100%;
+    height: 400px;
+  }
   .megachart-container {
     width: 100%;
     height: 400px;
@@ -1205,7 +1125,8 @@ button {
     width: 100%;
     height: 400px;
   }
-  .buttonSortRevenue, .buttonSortTransaction {
+  .buttonSortRevenue,
+  .buttonSortTransaction {
     padding-left: 15px;
   }
   .sortTotalRevenue label {
@@ -1221,7 +1142,7 @@ button {
     padding-right: 30px;
   }
   .form-chart-2 {
-    display:flex;
+    display: flex;
     flex-direction: column;
   }
   label.start-month {
@@ -1235,13 +1156,14 @@ button {
   #chart-2-filter-apply {
     margin-top: 5px;
   }
-  #start-month, #end-month, #chart-2-filter-apply {
+  #start-month,
+  #end-month,
+  #chart-2-filter-apply {
     width: 50%;
   }
   #chart-2-filter-apply {
     margin-left: 0;
   }
-
 }
 
 /*media screen untuk ukuran tablet*/
