@@ -270,15 +270,19 @@ fetch("File Json/Sales_Composition_building_classification (1).json")
     console.log(data);
     var arrBuildingClass = [];
     var arrTotalRevenue = [];
+    var arrPercentage = [];
     data.forEach((element) => {
       arrTotalRevenue.push(element.TOTAL_REVENUE);
       arrBuildingClass.push(element.BUILDING_CLASS);
+      arrPercentage.push(element.PERCENTAGE_REVENUE)
     });
     console.log(arrBuildingClass);
     console.log(arrTotalRevenue);
+    console.log(arrPercentage);
     var objChart = {
       total_revenue: arrTotalRevenue,
       building_class: arrBuildingClass,
+      percentage_revenue: arrPercentage,
     };
     console.log(objChart);
     createChart3(objChart, "pie");
@@ -314,6 +318,17 @@ function createChart3(arrPassed, type) {
         },
         legend: {
           position: "bottom",
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const index = context.dataIndex;
+              const label = context.label;
+              const totalRevenues = arrPassed.total_revenue[index];
+              const percentages = arrPassed.percentage_revenue[index];
+              return `${label}: ${totalRevenues} (${percentages}%)`;
+            },
+          },
         },
       },
     },
