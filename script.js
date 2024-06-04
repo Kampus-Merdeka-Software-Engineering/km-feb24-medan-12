@@ -34,7 +34,7 @@ function createQuarterlySalesChart() {
 }
 
 function createQuarterlyChart(arrPassed, type) {
-  const ctx = document.getElementById("mychart_1");
+  const ctx = document.getElementById("chartQuarterly");
   new Chart(ctx, {
     type: type, // Sekarang adalah grafik garis
     data: {
@@ -89,7 +89,7 @@ function createQuarterlyChart(arrPassed, type) {
 createQuarterlySalesChart();
 
 //MONTHLY AVERAGE REVENUE
-const chart2 = document.getElementById("mychart_2").getContext("2d");
+const chart2 = document.getElementById("chartMonthly").getContext("2d");
 let chartMonthlyRevenue = null;
 
 fetch("File Json/Monthly_Average_Revenue.json")
@@ -258,7 +258,7 @@ function createChart7(arrLine3, type) {
 }
 
 // SALES COMPOSITION
-const ctx = document.getElementById("mychart_3");
+const ctx = document.getElementById("chartComposition");
 
 fetch("File Json/Sales_Composition_building_classification (1).json")
   .then(function (response) {
@@ -336,7 +336,7 @@ function createChart3(arrPassed, type) {
 }
 
 //Total Revenue By Tax Class
-const chart4 = document.getElementById("mychart_4");
+const chart4 = document.getElementById("chartTaxClass");
 let dataTaxClass = null;
 let chartTaxClass = null;
 
