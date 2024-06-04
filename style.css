@@ -551,7 +551,7 @@ button:hover {
   background-color: #555;
 }
 
-.chart-area {
+.chartArea {
   padding-left: 65px;
   max-width: 100%;
   margin-bottom: 20px;
@@ -1142,7 +1142,7 @@ button {
     height: 100%;
   }
 
-  .chart-area {
+  .chartArea {
     padding-left: 20px;
   }
   .chartCard {
@@ -1302,7 +1302,7 @@ button {
     height: 23px;
   }
 
-  .chart-area {
+  .chartArea {
     width: 100%;
     padding-left: 0px;
   }
