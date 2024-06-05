@@ -1,0 +1,161 @@
+[{
+  "BUILDING_CLASS_CATEGORY": "13 CONDOS - ELEVATOR APARTMENTS            ",
+  "Total_Revenue": "3977746183",
+  "Revenue_Percentage": "90.08693001999319"
+}, {
+  "BUILDING_CLASS_CATEGORY": "07 RENTALS - WALKUP APARTMENTS             ",
+  "Total_Revenue": "92785291",
+  "Revenue_Percentage": "2.101376415852048"
+}, {
+  "BUILDING_CLASS_CATEGORY": "15 CONDOS - 2-10 UNIT RESIDENTIAL          ",
+  "Total_Revenue": "72920548",
+  "Revenue_Percentage": "1.6514850376252763"
+}, {
+  "BUILDING_CLASS_CATEGORY": "12 CONDOS - WALKUP APARTMENTS              ",
+  "Total_Revenue": "59807865",
+  "Revenue_Percentage": "1.3545125055809022"
+}, {
+  "BUILDING_CLASS_CATEGORY": "43 CONDO OFFICE BUILDINGS                  ",
+  "Total_Revenue": "55855020",
+  "Revenue_Percentage": "1.2649895308831272"
+}, {
+  "BUILDING_CLASS_CATEGORY": "02 TWO FAMILY DWELLINGS                    ",
+  "Total_Revenue": "28907667",
+  "Revenue_Percentage": "0.65469309861952718"
+}, {
+  "BUILDING_CLASS_CATEGORY": "45 CONDO HOTELS                            ",
+  "Total_Revenue": "21560848",
+  "Revenue_Percentage": "0.48830430992527468"
+}, {
+  "BUILDING_CLASS_CATEGORY": "03 THREE FAMILY DWELLINGS                  ",
+  "Total_Revenue": "17539435",
+  "Revenue_Percentage": "0.39722842553104631"
+}, {
+  "BUILDING_CLASS_CATEGORY": "46 CONDO STORE BUILDINGS                   ",
+  "Total_Revenue": "13467127",
+  "Revenue_Percentage": "0.30499988481023727"
+}, {
+  "BUILDING_CLASS_CATEGORY": "01 ONE FAMILY DWELLINGS                    ",
+  "Total_Revenue": "13070572",
+  "Revenue_Percentage": "0.29601881339679292"
+}, {
+  "BUILDING_CLASS_CATEGORY": "22 STORE BUILDINGS                         ",
+  "Total_Revenue": "12004621",
+  "Revenue_Percentage": "0.27187744068876424"
+}, {
+  "BUILDING_CLASS_CATEGORY": "04 TAX CLASS 1 CONDOS                      ",
+  "Total_Revenue": "7536500",
+  "Revenue_Percentage": "0.17068463317174873"
+}, {
+  "BUILDING_CLASS_CATEGORY": "14 RENTALS - 4-10 UNIT                     ",
+  "Total_Revenue": "6170020",
+  "Revenue_Percentage": "0.13973696017545986"
+}, {
+  "BUILDING_CLASS_CATEGORY": "37 RELIGIOUS FACILITIES                    ",
+  "Total_Revenue": "6043466",
+  "Revenue_Percentage": "0.13687079908391636"
+}, {
+  "BUILDING_CLASS_CATEGORY": "28 COMMERCIAL CONDOS                       ",
+  "Total_Revenue": "5238821",
+  "Revenue_Percentage": "0.11864741466694805"
+}, {
+  "BUILDING_CLASS_CATEGORY": "16 CONDOS - 2-10 UNIT WITH COMMERCIAL UNIT ",
+  "Total_Revenue": "3850000",
+  "Revenue_Percentage": "0.087193768687219883"
+}, {
+  "BUILDING_CLASS_CATEGORY": "26 OTHER HOTELS                            ",
+  "Total_Revenue": "3317624",
+  "Revenue_Percentage": "0.075136659648615378"
+}, {
+  "BUILDING_CLASS_CATEGORY": "21 OFFICE BUILDINGS                        ",
+  "Total_Revenue": "3239551",
+  "Revenue_Percentage": "0.073368483258299172"
+}, {
+  "BUILDING_CLASS_CATEGORY": "29 COMMERCIAL GARAGES                      ",
+  "Total_Revenue": "3227010",
+  "Revenue_Percentage": "0.07308445804970011"
+}, {
+  "BUILDING_CLASS_CATEGORY": "10 COOPS - ELEVATOR APARTMENTS             ",
+  "Total_Revenue": "3169968",
+  "Revenue_Percentage": "0.071792586113737414"
+}, {
+  "BUILDING_CLASS_CATEGORY": "08 RENTALS - ELEVATOR APARTMENTS           ",
+  "Total_Revenue": "2606165",
+  "Revenue_Percentage": "0.05902372679759179"
+}, {
+  "BUILDING_CLASS_CATEGORY": "47 CONDO NON-BUSINESS STORAGE              ",
+  "Total_Revenue": "2216068",
+  "Revenue_Percentage": "0.050188914438220773"
+}, {
+  "BUILDING_CLASS_CATEGORY": "44 CONDO PARKING                           ",
+  "Total_Revenue": "1394260",
+  "Revenue_Percentage": "0.031576826994764468"
+}, {
+  "BUILDING_CLASS_CATEGORY": "23 LOFT BUILDINGS                          ",
+  "Total_Revenue": "1381501",
+  "Revenue_Percentage": "0.031287864580561806"
+}, {
+  "BUILDING_CLASS_CATEGORY": "09 COOPS - WALKUP APARTMENTS               ",
+  "Total_Revenue": "372000",
+  "Revenue_Percentage": "0.00842495635107683"
+}, {
+  "BUILDING_CLASS_CATEGORY": "49 CONDO WAREHOUSES/FACTORY/INDUS          ",
+  "Total_Revenue": "25000",
+  "Revenue_Percentage": "0.00056619330316376546"
+}, {
+  "BUILDING_CLASS_CATEGORY": "42 CONDO CULTURAL/MEDICAL/EDUCATIONAL/ETC  ",
+  "Total_Revenue": "10",
+  "Revenue_Percentage": "2.2647732126550618e-07"
+}, {
+  "BUILDING_CLASS_CATEGORY": "38 ASYLUMS AND HOMES                       ",
+  "Total_Revenue": "1",
+  "Revenue_Percentage": "2.2647732126550619e-08"
+}, {
+  "BUILDING_CLASS_CATEGORY": "40 SELECTED GOVERNMENTAL FACILITIES        ",
+  "Total_Revenue": "1",
+  "Revenue_Percentage": "2.2647732126550619e-08"
+}, {
+  "BUILDING_CLASS_CATEGORY": "30 WAREHOUSES                              ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "25 LUXURY HOTELS                           ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "32 HOSPITAL AND HEALTH FACILITIES          ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "34 THEATRES                                ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "35 INDOOR PUBLIC AND CULTURAL FACILITIES   ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "17 CONDO COOPS                             ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "11A CONDO-RENTALS                           ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "48 CONDO TERRACES/GARDENS/CABANAS          ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "31 COMMERCIAL VACANT LAND                  ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "33 EDUCATIONAL FACILITIES                  ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}, {
+  "BUILDING_CLASS_CATEGORY": "41 TAX CLASS 4 - OTHER                     ",
+  "Total_Revenue": "0",
+  "Revenue_Percentage": "0.0"
+}]
