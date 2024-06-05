@@ -314,6 +314,20 @@ section {
     margin-top: -8px;
   }
 
+  .footer-box h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .footer-box p {
+    font-size: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: -8px;
+  }
   .social a .bx {
     font-size: 15px;
     color: whitesmoke;
