@@ -292,20 +292,22 @@ section {
     display: flex;
     flex-direction: row;
     grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    gap: 1.5rem;
     background-color: #d7c4aa;
     width: 100%;
     height: 100px;
-    margin-top: -10px;
+    justify-content: center;
+    font-size: 5px;
   }
-  .footer-box h2 {
-    font-size: 15px;
+  .footer-box1 h2 {
+    font-size: 13px;
     font-weight: 600;
     margin-bottom: 10px;
     text-align: center;
-    margin-top: 12px;
+    margin-top: -17px;
   }
 
-  .footer-box p {
+  .footer-box1 p {
     font-size: 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -1252,7 +1254,7 @@ button {
     margin-left: 0;
   }
   .footer-box {
-    padding-top: 5px;
+    padding-top: -2px;
   }
 }
 
