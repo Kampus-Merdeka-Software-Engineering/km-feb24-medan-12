@@ -302,7 +302,7 @@ section {
     font-weight: 600;
     margin-bottom: 10px;
     text-align: center;
-    margin-top: -20px;
+    margin-top: 12px;
   }
 
   .footer-box p {
@@ -1252,7 +1252,7 @@ button {
     margin-left: 0;
   }
   .footer-box {
-    padding-top: 20px;
+    padding-top: 5px;
   }
 }
 
