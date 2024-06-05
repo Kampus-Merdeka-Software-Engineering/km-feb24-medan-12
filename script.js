@@ -701,9 +701,7 @@ function createChart5(arrPassed5, type) {
   let arrBgColors = [];
   arrPassed5.total_revenue.forEach((element, index) => {
     arrBgColors.push(
-      `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
-        Math.random() * 256
-      )}, ${Math.floor(Math.random() * 256)}, 0.8)`
+       `rgba(47, 160, 215, 0.5)`
     );
   });
 
