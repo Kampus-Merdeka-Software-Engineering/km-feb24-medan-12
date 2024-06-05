@@ -288,31 +288,6 @@ section {
     margin-left: 20px;
   }
 
-  .dashboard .heading h2 {
-    position: relative;
-    margin-top: 5px;
-    font-size: 30px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .about-img img {
-    border-radius: 0.5rem;
-    width: 270px;
-    height: 180px;
-    margin-left: 20px;
-  }
-  .about-text h2 {
-    font-size: 20px;
-    text-transform: uppercase;
-    margin-left: 20px;
-  }
-  .about-text p {
-    font-size: 10px;
-    margin: 0.5rem 0 1.1rem;
-    text-align: justify;
-    margin-left: 20px;
-  }
-
   .footer {
     display: flex;
     flex-direction: row;
