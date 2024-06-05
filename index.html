@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Page Dashboard Manhattan Property Sales</title>
     <!--Font Google-->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital@1&family=Courgette&family=Poppins:wght@300;400;500;600;700&family=Ubuntu&family=Ysabeau+Infant:ital,wght@1,1&display=swap");
@@ -11,79 +11,446 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="style.css" />
-    <!--Box Icons-->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+
     <!--Icons-CSS-->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
   </head>
-  <body>
+  <body class="responsive-sidebar">
+    <!--navigasi bar-->
     <nav class="sidebar">
       <header>
         <div class="image-text">
-          <a class="image">
-            <img src="img/logo.jpg" alt="logo" /></a>
+          <span class="image">
+            <img src="img/logo.jpg" alt="logo" />
           </span>
         </div>
       </header>
       <div class="menubar">
         <div class="menu-links">
+          <li class="nav-list">
+            <a href="home.html">
+              <i class="bx bx-home-alt icon"></i>
+            </a>
+          </li>
           <ul class="menu-links">
             <li class="nav-list">
               <a href="index.html">
-                <i class="bx bx-home-alt icon"></i></a>
-            </li>
-            <li class="nav-list">
-              <a href="dashboard.html">
-                <i class="bx bxs-dashboard icon"></i></a>
+                <i class="bx bxs-dashboard icon"></i>
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <section class="home" id="home">
-      <div class="content">
-        <h1>Manhattan Sales Dashboard</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-          eveniet similique error autem ipsum tenetur.
-        </p>
-        <a href="dashboard.html" class="btn">Go to dashboard</a>
+    <!--section untuk bagian utama dari dashboard-->
+    <main class="main">
+      <!--Header-->
+      <div class="header">
+        <h1>Manhattan Property Sales Dashboard</h1>
       </div>
-    </section>
-
-    <!--footer-->
-    <section class="footer">
-      <div class="footer-box1">
-        <h2>Manhattan Sales Dashboard</h2>
-        <p>Follow our social media:</p>
-        <div class="social">
-          <a href="https://www.linkedin.com/school/revou/"
-            ><i class="bx bxl-linkedin"></i
-          ></a>
-          <a href="#"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.instagram.com/revou_id/"
-            ><i class="bx bxl-instagram"></i
-          ></a>
-          <a
-            href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-medan-12"
-            ><i class="bx bxl-github"></i
-          ></a>
+      <!--navbar untuk mobile-->
+      <nav class="sidebar-mobile">
+        <header>
+          <div class="image-text">
+            <span class="image">
+              <img src="img/logo.jpg" alt="logo" />
+            </span>
+          </div>
+        </header>
+        <div class="menubar">
+          <div class="menu-links">
+            <ul class="menu-links">
+              <li class="nav-list">
+                <a href="home.html">
+                  <i class="bx bx-home-alt icon"></i>
+                </a>
+              </li>
+              <li class="nav-list">
+                <a href="index.html">
+                  <i class="bx bxs-dashboard icon"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--section untuk menampung bagian form-->
+      <div class="main-content">
+        <div class="chart-mini-filter">
+          <!--section form-->
+          <div class="user-interaction">
+            <!--FORM-->
+            <form id="filter-form" action="#" , method="post">
+              <div class="filter">
+                <!--Section untuk select "NEIGHBORHOOD"-->
+                <div class="filter-neighborhood">
+                  <label id="label-NEIGHBORHOOD" for="NEIGHBORHOOD"
+                    >NEIGHBORHOOD</label
+                  >
+                  <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
+                    <option value="" disabled selected hidden>ALL</option>
+                    <option value="ALPHABET CITY">ALPHABET CITY</option>
+                    <option value="CHELSEA">CHELSEA</option>
+                    <option value="CHINATOWN">CHINATOWN</option>
+                    <option value="CIVIC CENTER">CIVIC CENTER</option>
+                    <option value="CLINTON">CLINTON</option>
+                    <option value="EAST VILLAGE">EAST VILLAGE</option>
+                    <option value="FASHION">FASHION</option>
+                    <option value="FINANCIAL">FINANCIAL</option>
+                    <option value="FLATIRON">FLATIRON</option>
+                    <option value="GRAMERCY">GRAMERCY</option>
+                    <option value="GREENWICH VILLAGE CENTRAL">
+                      GREENWICH VILLAGE-CENTRAL
+                    </option>
+                    <option value="GREENWICH VILLAGE WEST">
+                      GREENWICH VILLAGE-WEST
+                    </option>
+                    <option value="HARLEM CENTRAL">HARLEM-CENTRAL</option>
+                    <option value="HARLEM EAST">HARLEM-EAST</option>
+                    <option value="HARLEM UPPER">HARLEM-UPPER</option>
+                    <option value="HARLEM WEST">HARLEM-WEST</option>
+                    <option value="INWOOD">INWOOD</option>
+                    <option value="JAVITS CENTER">JAVITS CENTER</option>
+                    <option value="KIPS BAY">KIPS BAY</option>
+                    <option value="LITTLE ITALY">LITTLE ITALY</option>
+                    <option value="LOWER EAST SIDE">LOWER EAST SIDE</option>
+                    <option value="MANHATTAN VALLEY">MANHATTAN VALLEY</option>
+                    <option value="MIDTOWN CBD">MIDTOWN CBD</option>
+                    <option value="MIDTOWN EAST">MIDTOWN EAST</option>
+                    <option value="MIDTOWN WEST">MIDTOWN WEST</option>
+                    <option value="MORNINGSIDE HEIGHTS">
+                      MORNINGSIDE HEIGHTS
+                    </option>
+                    <option value="MURRAY HILL">MURRAY HILL</option>
+                    <option value="ROOSEVELT ISLAND">ROOSEVELT ISLAND</option>
+                    <option value="SOHO">SOHO</option>
+                    <option value="SOUTHBRIDGE">SOUTHBRIDGE</option>
+                    <option value="TRIBECA">TRIBECA</option>
+                    <option value="UPPER EAST SIDE (59 79)">
+                      UPPER EAST SIDE (59-79)
+                    </option>
+                    <option value="UPPER EAST SIDE (79 96)">
+                      UPPER EAST SIDE (79-96)
+                    </option>
+                    <option value="UPPER EAST SIDE (96 110)">
+                      UPPER EAST SIDE (96-110)
+                    </option>
+                    <option value="UPPER WEST SIDE (59 79)">
+                      UPPER WEST SIDE (59-79)
+                    </option>
+                    <option value="UPPER WEST SIDE (79 96)">
+                      UPPER WEST SIDE (79-96)
+                    </option>
+                    <option value="UPPER WEST SIDE (96 116)">
+                      UPPER WEST SIDE (96-116)
+                    </option>
+                    <option value="WASHINGTON HEIGHTS LOWER">
+                      WASHINGTON HEIGHTS LOWER
+                    </option>
+                    <option value="WASHINGTON HEIGHTS UPPER">
+                      WASHINGTON HEIGHTS UPPER
+                    </option>
+                    <option value="">ALL</option>
+                  </select>
+                </div>
+                <!--section untuk tanggal-->
+                <div class="from-date">
+                  <label id="date" for="start-date">FROM:</label>
+                  <input type="date" id="start-date" name="start-date" />
+                </div>
+                <div class="to-date">
+                  <label id="date" for="end-date">TO:</label>
+                  <input type="date" id="end-date" name="end-date" />
+                </div>
+                <!--Tombol untuk submit filter-->
+                <div class="buttons">
+                  <label id="label-btn" for="stickyButton">tombol</label>
+                  <button id="stickyButton" class="sticky-button" type="submit">
+                    FILTER
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="chartCard">
+            <div class="chartTotalRevenue">
+              <h3>Total revenue</h3>
+              <p id="total-revenue-text"></p>
+            </div>
+            <div class="chartTotalTransaction">
+              <h3>Total Transaction</h3>
+              <p id="total-transaction"></p>
+            </div>
+            <div class="chartAverageSales">
+              <h3>Average Sales</h3>
+              <p id="average-sales"></p>
+            </div>
+            <div class="chartResidentialUnit">
+              <h3>Total Residential Unit</h3>
+              <p id="total-residential"></p>
+            </div>
+            <div class="chartCommercialUnit">
+              <h3>Total Commercial Unit</h3>
+              <p id="total-commercial"></p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <!--copyright-->
-    <div class="copyright">
-      <p>&#169; Medan-Team 12</p>
+      <div class="chartArea">
+        <!--section untuk chart ringkasan yang berupa angka-->
+        <!--section untuk chart berupa grafik-->
+        <div class="chart">
+          <div class="chartQuarterlyBox">
+            <div class="chartQuarterlyContainer">
+            <canvas id="chartQuarterly"> </canvas>
+            </div>
+            <div>
+              <div class="button-Quarterly">
+                <button
+                  id="infoQuarterlyChart"
+                  onclick="showHideQuarter(event)"
+                >
+                  INSIGHT
+                </button>
+              </div>
+              <div id="insightQuarter" class="insightQuarterlyChartBox">
+                <p id="insightQuarterlyChart" class="hidden">
+                  Adanya
+                  <b
+                    >tren kenaikan menuju Q4 2016 yang menunjukkan adanya
+                    peningkatan aktivitas pasar menjelang akhir tahun</b
+                  >. Kemudian terus
+                  <b
+                    >meningkat ke Q1 2017 dan mencapai puncak di Q2 2017 disusul
+                    oleh penurunan tajam di Q3 2017</b
+                  >. Penurunan ini bisa mencerminkan
+                  <b
+                    >penurunan musiman atau mungkin faktor pasar yang
+                    mempengaruhi keputusan pembelian</b
+                  >.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="chartMonthlyBox">
+            <div class="chart-2-filter-div">
+              <form class="form-chart-2" onsubmit="updateMonthlyRevenueChart(event)">
+                <label class="start-month" for="start-month">Start Month:</label>
+                <select id="start-month"></select>
+                <label class="end-month"for="end-month">End Month:</label>
+                <select id="end-month"></select>
+                <input type="submit" value="Apply" id="chart-2-filter-apply" />
+              </form>
+            </div>
+            <div class="chartMonthlyContainer">
+            <canvas id="chartMonthly"> </canvas>
+            </div>
+                    <div>
+                      <div class="button-center-container">
+                        <button id="infoLineChart" onclick="showHideMonthly(event)">INSIGHT</button>
+                      </div>
+                      <div id="insightChart" class="insightLineChartBox">
+                        <div id="insightChartLine" class="hidden">
+                          <p id="insightLineChart" class="hidden">
+                      
+                            <p class="insightLineChartFilter show" data-range-from="2017-03" data-range-to="2017-06">
+                              Pendapatan antara <b>bulan Maret 2017 hingga Juni 2017 mengalami peningkatan yang signifikan</b> 
+                            </p>
+                            <p class="insightLineChartFilter show" data-range-from="2016-09" data-range-to="2017-03">
+                              Pendapatan antara <b>bulan September 2016 hingga Maret 2017 mengalami fluktasi naik turun</b>
+                            </p>
+                            <p class="insightLineChartFilter show" data-range-from="2017-06" data-range-to="2017-08">
+                              Pendapatan antara <b>bulan Juni 2017 hingga Agustus 2017 mengalami penurunan yang  signifikan</b> setelah mencapai puncak pendapatan rata rata tertinggi
+                            </p>
+                            <p class="insightLineChartFilter show" data-range-from="2016-09" data-range-to="2017-08">
+                              <b>Bulan September 2016 mengalami pendapatan rata-rata terendah (US$ 520.113)</b>,
+                               sedangkan pada <b>bulan Juni 2017 mengalami pendapatan rata-rata tertinggi (US$ 764.771)</b>
+                            </p>
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          <div class="chartCompositionBox">
+            <div class="chartCompositionContainer">
+            <canvas id="chartComposition"> </canvas>
+            </div>
+            <div>
+              <div class="button-piechart">
+                <button id="infoPieChart" onclick="showHideComposition(event)">
+                  INSIGHT
+                </button>
+              </div>
+              <div id="insightChart" class="insightPieChartBox">
+                <p id="insightPieChart" class="hidden">
+                  Chart di atas menunjukkan bahwa 
+                  <b> Condo Residential Unit in Elevator Building </b>  
+                  mendominasi penjualan dengan 
+                  <b> 90,1% atau sekitar US$ 3.997.746.183.</b>
+                  Penjualan didominasi oleh 
+                  <b>Residential Unit in Elevator building,</b>
+                  jauh lebih besar dibandingkan jenis properti lainnya seperti 
+                  <b>Residential Unit in 2-10 unit dan Residental Unit in Walk Building.</b>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="chartTaxClassBox">
+            <div class="chart-4-filter-div">
+              <form onsubmit="updateTaxClassChart(event)">
+                <label for="chart-4-taxclass">Select Tax Class: </label>
+                <select id="chart-4-taxclass"></select>
+              </form>
+              <div class="chart-4-sort-div">
+                <button id="btn-sort-ascending" onclick="sortTaxClass('asc')">
+                  Sort Ascending
+                </button>
+                <button id="btn-sort-descending" onclick="sortTaxClass('desc')">
+                  Sort Descending
+                </button>
+              </div>
+            </div>
+            <div class="chartTaxClassContainer">
+            <canvas id="chartTaxClass"> </canvas>
+            </div>
+            <div>
+              <div class="buttonInsight-Taxclass">
+                <button
+                  id="infoChartTaxClass"
+                  onclick="showHideTaxClass(event)"
+                >
+                  INSIGHT
+                </button>
+              </div>
+              <div id="insightTaxClass" class="insightChartTaxClass">
+                <p id="insightChartTaxClass" class="hidden"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+      <div class="chart-mega">
+        <div class="chart-mega-1">
+          <div class="sortChartMega">
+          <div class="sortRevenue">
+            <div class="chartMegaRevenue">
+            <label for="sortAscRevenue">Sort by Revenue : </label>
+            </div>
+            <div class="buttonSortRevenue">
+            <button id="sortAscRevenue" onclick="sortChartData('revenue','asc')">Revenue Asc</button>
+            <button id="sortDescRevenue" onclick="sortChartData('revenue','desc')">Revenue Desc</button>
+            </div>
+          </div>
+          <div class="sortTransactions">
+            <div class="chartMegaTransaction">
+            <label for="sortAscTransactions">Sort by Transaction : </label>
+            </div>
+            <div class="buttonSortTransaction">
+            <button id="sortAscTransactions" onclick="sortChartData('transaction','asc')">Transaction Asc</button>
+            <button id="sortDescTransactions" onclick="sortChartData('transaction','desc')">Transaction Desc</button>
+            </div>
+          </div>
+          </div>
+          <div class = "megachart-container">
+          <canvas id="megachart"> </canvas>
+          </div>
+          <div>
+            <div class="button-center-container">
+              <button id="infoChartMega" onclick="showHideInsight(event)">
+                INSIGHT
+              </button>
+            </div>
+            <div id="insightContainer" class="insightChartMegaBox">
+              <p id="insightChartMega" class="hidden">
+                Chart di atas menunjukkan
+                <b
+                  >Perbedaan Jumlah Pendapatan dan Transaksi Penjualan Properti
+                  Berdasarkan Neighborhood di Manhattan, New York</b>
+                menunjukkan bahwa <b>Harlem-Central</b> memiliki pendapatan
+                tertinggi dengan <b>557 transaksi penjualan</b>.
+                <b>Midtown West</b> memiliki pendapatan tertinggi kedua dan
+                jumlah transaksi terbanyak, yaitu <b>614</b>.
+                <b>Tribeca</b> mencatat pendapatan terkecil dengan
+                <b>308 transaksi</b>, sedangkan <b>Clinton</b> memiliki jumlah
+                transaksi paling sedikit, yaitu <b>235 transaksi</b>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-mega-2">
+          <div class="sortTotalRevenue">
+            <label id="sortAscMega" for="sortAsc">Sort by Revenue : </label>
+            <button id="sortChartAsc" onclick="sortChartDataRevenue('revenue','asc')">Sort Ascending</button>
+            <button id="sortChartDesc" onclick="sortChartDataRevenue('revenue','desc')">Sort Descending</button>
+          </div>
+          <div class="megachart-2-container">
+          <canvas id="megachart_2"> </canvas>
+          </div>
+          <div>
+            <div class="button-center-container">
+              <button id="infoChart2Mega" onclick="showHideInsight2(event)">
+                INSIGHT
+              </button>
+            </div>
+            <div id="insight2Container" class="insightChart2MegaBox">
+              <p id="insightChart2Mega" class="hidden">
+                Chart di atas menunjukkan
+                <b
+                  >Perbandingan Jumlah Pendapatan di Manhattan, New York
+                  Berdasarkan Kategori Bangunannya</b
+                >
+                dimana <b>13 Condos - Elevator Apartements</b> merupakan
+                kategori bangunan yang <b>paling populer</b> dengan total
+                pendapatan mencapai <b>$3,916,043,073</b>, setara dengan
+                <b>91% dari total pendapatan keseluruhan</b>.
+                <b>07 Rentals - Walkup Apartements</b> merupakan kategori
+                bangunan <b>tertinggi kedua</b> dengan total pendapatan sebesar
+                <b>$90,660,291</b>, setara dengan
+                <b>2,1% dari total penjualan keseluruhan</b>.
+                <b>15 Condos - 2-10 Unit Resindential</b> merupakan kategori
+                bangunan <b>tertinggi ketiga</b> dengan total pendapatan sebesar
+                <b>$70,795,548</b>, setara dengan
+                <b>1,7% dari total penjualan keseluruhan</b>. Sedangkan
+                <b>01 One Family Dwellings</b> menjadi kategori bangunan dengan
+                <b>penjualan terendah</b> yakni sebesar <b>$13,070,572</b>,
+                setara dengan <b>0.3% dari total pendapatan keseluruhan</b>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--footer-->
+      <footer class="footer">
+        <div class="footer-box">
+          <h2>Manhattan Sales Dashboard</h2>
+          <p>Follow our social media:</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/school/revou/"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/revou_id/"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a
+              href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-medan-12"
+              ><i class="bx bxl-github"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
+      <div class="copyright">
+        <p>&#169; Medan-Team 12</p>
+      </div>
+    </main>
+    <!--file javascript-->
+    <script src="script.js"></script>
+    <script src="script_2.js"></script>
   </body>
 </html>
