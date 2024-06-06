@@ -48,7 +48,6 @@ function createQuarterlyChart(arrPassed, type) {
           borderWidth: 1,
           fill: false, // Pastikan area di bawah garis tidak diisi
           tension: 0.4, // Menambahkan kelengkungan pada garis
-          display: false,
         },
       ],
     },
