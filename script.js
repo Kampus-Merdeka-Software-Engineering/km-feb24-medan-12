@@ -60,10 +60,9 @@ function createQuarterlyChart(arrPassed, type) {
           text: "QUARTERLY SALES REVENUE",
         },
         legend: {
-          display: false,
+          onClick  : (e) => e.stopPropagation()
         },
         tooltip: {
-          enabled: false,
           callbacks: {
             label: function (context) {
               let label = "Total Revenue: " + context.raw || "";
@@ -246,11 +245,8 @@ function createChart7(arrLine3, type) {
           text: "MONTHLY AVERAGE REVENUE",
         },
         legend: {
-          display: false,
+          onClick  : (e) => e.stopPropagation()
         },
-        tooltip: {
-          enabled: false,
-        }
       },
       scales: {
         y: {
@@ -331,10 +327,8 @@ function createChart3(arrPassed, type) {
         legend: {
           position: "bottom",
           onHover: null,
-          onClick: null
         },
         tooltip: {
-          enabled: false,
           callbacks: {
             label: function(context) {
               const index = context.dataIndex;
@@ -470,15 +464,12 @@ function createChart2(arrPassed2, type) {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          display: false,
+          onClick  : (e) => e.stopPropagation()
         },
         title: {
           display: true,
           text: "TOTAL REVENUE BY TAX CLASS",
         },
-        tooltip: {
-          enabled: false,
-        }
       },
       scales: {
         y: {
@@ -568,11 +559,8 @@ function createChart(arrPassed, type) {
         },
         legend: {
           onHover: null,
-          onClick: null
+          onClick  : (e) => e.stopPropagation()
         },
-        tooltip: {
-          enabled: false,
-        }
       },
       layout: {
         padding: {},
@@ -771,10 +759,9 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
           text: "TOP 10 TOTAL REVENUE BY BUILDING CATEGORY",
         },
         legend: {
-          display: false,
+          onClick  : (e) => e.stopPropagation()
         },
         tooltip: {
-          enabled: false,
           callbacks: {
             label: function (tooltipItem, data) {
               const formatterUsd = new Intl.NumberFormat("en-US", {
