@@ -60,6 +60,9 @@ function createQuarterlyChart(arrPassed, type) {
           display: true,
           text: "QUARTERLY SALES REVENUE",
         },
+        legend: {
+          display: false,
+        },
         tooltip: {
           enabled: false,
           callbacks: {
@@ -81,9 +84,6 @@ function createQuarterlyChart(arrPassed, type) {
             text: "Total Revenue (in USD)",
           },
         },
-      },
-      legend: {
-        display: false // Menonaktifkan legenda
       },
     },
   });
@@ -246,6 +246,9 @@ function createChart7(arrLine3, type) {
           display: true,
           text: "MONTHLY AVERAGE REVENUE",
         },
+        legend: {
+          display: false,
+        },
         tooltip: {
           enabled: false,
         }
@@ -328,6 +331,8 @@ function createChart3(arrPassed, type) {
         },
         legend: {
           position: "bottom",
+          onHover: null,
+          onClick: null
         },
         tooltip: {
           enabled: false,
@@ -465,6 +470,9 @@ function createChart2(arrPassed2, type) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        legend: {
+          display: false,
+        },
         title: {
           display: true,
           text: "TOTAL REVENUE BY TAX CLASS",
@@ -558,6 +566,10 @@ function createChart(arrPassed, type) {
         title: {
           display: true,
           text: "TOP 10 TOTAL REVENUE & TRANSACTION BY NEIGHBORHOOD",
+        },
+        legend: {
+          onHover: null,
+          onClick: null
         },
         tooltip: {
           enabled: false,
@@ -759,6 +771,9 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
           display: true,
           text: "TOP 10 TOTAL REVENUE BY BUILDING CATEGORY",
         },
+        legend: {
+          display: false,
+        },
         tooltip: {
           enabled: false,
           callbacks: {
@@ -781,9 +796,6 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
               return strDisplay;
             },
           },
-        },
-        legend: {
-          position: "top",
         },
         datalabels: {
           clip: true,
