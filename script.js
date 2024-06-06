@@ -48,6 +48,7 @@ function createQuarterlyChart(arrPassed, type) {
           borderWidth: 1,
           fill: false, // Pastikan area di bawah garis tidak diisi
           tension: 0.4, // Menambahkan kelengkungan pada garis
+          display: false,
         },
       ],
     },
@@ -60,6 +61,7 @@ function createQuarterlyChart(arrPassed, type) {
           text: "QUARTERLY SALES REVENUE",
         },
         tooltip: {
+          enabled: false,
           callbacks: {
             label: function (context) {
               let label = "Total Revenue: " + context.raw || "";
@@ -80,7 +82,9 @@ function createQuarterlyChart(arrPassed, type) {
           },
         },
       },
-      responsive: true,
+      legend: {
+        display: false // Menonaktifkan legenda
+      },
     },
   });
 }
@@ -242,6 +246,9 @@ function createChart7(arrLine3, type) {
           display: true,
           text: "MONTHLY AVERAGE REVENUE",
         },
+        tooltip: {
+          enabled: false,
+        }
       },
       scales: {
         y: {
@@ -316,10 +323,14 @@ function createChart3(arrPassed, type) {
           display: true,
           text: "SALES COMPOSITION BUILDING CLASSIFICATION",
         },
+        tooltip: {
+          enabled: false,
+        },
         legend: {
           position: "bottom",
         },
         tooltip: {
+          enabled: false,
           callbacks: {
             label: function(context) {
               const index = context.dataIndex;
@@ -458,6 +469,9 @@ function createChart2(arrPassed2, type) {
           display: true,
           text: "TOTAL REVENUE BY TAX CLASS",
         },
+        tooltip: {
+          enabled: false,
+        }
       },
       scales: {
         y: {
@@ -545,6 +559,9 @@ function createChart(arrPassed, type) {
           display: true,
           text: "TOP 10 TOTAL REVENUE & TRANSACTION BY NEIGHBORHOOD",
         },
+        tooltip: {
+          enabled: false,
+        }
       },
       layout: {
         padding: {},
@@ -743,6 +760,7 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
           text: "TOP 10 TOTAL REVENUE BY BUILDING CATEGORY",
         },
         tooltip: {
+          enabled: false,
           callbacks: {
             label: function (tooltipItem, data) {
               const formatterUsd = new Intl.NumberFormat("en-US", {
