@@ -113,7 +113,56 @@ fetch("File Json/Monthly_Average_Revenue.json")
     generateMonthlyRevenueFilter(objChart);
     createChart7(objChart, "line");
   });
+// Function to show the modal for Monthly Chart
+function showHideMonthly(e) {
+  var modal = document.getElementById("insightMonthlyModal");
+  modal.style.display = "block";
 
+  const startSelect = document.getElementById("start-month");
+  const endSelect = document.getElementById("end-month");
+
+  const from = startSelect.value;
+  const to = endSelect.value;
+
+  const fromIndex = window.dataMonthlyRevenue.Year_month.indexOf(from);
+  const toIndex = window.dataMonthlyRevenue.Year_month.indexOf(to);
+
+  const yearMonth = window.dataMonthlyRevenue.Year_month.slice(
+    fromIndex,
+    toIndex + 1
+  );
+
+  let paragraphInsights = document.getElementsByClassName("insightLineChartFilter");
+  Array.from(paragraphInsights).forEach((element) => {
+    if (
+      yearMonth.includes(element.dataset.rangeFrom) &&
+      yearMonth.includes(element.dataset.rangeTo)
+    ) {
+      element.classList.remove("hidden");
+      element.classList.add("show");
+    }
+    else {
+      element.classList.remove("show");
+      element.classList.add("hidden");
+    }
+  });
+}
+
+// Function to close the modal for Monthly Chart
+function closeMonthlyModal() {
+  var modal = document.getElementById("insightMonthlyModal");
+  modal.style.display = "none";
+}
+
+// Close the modal when the user clicks anywhere outside of the modal
+window.onclick = function(event) {
+  var modal = document.getElementById("insightMonthlyModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Generate Monthly Revenue Filter Options
 function generateMonthlyRevenueFilter(dataMonthlyRevenuePassed) {
   const startSelect = document.getElementById("start-month");
   const endSelect = document.getElementById("end-month");
@@ -159,6 +208,7 @@ function generateMonthlyRevenueFilter(dataMonthlyRevenuePassed) {
   startSelect.dispatchEvent(new Event("change"));
 }
 
+// Update Monthly Revenue Chart
 function updateMonthlyRevenueChart(e) {
   e.preventDefault();
 
@@ -197,31 +247,7 @@ function updateMonthlyRevenueChart(e) {
   chartMonthlyRevenue.data.datasets[0].data = averageRevenue;
   chartMonthlyRevenue.update();
 }
-function showHideInsight(e) {
-  var x = document.getElementById("insightChartMega");
-  
-  if(x.classList.contains('hidden')){
-    x.classList.remove('hidden');
-    x.classList.add('show');
-  }
-  else if(x.classList.contains('show')){
-    x.classList.remove('show');
-    x.classList.add('hidden');
-  }  
-}
 
-function showHideMonthly(e) {
-  var x = document.getElementById("insightChartLine");
-  
-  if(x.classList.contains('hidden')){
-    x.classList.remove('hidden');
-    x.classList.add('show');
-  }
-  else if(x.classList.contains('show')){
-    x.classList.remove('show');
-    x.classList.add('hidden');
-  }  
-}
 function createChart7(arrLine3, type) {
   chartMonthlyRevenue = new Chart(chart2, {
     type: type,
