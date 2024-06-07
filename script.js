@@ -113,7 +113,8 @@ fetch("File Json/Monthly_Average_Revenue.json")
     generateMonthlyRevenueFilter(objChart);
     createChart7(objChart, "line");
   });
-// Function to show the modal for Monthly Chart
+  
+// Open Popup
 function showHideMonthly(e) {
   var modal = document.getElementById("insightMonthlyModal");
   modal.style.display = "block";
@@ -148,21 +149,14 @@ function showHideMonthly(e) {
   });
 }
 
-// Function to close the modal for Monthly Chart
+// Close Popup
 function closeMonthlyModal() {
   var modal = document.getElementById("insightMonthlyModal");
   modal.style.display = "none";
 }
 
-// Close the modal when the user clicks anywhere outside of the modal
-window.onclick = function(event) {
-  var modal = document.getElementById("insightMonthlyModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 
-// Generate Monthly Revenue Filter Options
+// Filter Options
 function generateMonthlyRevenueFilter(dataMonthlyRevenuePassed) {
   const startSelect = document.getElementById("start-month");
   const endSelect = document.getElementById("end-month");
