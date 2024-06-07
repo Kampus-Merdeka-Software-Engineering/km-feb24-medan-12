@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
   </head>
   <body class="responsive-sidebar">
     <!--navigasi bar-->
@@ -32,13 +33,13 @@
       <div class="menubar">
         <div class="menu-links">
           <li class="nav-list">
-            <a href="home.html">
+            <a href="index.html">
               <i class="bx bx-home-alt icon"></i>
             </a>
           </li>
           <ul class="menu-links">
             <li class="nav-list">
-              <a href="index.html">
+              <a href="dashboard.html">
                 <i class="bx bxs-dashboard icon"></i>
               </a>
             </li>
@@ -65,12 +66,12 @@
           <div class="menu-links">
             <ul class="menu-links">
               <li class="nav-list">
-                <a href="home.html">
+                <a href="index.html">
                   <i class="bx bx-home-alt icon"></i>
                 </a>
               </li>
               <li class="nav-list">
-                <a href="index.html">
+                <a href="dashboard.html">
                   <i class="bx bxs-dashboard icon"></i>
                 </a>
               </li>
@@ -89,8 +90,8 @@
                 <!--Section untuk select "NEIGHBORHOOD"-->
                 <div class="filter-neighborhood">
                   <label id="label-NEIGHBORHOOD" for="NEIGHBORHOOD"
-                    >NEIGHBORHOOD</label
-                  >
+                    >NEIGHBORHOOD
+                  </label>
                   <select id="NEIGHBORHOOD" name="NEIGHBORHOOD">
                     <option value="" disabled selected hidden>ALL</option>
                     <option value="ALPHABET CITY">ALPHABET CITY</option>
@@ -217,22 +218,21 @@
                   INSIGHT
                 </button>
               </div>
-              <div id="insightQuarter" class="insightQuarterlyChartBox">
-                <p id="insightQuarterlyChart" class="hidden">
-                  Adanya
-                  <b
-                    >tren kenaikan menuju Q4 2016 yang menunjukkan adanya
-                    peningkatan aktivitas pasar menjelang akhir tahun</b
-                  >. Kemudian terus
-                  <b
-                    >meningkat ke Q1 2017 dan mencapai puncak di Q2 2017 disusul
-                    oleh penurunan tajam di Q3 2017</b
-                  >. Penurunan ini bisa mencerminkan
-                  <b
-                    >penurunan musiman atau mungkin faktor pasar yang
-                    mempengaruhi keputusan pembelian</b
-                  >.
-                </p>
+              <div id="insightModal" class="modal">
+                <div class="modal-content">
+                  <h1 class="Popuptitle"> Insight Monthly Revenue</h1>
+                  <p id="insightQuarterlyChart">
+                    Adanya
+                    <b>tren kenaikan menuju Q4 2016 yang menunjukkan adanya peningkatan aktivitas pasar menjelang akhir tahun</b>.
+                    Kemudian terus
+                    <b>meningkat ke Q1 2017 dan mencapai puncak di Q2 2017 disusul oleh penurunan tajam di Q3 2017</b>.
+                    Penurunan ini bisa mencerminkan
+                    <b>penurunan musiman atau mungkin faktor pasar yang mempengaruhi keputusan pembelian</b>.
+                  </p>
+                  <div class="button-center-container">
+                  <button class="close" onclick="closeModal()">Close</button>
+                </div>
+                </div>
               </div>
             </div>
           </div>
@@ -247,59 +247,71 @@
               </form>
             </div>
             <div class="chartMonthlyContainer">
-            <canvas id="chartMonthly"> </canvas>
+              <canvas id="chartMonthly"> </canvas>
             </div>
                     <div>
                       <div class="button-center-container">
                         <button id="infoLineChart" onclick="showHideMonthly(event)">INSIGHT</button>
                       </div>
-                      <div id="insightChart" class="insightLineChartBox">
-                        <div id="insightChartLine" class="hidden">
-                          <p id="insightLineChart" class="hidden">
-                      
-                            <p class="insightLineChartFilter show" data-range-from="2017-03" data-range-to="2017-06">
-                              Pendapatan antara <b>bulan Maret 2017 hingga Juni 2017 mengalami peningkatan yang signifikan</b> 
+                      <div id="insightMonthlyModal" class="modal">
+                        <div class="modal-content-monthly">
+                          <div id="insightChartLine">
+                            <h1 class="Popuptitle"> Insight Monthly Revenue </h1>
+                            <p id="insightLineChart">
+                              <p class="insightLineChartFilter hidden" data-range-from="2017-03" data-range-to="2017-06">
+                                Pendapatan antara <b>bulan Maret 2017 hingga Juni 2017 mengalami peningkatan yang signifikan</b> 
+                              </p>
+                              <p class="insightLineChartFilter hidden" data-range-from="2016-09" data-range-to="2017-03">
+                                Pendapatan antara <b>bulan September 2016 hingga Maret 2017 mengalami fluktasi naik turun</b>
+                              </p>
+                              <p class="insightLineChartFilter hidden" data-range-from="2017-06" data-range-to="2017-08">
+                                Pendapatan antara <b>bulan Juni 2017 hingga Agustus 2017 mengalami penurunan yang signifikan</b> setelah mencapai puncak pendapatan rata-rata tertinggi
+                              </p>
+                              <p class="insightLineChartFilter hidden" data-range-from="2016-09" data-range-to="2017-08">
+                                <b>Bulan September 2016 mengalami pendapatan rata-rata terendah (US$ 520.113)</b>, sedangkan pada <b>bulan Juni 2017 mengalami pendapatan rata-rata tertinggi (US$ 764.771)</b>
+                              </p>
                             </p>
-                            <p class="insightLineChartFilter show" data-range-from="2016-09" data-range-to="2017-03">
-                              Pendapatan antara <b>bulan September 2016 hingga Maret 2017 mengalami fluktasi naik turun</b>
-                            </p>
-                            <p class="insightLineChartFilter show" data-range-from="2017-06" data-range-to="2017-08">
-                              Pendapatan antara <b>bulan Juni 2017 hingga Agustus 2017 mengalami penurunan yang  signifikan</b> setelah mencapai puncak pendapatan rata rata tertinggi
-                            </p>
-                            <p class="insightLineChartFilter show" data-range-from="2016-09" data-range-to="2017-08">
-                              <b>Bulan September 2016 mengalami pendapatan rata-rata terendah (US$ 520.113)</b>,
-                               sedangkan pada <b>bulan Juni 2017 mengalami pendapatan rata-rata tertinggi (US$ 764.771)</b>
-                            </p>
-                            </p>
+                            <div class="button-center-container">
+                            <button class="close" onclick="closeMonthlyModal()">Close</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-          <div class="chartCompositionBox">
-            <div class="chartCompositionContainer">
-            <canvas id="chartComposition"> </canvas>
-            </div>
-            <div>
-              <div class="button-piechart">
-                <button id="infoPieChart" onclick="showHideComposition(event)">
-                  INSIGHT
-                </button>
-              </div>
-              <div id="insightChart" class="insightPieChartBox">
-                <p id="insightPieChart" class="hidden">
-                  Chart di atas menunjukkan bahwa 
-                  <b> Condo Residential Unit in Elevator Building </b>  
-                  mendominasi penjualan dengan 
-                  <b> 90,1% atau sekitar US$ 3.997.746.183.</b>
-                  Penjualan didominasi oleh 
-                  <b>Residential Unit in Elevator building,</b>
-                  jauh lebih besar dibandingkan jenis properti lainnya seperti 
-                  <b>Residential Unit in 2-10 unit dan Residental Unit in Walk Building.</b>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="chartTaxClassBox">
+                  <div class="chartCompositionBox">
+                    <div class="chartCompositionContainer">
+                      <canvas id="chartComposition"></canvas>
+                    </div>
+                    <div>
+                      <div class="button-piechart">
+                        <button id="infoPieChart" onclick="showHideComposition(event)">
+                          INSIGHT
+                        </button>
+                      </div>
+                      <div id="insightCompositionModal" class="modal">
+                        <div class="modal-content">
+                          <h1 class="Popuptitle"> 
+                            Insight Chart Composition
+                          </h1>
+                          <p id="insightPieChart">
+                            Chart di atas menunjukkan bahwa 
+                            <b>Condo Residential Unit in Elevator Building</b> 
+                            mendominasi penjualan dengan 
+                            <b>90,1% atau sekitar US$ 3.997.746.183.</b>
+                            Penjualan didominasi oleh 
+                            <b>Residential Unit in Elevator building,</b> 
+                            jauh lebih besar dibandingkan jenis properti lainnya seperti 
+                            <b>Residential Unit in 2-10 unit dan Residential Unit in Walk Building.</b>
+                          </p>
+                          <div class="button-center-container">
+                          <button class="close" onclick="closeCompositionModal()">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            <div class="chartTaxClassBox">
             <div class="chart-4-filter-div">
               <form onsubmit="updateTaxClassChart(event)">
                 <label for="chart-4-taxclass">Select Tax Class: </label>
@@ -326,14 +338,19 @@
                   INSIGHT
                 </button>
               </div>
-              <div id="insightTaxClass" class="insightChartTaxClass">
-                <p id="insightChartTaxClass" class="hidden"></p>
+               <div id="insightTaxClassModal" class="modal">
+                <div class="modal-content">
+                  <h1 class="Popuptitle"> Insight Tax Class</h1>
+                  <p id="insightChartTaxClass"></p>
+                  <div class="button-center-container">
+                  <button class="close" onclick="closeTaxClassModal()">Close</button>
+                </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
       <div class="chart-mega">
         <div class="chart-mega-1">
           <div class="sortChartMega">
@@ -365,23 +382,23 @@
                 INSIGHT
               </button>
             </div>
-            <div id="insightContainer" class="insightChartMegaBox">
-              <p id="insightChartMega" class="hidden">
-                Chart di atas menunjukkan
-                <b
-                  >Perbedaan Jumlah Pendapatan dan Transaksi Penjualan Properti
-                  Berdasarkan Neighborhood di Manhattan, New York</b>
-                menunjukkan bahwa <b>Harlem-Central</b> memiliki pendapatan
-                tertinggi dengan <b>557 transaksi penjualan</b>.
-                <b>Midtown West</b> memiliki pendapatan tertinggi kedua dan
-                jumlah transaksi terbanyak, yaitu <b>614</b>.
-                <b>Tribeca</b> mencatat pendapatan terkecil dengan
-                <b>308 transaksi</b>, sedangkan <b>Clinton</b> memiliki jumlah
-                transaksi paling sedikit, yaitu <b>235 transaksi</b>.
-              </p>
-            </div>
+              <div id="insightMegaModal" class="modal">
+            <div class="modal-content">
+              <h1 class="Popuptitle"> Insight Total Revenue and Transaction</h1>
+            <p>
+            Chart di atas menunjukkan
+            <b>Perbedaan Jumlah Pendapatan dan Transaksi Penjualan Properti Berdasarkan Neighborhood di Manhattan, New York</b>
+            menunjukkan bahwa <b>Harlem-Central</b> memiliki pendapatan tertinggi dengan <b>557 transaksi penjualan</b>.
+            <b>Midtown West</b> memiliki pendapatan tertinggi kedua dan jumlah transaksi terbanyak, yaitu <b>614</b>.
+            <b>Tribeca</b> mencatat pendapatan terkecil dengan <b>308 transaksi</b>, sedangkan <b>Clinton</b> memiliki jumlah transaksi paling sedikit, yaitu <b>235 transaksi</b>.
+          </p>
+          <div class="button-center-container">
+          <button class="close" onclick="closeMegaModal()">Close</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
         <div class="chart-mega-2">
           <div class="sortTotalRevenue">
             <label id="sortAscMega" for="sortAsc">Sort by Revenue : </label>
@@ -397,32 +414,24 @@
                 INSIGHT
               </button>
             </div>
-            <div id="insight2Container" class="insightChart2MegaBox">
-              <p id="insightChart2Mega" class="hidden">
-                Chart di atas menunjukkan
-                <b
-                  >Perbandingan Jumlah Pendapatan di Manhattan, New York
-                  Berdasarkan Kategori Bangunannya</b
-                >
-                dimana <b>13 Condos - Elevator Apartements</b> merupakan
-                kategori bangunan yang <b>paling populer</b> dengan total
-                pendapatan mencapai <b>$3,977,746,183</b>, setara dengan
-                <b>91% dari total pendapatan keseluruhan</b>.
-                <b>07 Rentals - Walkup Apartements</b> merupakan kategori
-                bangunan <b>tertinggi kedua</b> dengan total pendapatan sebesar
-                <b>$92,785,291</b>, setara dengan
-                <b>2,1% dari total penjualan keseluruhan</b>.
-                <b>15 Condos - 2-10 Unit Resindential</b> merupakan kategori
-                bangunan <b>tertinggi ketiga</b> dengan total pendapatan sebesar
-                <b>$72,920,548</b>, setara dengan
-                <b>1,7% dari total penjualan keseluruhan</b>. Sedangkan
-                <b>01 One Family Dwellings</b> menjadi kategori bangunan dengan
-                <b>penjualan terendah</b> yakni sebesar <b>$13,070,572</b>,
-                setara dengan <b>0.3% dari total pendapatan keseluruhan</b>.
+            <div id="insight2MegaModal" class="modal">
+            <div class="modal-content-building">
+              <h1 class="Popuptitle"> Insight Total Revenue by Building Category</h1>
+              <p id="insightChart2Mega">
+              Chart di atas menunjukkan
+              <b>Perbandingan Jumlah Pendapatan di Manhattan, New York Berdasarkan Kategori Bangunannya</b>
+              dimana <b>13 Condos - Elevator Apartements</b> merupakan kategori bangunan yang <b>paling populer</b> dengan total pendapatan mencapai <b>$3,916,043,073</b>, setara dengan <b>91% dari total pendapatan keseluruhan</b>.
+              <b>07 Rentals - Walkup Apartements</b> merupakan kategori bangunan <b>tertinggi kedua</b> dengan total pendapatan sebesar <b>$90,660,291</b>, setara dengan <b>2,1% dari total penjualan keseluruhan</b>.
+              <b>15 Condos - 2-10 Unit Resindential</b> merupakan kategori bangunan <b>tertinggi ketiga</b> dengan total pendapatan sebesar <b>$70,795,548</b>, setara dengan <b>1,7% dari total penjualan keseluruhan</b>. Sedangkan <b>01 One Family Dwellings</b> menjadi kategori bangunan dengan <b>penjualan terendah</b> yakni sebesar <b>$13,070,572</b>, setara dengan <b>0.3% dari total pendapatan keseluruhan</b>.
               </p>
+              <div class="button-center-container">
+              <button class="close" onclick="closeMega2Modal()"> Close </button>
+              </div>
+            </div>
             </div>
           </div>
         </div>
+      </div>
       </div>
       <!--footer-->
       <footer class="footer">
@@ -433,7 +442,7 @@
             <a href="https://www.linkedin.com/school/revou/"
               ><i class="bx bxl-linkedin"></i
             ></a>
-            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="https://x.com/revoudotco"><i class="bx bxl-twitter"></i></a>
             <a href="https://www.instagram.com/revou_id/"
               ><i class="bx bxl-instagram"></i
             ></a>
