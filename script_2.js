@@ -110,13 +110,6 @@ function closeMegaModal() {
   modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  var modal = document.getElementById("insightMegaModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 // Insight Chart Sales Composition
 function showHideComposition(event) {
   var modal = document.getElementById("insightCompositionModal");
@@ -126,13 +119,6 @@ function showHideComposition(event) {
 function closeCompositionModal() {
   var modal = document.getElementById("insightCompositionModal");
   modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  var modal = document.getElementById("insightCompositionModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
 }
 
 // Insight Chart Quarterly Sales Revenue
@@ -146,13 +132,6 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  var modal = document.getElementById("insightModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 //INSIGHT BUTTON REVENUE BY BUILDING CATEGORY
 function showHideInsight2(event) {
   var modal = document.getElementById("insight2MegaModal");
@@ -162,13 +141,6 @@ function showHideInsight2(event) {
 function closeMega2Modal() {
   var modal = document.getElementById("insight2MegaModal");
   modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  var modal = document.getElementById("insight2MegaModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
 }
 
 //insight Chart Monthly Average Revenue
@@ -213,9 +185,21 @@ function closeTaxClassModal() {
   modal.style.display = "none";
 }
 
+
+// Fitur Close Popup tidak di button close
 window.onclick = function(event) {
-  var modal = document.getElementById("insightTaxClassModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+  var modals = [
+    document.getElementById("insightTaxClassModal"),
+    document.getElementById("insight2MegaModal"),
+    document.getElementById("insightMegaModal"),
+    document.getElementById("insightModal"),
+    document.getElementById("insightCompositionModal"),
+    document.getElementById("insightMonthlyModal")
+  ];
+
+  modals.forEach(function(modal) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
 }
