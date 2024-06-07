@@ -100,56 +100,75 @@ function loadData() {
 document.addEventListener("DOMContentLoaded", loadData);
 
 // Insight Chart Total Revenue by Neighbourhood
-function showHideInsight(e) {
-  var chart_mega = document.getElementById("insightChartMega");
+function showHideInsight(event) {
+  var modal = document.getElementById("insightMegaModal");
+  modal.style.display = "block";
+}
 
-  if (chart_mega.classList.contains("hidden")) {
-    chart_mega.classList.remove("hidden");
-    chart_mega.classList.add("show");
-  } else if (chart_mega.classList.contains("show")) {
-    chart_mega.classList.remove("show");
-    chart_mega.classList.add("hidden");
+function closeMegaModal() {
+  var modal = document.getElementById("insightMegaModal");
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  var modal = document.getElementById("insightMegaModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
 // Insight Chart Sales Composition
-function showHideComposition(e) {
-  var chart_pie = document.getElementById("insightPieChart");
+function showHideComposition(event) {
+  var modal = document.getElementById("insightCompositionModal");
+  modal.style.display = "block";
+}
 
-  if (chart_pie.classList.contains("hidden")) {
-    chart_pie.classList.remove("hidden");
-    chart_pie.classList.add("show");
-  } else if (chart_pie.classList.contains("show")) {
-    chart_pie.classList.remove("show");
-    chart_pie.classList.add("hidden");
+function closeCompositionModal() {
+  var modal = document.getElementById("insightCompositionModal");
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  var modal = document.getElementById("insightCompositionModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
 // Insight Chart Quarterly Sales Revenue
-function showHideQuarter(e) {
-  var chart_Quarter = document.getElementById("insightQuarterlyChart");
+function showHideQuarter(event) {
+  var modal = document.getElementById("insightModal");
+  modal.style.display = "block";
+}
 
-  if (chart_Quarter.classList.contains("hidden")) {
-    chart_Quarter.classList.remove("hidden");
-    chart_Quarter.classList.add("show");
-  } else if (chart_Quarter.classList.contains("show")) {
-    chart_Quarter.classList.remove("show");
-    chart_Quarter.classList.add("hidden");
+function closeModal() {
+  var modal = document.getElementById("insightModal");
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  var modal = document.getElementById("insightModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
 //INSIGHT BUTTON REVENUE BY BUILDING CATEGORY
-function showHideInsight2(e) {
-  var x = document.getElementById("insightChart2Mega");
-  
-  if(x.classList.contains('hidden')){
-    x.classList.remove('hidden');
-    x.classList.add('show');
+function showHideInsight2(event) {
+  var modal = document.getElementById("insight2MegaModal");
+  modal.style.display = "block";
+}
+
+function closeMega2Modal() {
+  var modal = document.getElementById("insight2MegaModal");
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  var modal = document.getElementById("insight2MegaModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
-  else if(x.classList.contains('show')){
-    x.classList.remove('show');
-    x.classList.add('hidden');
-  }  
 }
 
 //insight Chart Monthly Average Revenue
@@ -167,31 +186,36 @@ function showHideInsight2(e) {
 
 //Insight Chart Total Revenue by Tax Class
 function showHideTaxClass(e) {
-  var taxC = document.getElementById("insightChartTaxClass");
+  var modal = document.getElementById("insightTaxClassModal");
+  modal.style.display = "block";
 
-  if(taxC.classList.contains('hidden')){
-    taxC.classList.remove('hidden');
-    taxC.classList.add('show');
+  const select = document.getElementById("chart-4-taxclass");
+  const selectedTaxClass = select.value;
+  const taxClassIndex = window.dataTaxClass.tax_class.indexOf(selectedTaxClass);
+  const revenue = window.dataTaxClass.total_revenue[taxClassIndex];
+
+  let insightMessage = "";
+  if (selectedTaxClass === "All") {
+    insightMessage = `Terdapat perbedaan pendapatan yang signifikan tax class 2 lebih tinggi daripada tax class 1 dengan selisih lebih dari US$ 4 Milyar.`;
+  } else if (selectedTaxClass === "2") {
+    insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total tertinggi, yaitu US$ ${revenue}.`;
+  } else if (selectedTaxClass === "4") {
+    insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total kedua tertinggi, yaitu US$ ${revenue}.`;
+  } else if (selectedTaxClass === "1") {
+    insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total terendah, yaitu US$ ${revenue}.`;
   }
-  else if(taxC.classList.contains('show')){
-    taxC.classList.remove('show');
-    taxC.classList.add('hidden');
+
+  document.getElementById("insightChartTaxClass").textContent = insightMessage;
+}
+
+function closeTaxClassModal() {
+  var modal = document.getElementById("insightTaxClassModal");
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  var modal = document.getElementById("insightTaxClassModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
-    const select = document.getElementById("chart-4-taxclass");
-    const selectedTaxClass = select.value;
-    const taxClassIndex = window.dataTaxClass.tax_class.indexOf(selectedTaxClass);
-    const revenue = window.dataTaxClass.total_revenue[taxClassIndex];
-
-    let insightMessage = "";
-    if (selectedTaxClass === "All") {
-        insightMessage = `Terdapat perbedaan pendapatan yang signifikan tax class 2 lebih tinggi daripada tax class 1 dengan selisih lebih dari US$ 4 Milyar.`;
-    } else if (selectedTaxClass === "2") {
-        insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total tertinggi, yaitu US$ ${revenue}.`;
-    } else if (selectedTaxClass === "4") {
-        insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total kedua tertinggi, yaitu US$ ${revenue}.`;
-    } else if (selectedTaxClass === "1") {
-        insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total terendah, yaitu US$ ${revenue}.`;
-    }
-
-    taxC.textContent = insightMessage;
 }
