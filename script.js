@@ -701,29 +701,19 @@ fetch("File Json/Total_Revenue_building_Category.json")
       arrBuildingClassCategory.push(element.BUILDING_CLASS_CATEGORY);
       arrRevenuePercentage.push(element.Revenue_Percentage);
     });
-    console.log(arrBuildingClassCategory);
-    console.log(arrTotalRevenue);
-    console.log(arrRevenuePercentage);
+    
     var objChart = {
       building_class_category: arrBuildingClassCategory,
       total_revenue: arrTotalRevenue,
       revenue_percentage: arrRevenuePercentage,
     };
-    console.log(objChart);
+    
     createChartBuildingCategory(objChart, "bar");
   });
 
 function createChartBuildingCategory(arrPassedBuildingCategory, type) {
-  let arrBgColors = [];
-  arrPassedBuildingCategory.total_revenue.forEach((element, index) => {
-    arrBgColors.push(
-       `rgba(47, 160, 215, 0.5)`
-    );
-  });
-
   window.megaChart2Sort = new Chart(chartBuildingCategory, {
     type: "bar",
-    plugins: [ChartDataLabels],
     data: {
       labels: arrPassedBuildingCategory.building_class_category,
       datasets: [
@@ -731,7 +721,7 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
           label: "Total Revenue",
           data: arrPassedBuildingCategory.total_revenue,
           borderColor: "rgb(0, 0, 255)",
-          backgroundColor: arrBgColors,
+          backgroundColor: "rgba(47, 160, 215, 0.5)",
           borderWidth: 1,
         },
       ],
@@ -783,31 +773,6 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
             },
           },
         },
-        datalabels: {
-          clip: true,
-          align: "end",
-          anchor: "end",
-          formatter: (value, ctx) => {
-            let sum = 0;
-            let dataArr = ctx.chart.data.datasets[0].data;
-            dataArr.map((data) => {
-              sum += parseInt(data);
-            });
-            let percentage = ((parseInt(value) * 100) / sum).toFixed(5) + "%";
-            const formatterUsd = new Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: "USD",
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-            });
-
-            let usdValue = formatterUsd.format(value);
-            let strDisplay = `${usdValue} | (${percentage})`;
-
-            return strDisplay;
-          },
-          color: "#000",
-        },
       },
     },
   });
@@ -824,15 +789,12 @@ document.getElementById("sortChartDesc").addEventListener("click", function () {
 function sortChartDataRevenue(strSort, sortBy) {
   let arrBuildingClassCategoryChart = window.megaChart2Sort.data.labels;
   let arrTotalRevenueChart = window.megaChart2Sort.data.datasets[0].data;
-  let arrBackgroundColor =
-    window.megaChart2Sort.data.datasets[0].backgroundColor;
   let arrSort = [];
 
   arrTotalRevenueChart.forEach((element, index) => {
     arrSort.push({
       building_class_category: arrBuildingClassCategoryChart[index],
       totalRevenue: element,
-      backgroundColor: arrBackgroundColor[index],
     });
   });
 
@@ -846,16 +808,13 @@ function sortChartDataRevenue(strSort, sortBy) {
 
   arrBuildingClassCategoryChart = [];
   arrTotalRevenueChart = [];
-  arrBackgroundColor = [];
   arrSort.forEach((element) => {
     arrBuildingClassCategoryChart.push(element.building_class_category);
     arrTotalRevenueChart.push(element.totalRevenue);
-    arrBackgroundColor.push(element.backgroundColor);
   });
 
   window.megaChart2Sort.data.labels = arrBuildingClassCategoryChart;
   window.megaChart2Sort.data.datasets[0].data = arrTotalRevenueChart;
-  window.megaChart2Sort.data.datasets[0].backgroundColor = arrBackgroundColor;
   window.megaChart2Sort.update();
 }
 
