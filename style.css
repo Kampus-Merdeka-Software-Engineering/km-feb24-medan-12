@@ -471,6 +471,102 @@ button:hover {
   column-gap: 30px;
 }
 
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 40px;
+  border: 1px solid #888;
+  width: 50%; 
+  max-width: 800px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 50vh; 
+  text-align: justify;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+.modal-content-building {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 30px;
+  border: 1px solid #888;
+  width: 50%; 
+  max-width: 800px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 80vh; 
+  text-align: justify;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+.modal-content-monthly {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 30px;
+  border: 1px solid #888;
+  width: 50%; 
+  max-width: 800px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 60vh; 
+  text-align: justify;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+.close {
+  background-color: gray;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Popuptitle {
+  /* margin-bottom: 20px; */
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.button-center-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .chartQuarterlyBox {
   width: 600px;
   height: auto;
@@ -483,31 +579,12 @@ button:hover {
   margin-top: 30px;
 }
 
-#insightQuarterlyChart.hidden {
-  display: none;
-}
-
-#insightQuarterlyChart.show {
-  display: block;
-}
 
 .button-Quarterly {
   display: flex;
   justify-content: center;
   margin-top: 22px;
   margin-bottom: 5px;
-}
-
-#insightQuarterlyChart {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 #infoQuarterlyChart {
@@ -531,30 +608,11 @@ button:hover {
 #chartMonthly {
   margin-left: 30px;
 }
-#insightLineChart.hidden {
-  display: none;
-}
-
-#insightLineChart.show {
-  display: block;
-}
 
 .button-linechart {
   display: flex;
   justify-content: center;
   margin-top: 15px;
-}
-
-#insightChartLine {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 #infoLineChart {
@@ -578,30 +636,11 @@ button:hover {
 #chartComposition {
   margin-top: 45px;
 }
-#insightPieChart.hidden {
-  display: none;
-}
-
-#insightPieChart.show {
-  display: block;
-}
 
 .button-piechart {
   display: flex;
   justify-content: center;
   margin-top: 25px;
-}
-
-#insightPieChart {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 #infoPieChart {
@@ -635,18 +674,6 @@ button:hover {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-}
-
-#insightChartTaxClass {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 #infoChartTaxClass {
@@ -799,13 +826,7 @@ button {
   border-radius: 25px;
 }
 
-#insightChartMega.hidden {
-  display: none;
-}
 
-#insightChartMega.show {
-  display: block;
-}
 
 #insightChartLine.hidden {
   display: none;
@@ -818,18 +839,6 @@ button {
   display: flex;
   justify-content: center;
   margin-left: 15px;
-}
-
-#insightChartMega {
-  display: flex;
-  justify-content: center;
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: justify;
-  padding-left: 70px;
-  padding-right: 70px;
 }
 
 #infoChartMega {
@@ -852,29 +861,11 @@ button {
   border-radius: 25px;
 }
 
-#insightChart2Mega.hidden {
-  display: none;
-}
-
-#insightChart2Mega.show {
-  display: block;
-}
 
 .button-center-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-
-.insightChart2MegaBox {
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 #infoChart2Mega {
