@@ -222,6 +222,9 @@ section {
   color: whitesmoke;
   background: #1c1616;
 }
+.insightLineChartFilter.show{
+  text-align: justify;
+}
 
 /*Media Queries*/
 @media screen and (max-width: 600px) {
@@ -500,6 +503,7 @@ button:hover {
   text-align: justify;
   border-radius: 16px;
   font-size: 15px;
+  height: auto;
 }
 
 .modal-content-building {
@@ -1186,6 +1190,10 @@ button {
   }
   #chart-2-filter-apply {
     margin-left: 0;
+  }
+  .modal-content, .modal-content-building, .modal-content-monthly{
+    width: 95%;
+    height: auto;
   }
 }
 
