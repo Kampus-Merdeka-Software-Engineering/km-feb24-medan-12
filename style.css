@@ -222,7 +222,7 @@ section {
   color: whitesmoke;
   background: #1c1616;
 }
-.insightLineChartFilter.show{
+.insightLineChartFilter.show {
   text-align: justify;
 }
 
@@ -502,7 +502,7 @@ button:hover {
   width: 70vh;
   text-align: justify;
   border-radius: 16px;
-  font-size: 15px;
+  font-size: 13px;
   height: auto;
 }
 
@@ -520,7 +520,7 @@ button:hover {
   height: 55vh;
   text-align: justify;
   border-radius: 16px;
-  font-size: 15px;
+  font-size: 13px;
   height: auto;
 }
 
@@ -539,7 +539,7 @@ button:hover {
   width: 80vh;
   text-align: justify;
   border-radius: 16px;
-  font-size: 15px;
+  font-size: 13px;
   height: auto;
 }
 
@@ -564,7 +564,7 @@ button:hover {
 .Popuptitle {
   margin-bottom: 5px;
   padding: 20px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
 }
@@ -971,6 +971,32 @@ button {
   padding-left: 15px;
 }
 
+.about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+  gap: 1.5rem;
+  margin-top: 50px;
+}
+.about-img img {
+  border-radius: 0.5rem;
+  width: 500px;
+  height: 300px;
+  margin-left: -60px;
+}
+.about-text h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-top: 90px;
+  margin-left: 10px;
+}
+.about-text p {
+  font-size: 15px;
+  margin: 0.5rem 0 1.1rem;
+  text-align: justify;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
 /*media screen untuk ukuran mobile*/
 @media (min-width: 320px) and (max-width: 720px) {
   .sidebar {
@@ -1193,9 +1219,37 @@ button {
   #chart-2-filter-apply {
     margin-left: 0;
   }
-  .modal-content, .modal-content-building, .modal-content-monthly{
+  .modal-content,
+  .modal-content-building,
+  .modal-content-monthly {
     width: 95%;
     height: auto;
+    font-size: 10px;
+  }
+  .Popuptitle {
+    font-size: 15px;
+  }
+
+  .about-img img {
+    border-radius: 10px;
+    width: 350px;
+    height: 200px;
+    margin-left: -18px;
+    margin-top: -70px;
+  }
+  .about-text h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-top: -5px;
+    margin-left: 10px;
+    text-align: center;
+  }
+  .about-text p {
+    font-size: 12px;
+    margin: 0.5rem 0 1.1rem;
+    text-align: justify;
+    margin-top: 5px;
+    margin-left: 10px;
   }
 }
 
@@ -1309,8 +1363,39 @@ button {
     width: 95%;
     margin-left: 0;
   }
+  .modal-content,
+  .modal-content-building,
+  .modal-content-monthly {
+    width: 95%;
+    height: auto;
+    font-size: 12px;
+  }
+  .Popuptitle {
+    font-size: 17px;
+  }
   .footer-box {
     padding-top: -2px;
+  }
+  .about-img img {
+    border-radius: 10px;
+    width: 600px;
+    height: 300px;
+    margin-left: -18px;
+    margin-top: -70px;
+  }
+  .about-text h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-top: -5px;
+    text-align: left;
+    margin-left: -10px;
+  }
+  .about-text p {
+    font-size: 12px;
+    margin: 0.5rem 0 1.1rem;
+    text-align: justify;
+    margin-top: 20px;
+    margin-left: -10px;
   }
 }
 
@@ -1434,7 +1519,7 @@ button {
   }
 }*/
 
-@media (min-width: 768px) and (max-width: 1024px){
+@media (min-width: 768px) and (max-width: 1024px) {
   .text-container {
     height: 100%;
   }
@@ -1473,7 +1558,9 @@ button {
   .modal {
     left: 80px;
   }
-  .modal-content, .modal-content-building, .modal-content-monthly{
+  .modal-content,
+  .modal-content-building,
+  .modal-content-monthly {
     width: 80%;
     height: auto;
     margin-top: 300px;
