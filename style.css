@@ -1357,16 +1357,6 @@ button {
     width: 95%;
     margin-left: 0;
   }
-  .modal-content,
-  .modal-content-building,
-  .modal-content-monthly {
-    width: 95%;
-    height: auto;
-    font-size: 12px;
-  }
-  .Popuptitle {
-    font-size: 17px;
-  }
   .footer-box {
     padding-top: -2px;
   }
@@ -1425,6 +1415,9 @@ button {
   .accordion-section {
     width: 300px;
   }
+  .Popuptitle {
+    font-size: 17px;
+  }
   .modal {
     left: 80px;
   }
@@ -1433,6 +1426,7 @@ button {
   .modal-content-monthly {
     width: 80%;
     height: auto;
+    font-size: 12px;
     margin-top: 300px;
     padding-left: 40px;
     padding-right: 40px;
