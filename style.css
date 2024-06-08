@@ -937,32 +937,32 @@ button {
   text-align: left;
   display: inline-flexbox;
 }
-
-.about{
+.about {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
   gap: 1.5rem;
   margin-top: 50px;
 }
-
-.dataset-img img{
+.about-img img {
   border-radius: 0.5rem;
-  width: 350px;
-  height: 250px;
+  width: 500px;
+  height: 300px;
+  margin-left: -60px;
 }
-
-.dataset-text h2{
-  font-size: 2.5rem;
+.about-text h2 {
+  font-size: 35px;
   text-transform: uppercase;
+  margin-top: 90px;
+  margin-left: 10px;
 }
-
-.dataset-text p{
-  font-size: 1rem;
+.about-text p {
+  font-size: 15px;
   margin: 0.5rem 0 1.1rem;
   text-align: justify;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
-/*footer*/
 .sidebar-mobile {
   display: none;
 }
@@ -993,32 +993,6 @@ button {
 .buttonSortRevenue,
 .buttonSortTransaction {
   padding-left: 15px;
-}
-
-.about {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
-  gap: 1.5rem;
-  margin-top: 50px;
-}
-.about-img img {
-  border-radius: 0.5rem;
-  width: 500px;
-  height: 300px;
-  margin-left: -60px;
-}
-.about-text h2 {
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-top: 90px;
-  margin-left: 10px;
-}
-.about-text p {
-  font-size: 15px;
-  margin: 0.5rem 0 1.1rem;
-  text-align: justify;
-  margin-top: 20px;
-  margin-left: 10px;
 }
 
 /*media screen untuk ukuran mobile*/
@@ -1255,23 +1229,19 @@ button {
   }
 
   .about-img img {
-    border-radius: 10px;
     width: 350px;
     height: 200px;
     margin-left: -18px;
     margin-top: -70px;
   }
   .about-text h2 {
-    font-size: 30px;
-    text-transform: uppercase;
-    margin-top: -5px;
+    font-size: 25px;
+    margin-top: -20px;
     margin-left: 10px;
     text-align: center;
   }
   .about-text p {
-    font-size: 12px;
-    margin: 0.5rem 0 1.1rem;
-    text-align: justify;
+    font-size: 10px;
     margin-top: 5px;
     margin-left: 10px;
   }
@@ -1401,7 +1371,6 @@ button {
     padding-top: -2px;
   }
   .about-img img {
-    border-radius: 10px;
     width: 600px;
     height: 300px;
     margin-left: -18px;
@@ -1409,145 +1378,18 @@ button {
   }
   .about-text h2 {
     font-size: 30px;
-    text-transform: uppercase;
     margin-top: -5px;
     text-align: left;
     margin-left: -10px;
   }
   .about-text p {
     font-size: 12px;
-    margin: 0.5rem 0 1.1rem;
-    text-align: justify;
     margin-top: 20px;
     margin-left: -10px;
   }
 }
 
-<<<<<<< HEAD
-/*@media (min-width: 1024px)
-  .header {
-    width: 100%;
-    font-size: 80%;
-  }
-  .sidebar-mobile {
-    display: none;
-  }
-  .main-content {
-    height: 20%;
-    margin-left: 8px;
-  }
-
-  .chart-mini-filter {
-    margin-left: 0;
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 25px;
-    width: 99%;
-  }
-
-  form {
-    width: 100%;
-  }
-  .filter {
-    width: 90%;
-    display: flex;
-    font-size: 80%;
-    align-items: start;
-    padding-left: 10px;
-  }
-  #label-NEIGHBORHOOD,
-  #date {
-  }
-  .filter-neighborhood {
-    width: 50%;
-  }
-  .from-date {
-    width: 50%;
-  }
-  .to-date {
-    width: 50%;
-  }
-  #start-date,
-  #end-date {
-    height: 23px;
-  }
-  .button {
-    padding-top: 17px;
-  }
-
-  #stickyButton {
-    margin-top: 0;
-    margin-left: 0px;
-    width: 83px;
-    height: 23px;
-  }
-
-  .chart-area {
-    width: 100%;
-  }
-
-  .chart-area {
-    padding-left: 0;
-  }
-  .chart-mini {
-    width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-left: 0;
-    column-gap: 15px;
-  }
-
-  .chart-mini-1,
-  .chart-mini-2,
-  .chart-mini-3,
-  .chart-mini-4,
-  .chart-mini-5 {
-    width: 100%;
-  }
-
-  .chart-mini h3 {
-    font-size: 100%;
-    padding-left: 5%;
-  }
-
-  .chart-mini p {
-    font-size: 100%;
-    padding-left: 4%;
-  }
-  .chart {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 5px;
-    margin-left: 0;
-    width: 100%;
-  }
-  .chart-mega {
-    padding-left: 0;
-    margin-left: 20px;
-  }
-  .chart-1,
-  .chart-2,
-  .chart-3,
-  .chart-4,
-  .chart-5,
-  .chart-6,
-  .chart-mega-1,
-  .chart-mega-2 {
-    width: 95%;
-    margin-left: 0;
-  }
-  .footer-box {
-    padding-top: 20px;
-  }
-}*/
-
 @media (min-width: 768px) and (max-width: 1024px) {
-=======
-@media (min-width: 768px) and (max-width: 1024px){
->>>>>>> bc8ef63f04b7b6e036a1826947a237ed651444ce
   .text-container {
     height: 100%;
   }
