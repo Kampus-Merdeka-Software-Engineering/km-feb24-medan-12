@@ -1377,47 +1377,7 @@ button {
     margin-top: 20px;
     margin-left: -10px;
   }
-}
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .text-container {
-    height: 100%;
-  }
-  .text-container h1 {
-    font-size: 24px;
-    margin-block: 10px;
-  }
-
-  .text-container p:nth-child(2) {
-    padding: 0;
-    font-weight: 500;
-  }
-
-  .accordion-wrapper {
-    margin-top: 16px;
-    width: 300px;
-  }
-
-  .accordion-details {
-    width: 100%;
-  }
-
-  .accordion {
-    flex-direction: column;
-  }
-
-  .summary {
-    font-size: 18px;
-    word-wrap: break-word;
-    width: fit-content;
-    word-break: keep-all;
-  }
-  .accordion-section {
-    width: 300px;
-  }
-  .Popuptitle {
-    font-size: 17px;
-  }
   .modal {
     left: 80px;
   }
@@ -1432,69 +1392,4 @@ button {
     padding-right: 40px;
     margin-left: 30px;
   }
-}
-
-/* style untuk accordion */
-.accordion-wrapper {
-  padding-left: 20px;
-  height: fit-content;
-  width: 100%;
-  overflow-y: scroll;
-}
-
-.accordion {
-  height: 100%;
-  max-width: 500px;
-  display: flex;
-  align-items: start;
-  gap: 36px;
-}
-
-.accordion-section {
-  width: 500px;
-}
-
-details {
-  margin-bottom: 10px;
-}
-
-summary {
-  width: 500px;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.accordion-details {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-details > span::after {
-  display: block;
-  margin-top: 12px;
-  content: "";
-  background-color: gray;
-  width: 500px;
-  height: 2px;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-.akses-dataset {
-  width: 180px;
-  border: 0;
-  padding: 1rem 1.5rem;
-  text-align: center;
-  border-radius: 10px;
-  background-color: #211515;
-  margin-top: 24px;
-}
-.insightLineChartFilter.hidden {
-  display: none;
-}
-.insightLineChartFilter.show {
-  display: block;
 }
