@@ -938,6 +938,30 @@ button {
   display: inline-flexbox;
 }
 
+.about{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+  gap: 1.5rem;
+  margin-top: 50px;
+}
+
+.dataset-img img{
+  border-radius: 0.5rem;
+  width: 350px;
+  height: 250px;
+}
+
+.dataset-text h2{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.dataset-text p{
+  font-size: 1rem;
+  margin: 0.5rem 0 1.1rem;
+  text-align: justify;
+}
+
 /*footer*/
 .sidebar-mobile {
   display: none;
@@ -1399,6 +1423,7 @@ button {
   }
 }
 
+<<<<<<< HEAD
 /*@media (min-width: 1024px)
   .header {
     width: 100%;
@@ -1520,6 +1545,9 @@ button {
 }*/
 
 @media (min-width: 768px) and (max-width: 1024px) {
+=======
+@media (min-width: 768px) and (max-width: 1024px){
+>>>>>>> bc8ef63f04b7b6e036a1826947a237ed651444ce
   .text-container {
     height: 100%;
   }
