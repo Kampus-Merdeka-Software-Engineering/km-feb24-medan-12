@@ -521,6 +521,7 @@ button:hover {
   text-align: justify;
   border-radius: 16px;
   font-size: 15px;
+  height: auto;
 }
 
 .modal-content-monthly {
@@ -539,6 +540,7 @@ button:hover {
   text-align: justify;
   border-radius: 16px;
   font-size: 15px;
+  height: auto;
 }
 
 .close {
@@ -1432,7 +1434,7 @@ button {
   }
 }*/
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px){
   .text-container {
     height: 100%;
   }
