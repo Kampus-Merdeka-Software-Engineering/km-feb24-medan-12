@@ -108,7 +108,6 @@ fetch("File Json/Monthly_Average_Revenue.json")
       Year_month: arrYearMonth,
       Avg_salesprice: arrAverageSalePrice,
     };
-    console.log(objChart);
     window.dataMonthlyRevenue = objChart;
     generateMonthlyRevenueFilter(objChart);
     createChart7(objChart, "line");
@@ -292,7 +291,6 @@ fetch("File Json/Sales_Composition_building_classification (1).json")
     }
   })
   .then(function (data) {
-    console.log(data);
     var arrBuildingClass = [];
     var arrTotalRevenue = [];
     var arrPercentage = [];
@@ -301,15 +299,11 @@ fetch("File Json/Sales_Composition_building_classification (1).json")
       arrBuildingClass.push(element.BUILDING_CLASS);
       arrPercentage.push(element.PERCENTAGE_REVENUE)
     });
-    console.log(arrBuildingClass);
-    console.log(arrTotalRevenue);
-    console.log(arrPercentage);
     var objChart = {
       total_revenue: arrTotalRevenue,
       building_class: arrBuildingClass,
       percentage_revenue: arrPercentage,
     };
-    console.log(objChart);
     createChart3(objChart, "pie");
   });
 
@@ -376,15 +370,13 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
     }
   })
   .then(function (data) {
-    console.log(data);
+    
     var arrTotalRevenue = [];
     var arrTaxClass = [];
     data.forEach((element) => {
       arrTotalRevenue.push(element.TOTAL_REVENUE);
       arrTaxClass.push(element.TAX_CLASS);
     });
-    console.log(arrTaxClass);
-    console.log(arrTotalRevenue);
     var objChart = {
       tax_class: arrTaxClass,
       total_revenue: arrTotalRevenue,
@@ -393,7 +385,6 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
     window.dataTaxClass = objChart;
     generateTaxClassOptions(objChart);
 
-    console.log(objChart);
     createChart2(objChart, "bar");
   });
 
@@ -510,7 +501,6 @@ fetch("File Json/Total_revenue_transaction_neighborhood.json")
     }
   })
   .then(function (data) {
-    console.log(data);
     var arrTotalSales = [];
     var arrTotalTransaction = [];
     var arrNeighborhood = [];
@@ -519,14 +509,11 @@ fetch("File Json/Total_revenue_transaction_neighborhood.json")
       arrTotalTransaction.push(element.TOTAL_TRANSACTIONS);
       arrNeighborhood.push(element.NEIGHBORHOOD);
     });
-    console.log(arrTotalSales);
-    console.log(arrTotalTransaction);
     var objChart = {
       total_sales: arrTotalSales,
       total_transaction: arrTotalTransaction,
       neighborhood: arrNeighborhood,
     };
-    console.log(objChart);
     createChart(objChart, "bar");
   });
 
@@ -709,7 +696,6 @@ fetch("File Json/Total_Revenue_building_Category.json")
     }
   })
   .then(function (data) {
-    console.log(data);
     var arrTotalRevenue = [];
     var arrBuildingClassCategory = [];
     var arrRevenuePercentage = [];
