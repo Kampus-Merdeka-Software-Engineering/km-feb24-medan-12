@@ -1468,6 +1468,17 @@ button {
   .accordion-section {
     width: 300px;
   }
+  .modal {
+    left: 80px;
+  }
+  .modal-content, .modal-content-building, .modal-content-monthly{
+    width: 80%;
+    height: auto;
+    margin-top: 300px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 30px;
+  }
 }
 
 /* style untuk accordion */
