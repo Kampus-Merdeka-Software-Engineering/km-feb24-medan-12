@@ -223,7 +223,11 @@ section {
   background: #1c1616;
 }
 .insightLineChartFilter.show {
+  display: block;
   text-align: justify;
+}
+.insightLineChartFilter.hidden {
+  display: none;
 }
 
 /*Media Queries*/

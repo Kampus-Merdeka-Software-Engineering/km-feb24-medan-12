@@ -133,15 +133,29 @@ function showHideMonthly(e) {
   );
 
   let paragraphInsights = document.getElementsByClassName("insightLineChartFilter");
+  let flagAll =
+    yearMonth.length == window.dataMonthlyRevenue.Year_month.length
+      ? true
+      : false;
+
   Array.from(paragraphInsights).forEach((element) => {
     if (
       yearMonth.includes(element.dataset.rangeFrom) &&
       yearMonth.includes(element.dataset.rangeTo)
     ) {
-      element.classList.remove("hidden");
-      element.classList.add("show");
-    }
-    else {
+      if (
+        (flagAll &&
+          element.dataset.rangeFrom == yearMonth[0] &&
+          element.dataset.rangeTo == yearMonth[yearMonth.length - 1]) ||
+        !flagAll
+      ) {
+        element.classList.remove("hidden");
+        element.classList.add("show");
+      } else {
+        element.classList.remove("show");
+        element.classList.add("hidden");
+      }
+    } else {
       element.classList.remove("show");
       element.classList.add("hidden");
     }
@@ -223,15 +237,29 @@ function updateMonthlyRevenueChart(e) {
     toIndex + 1
   );
   let paragraphInsights = document.getElementsByClassName("insightLineChartFilter");
+  let flagAll =
+    yearMonth.length == window.dataMonthlyRevenue.Year_month.length
+      ? true
+      : false;
+
   Array.from(paragraphInsights).forEach((element) => {
     if (
       yearMonth.includes(element.dataset.rangeFrom) &&
       yearMonth.includes(element.dataset.rangeTo)
     ) {
-      element.classList.remove("hidden");
-      element.classList.add("show");
-    }
-    else {
+      if (
+        (flagAll &&
+          element.dataset.rangeFrom == yearMonth[0] &&
+          element.dataset.rangeTo == yearMonth[yearMonth.length - 1]) ||
+        !flagAll
+      ) {
+        element.classList.remove("hidden");
+        element.classList.add("show");
+      } else {
+        element.classList.remove("show");
+        element.classList.add("hidden");
+      }
+    } else {
       element.classList.remove("show");
       element.classList.add("hidden");
     }
