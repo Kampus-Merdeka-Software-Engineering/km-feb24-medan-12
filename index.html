@@ -223,7 +223,7 @@
                   <h1 class="Popuptitle"> Insight Quarterly Sales Revenue</h1>
                   <p id="insightQuarterlyChart">
                     Adanya
-                    <b>tren kenaikan menuju Q4 2016 yang menunjukkan adanya peningkatan aktivitas pasar menjelang akhir tahun</b>.
+                    <b>Perkembangan kenaikan menuju Q4 2016 yang menunjukkan adanya peningkatan aktivitas pasar menjelang akhir tahun</b>.
                     Kemudian terus
                     <b>meningkat ke Q1 2017 dan mencapai puncak di Q2 2017 disusul oleh penurunan tajam di Q3 2017</b>.
                     Penurunan ini bisa mencerminkan
@@ -267,7 +267,9 @@
                                 Pendapatan antara <b>bulan Juni 2017 hingga Agustus 2017 mengalami penurunan yang signifikan</b> setelah mencapai puncak pendapatan rata-rata tertinggi
                               </p>
                               <p class="insightLineChartFilter hidden" data-range-from="2016-09" data-range-to="2017-08">
-                                <b>Bulan September 2016 mengalami pendapatan rata-rata terendah (US$ 520.113)</b>, sedangkan pada <b>bulan Juni 2017 mengalami pendapatan rata-rata tertinggi (US$ 764.771)</b>
+                                Perkembangan rata-rata harga penjualan bulanan menunjukkan <b>fluktuasi signifikan dari September 2016 hingga Agustus 2017</b>. <b>Pendapatan terendah terjadi pada September 2016 (US$ 520.113)</b> dan 
+                                <b>puncak pada Juni 2017 (US$ 764.771)</b>. Setelah itu, pendapatan menurun drastis hingga Agustus 2017. Fluktuasi ini dipengaruhi oleh <b>faktor musiman, kebijakan ekonomi, suku bunga, dan 
+                                peristiwa global, yang memengaruhi kepercayaan dan keputusan konsumen </b>. Memahami perkembangan ini membantu pelaku pasar merencanakan strategi pembelian atau penjualan.
                               </p>
                             </p>
                             <div class="button-center-container">
@@ -358,8 +360,8 @@
             <label for="sortAscRevenue">Sort by Revenue : </label>
             </div>
             <div class="buttonSortRevenue">
-            <button id="sortAscRevenue" onclick="sortChartData('revenue','asc')">Revenue Asc</button>
-            <button id="sortDescRevenue" onclick="sortChartData('revenue','desc')">Revenue Desc</button>
+            <button id="sortAscRevenue" onclick="sortChartNeighbourhood('revenue','asc')">Revenue Asc</button>
+            <button id="sortDescRevenue" onclick="sortChartNeighbourhood('revenue','desc')">Revenue Desc</button>
             </div>
           </div>
           <div class="sortTransactions">
@@ -367,8 +369,8 @@
             <label for="sortAscTransactions">Sort by Transaction : </label>
             </div>
             <div class="buttonSortTransaction">
-            <button id="sortAscTransactions" onclick="sortChartData('transaction','asc')">Transaction Asc</button>
-            <button id="sortDescTransactions" onclick="sortChartData('transaction','desc')">Transaction Desc</button>
+            <button id="sortAscTransactions" onclick="sortChartNeighbourhood('transaction','asc')">Transaction Asc</button>
+            <button id="sortDescTransactions" onclick="sortChartNeighbourhood('transaction','desc')">Transaction Desc</button>
             </div>
           </div>
           </div>
@@ -456,7 +458,8 @@
             <a href="https://www.linkedin.com/school/revou/"
               ><i class="bx bxl-linkedin"></i
             ></a>
-            <a href="https://x.com/revoudotco"><i class="bx bxl-twitter"></i></a>
+            <a href="https://x.com/revoudotco"><i 
+              class="bx bxl-twitter"></i></a>
             <a href="https://www.instagram.com/revou_id/"
               ><i class="bx bxl-instagram"></i
             ></a>
