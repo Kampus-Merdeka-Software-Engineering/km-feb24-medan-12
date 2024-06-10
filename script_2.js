@@ -155,7 +155,8 @@ function showHideTaxClass(e) {
 
   let insightMessage = "";
   if (selectedTaxClass === "All") {
-    insightMessage = `Terdapat perbedaan pendapatan yang signifikan tax class 2 lebih tinggi daripada tax class 1 dengan selisih lebih dari US$ 4 Milyar.`;
+    insightMessage = `Kelas pajak 2 mendominasi pasar dengan pendapatan penjualan yang signifikan, melebihi kelas pajak 1 dengan selisih lebih dari US$ 4 miliar. Ini menunjukkan 
+    minat tinggi pada apartemen dan kondominium, mencerminkan tren perkotaan. Sementara kelas pajak 4 dan 1 berkontribusi lebih kecil, mereka tetap penting dan melayani segmen pasar yang berbeda.`;
   } else if (selectedTaxClass === "2") {
     insightMessage = `Tax Class ${selectedTaxClass} menghasilkan pendapatan total tertinggi, yaitu US$ ${revenue}.`;
   } else if (selectedTaxClass === "4") {
@@ -172,21 +173,20 @@ function closeTaxClassModal() {
   modal.style.display = "none";
 }
 
-
 // Fitur Close Popup tidak di button close
-window.onclick = function(event) {
+window.onclick = function (event) {
   var modals = [
     document.getElementById("insightTaxClassModal"),
     document.getElementById("insight2MegaModal"),
     document.getElementById("insightMegaModal"),
     document.getElementById("insightModal"),
     document.getElementById("insightCompositionModal"),
-    document.getElementById("insightMonthlyModal")
+    document.getElementById("insightMonthlyModal"),
   ];
 
-  modals.forEach(function(modal) {
+  modals.forEach(function (modal) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
   });
-}
+};
