@@ -26,7 +26,7 @@ function createQuarterlySalesChart() {
         total_transactions: arrTransactions,
       };
 
-      createQuarterlyChart(objChart, "line"); // Tipe chart sekarang adalah 'line'
+      createQuarterlyChart(objChart, "line");
     })
     .catch(function (error) {
       console.error("Error during fetch operation:", error);
@@ -36,7 +36,7 @@ function createQuarterlySalesChart() {
 function createQuarterlyChart(arrPassed, type) {
   const ctx = document.getElementById("chartQuarterly");
   new Chart(ctx, {
-    type: type, // Sekarang adalah grafik garis
+    type: type,
     data: {
       labels: arrPassed.quarters,
       datasets: [
@@ -46,8 +46,8 @@ function createQuarterlyChart(arrPassed, type) {
           borderColor: "rgb(0, 0, 255)",
           backgroundColor: "rgba(0, 0, 255, 0.1)",
           borderWidth: 1,
-          fill: false, // Pastikan area di bawah garis tidak diisi
-          tension: 0.4, // Menambahkan kelengkungan pada garis
+          fill: false,
+          tension: 0.4,
         },
       ],
     },
@@ -60,7 +60,7 @@ function createQuarterlyChart(arrPassed, type) {
           text: "QUARTERLY SALES REVENUE",
         },
         legend: {
-          onClick  : (e) => e.stopPropagation()
+          onClick: (e) => e.stopPropagation(),
         },
         tooltip: {
           callbacks: {
@@ -76,7 +76,7 @@ function createQuarterlyChart(arrPassed, type) {
       scales: {
         y: {
           beginAtZero: true,
-          max: 1400000000, // Atur nilai maksimal untuk pendapatan
+          max: 1400000000,
           title: {
             display: true,
             text: "Total Revenue (in USD)",
@@ -87,7 +87,6 @@ function createQuarterlyChart(arrPassed, type) {
   });
 }
 
-// Memulai proses pembuatan grafik
 createQuarterlySalesChart();
 
 //MONTHLY AVERAGE REVENUE
@@ -110,10 +109,9 @@ fetch("File Json/Monthly_Average_Revenue.json")
     };
     window.dataMonthlyRevenue = objChart;
     generateMonthlyRevenueFilter(objChart);
-    createChart7(objChart, "line");
+    createMonthlyRevenueChart(objChart, "line");
   });
-  
-// Open Popup
+
 function showHideMonthly(e) {
   var modal = document.getElementById("insightMonthlyModal");
   modal.style.display = "block";
@@ -132,7 +130,9 @@ function showHideMonthly(e) {
     toIndex + 1
   );
 
-  let paragraphInsights = document.getElementsByClassName("insightLineChartFilter");
+  let paragraphInsights = document.getElementsByClassName(
+    "insightLineChartFilter"
+  );
   let flagAll =
     yearMonth.length == window.dataMonthlyRevenue.Year_month.length
       ? true
@@ -162,14 +162,11 @@ function showHideMonthly(e) {
   });
 }
 
-// Close Popup
 function closeMonthlyModal() {
   var modal = document.getElementById("insightMonthlyModal");
   modal.style.display = "none";
 }
 
-
-// Filter Options
 function generateMonthlyRevenueFilter(dataMonthlyRevenuePassed) {
   const startSelect = document.getElementById("start-month");
   const endSelect = document.getElementById("end-month");
@@ -215,7 +212,6 @@ function generateMonthlyRevenueFilter(dataMonthlyRevenuePassed) {
   startSelect.dispatchEvent(new Event("change"));
 }
 
-// Update Monthly Revenue Chart
 function updateMonthlyRevenueChart(e) {
   e.preventDefault();
 
@@ -236,7 +232,9 @@ function updateMonthlyRevenueChart(e) {
     fromIndex,
     toIndex + 1
   );
-  let paragraphInsights = document.getElementsByClassName("insightLineChartFilter");
+  let paragraphInsights = document.getElementsByClassName(
+    "insightLineChartFilter"
+  );
   let flagAll =
     yearMonth.length == window.dataMonthlyRevenue.Year_month.length
       ? true
@@ -269,7 +267,7 @@ function updateMonthlyRevenueChart(e) {
   chartMonthlyRevenue.update();
 }
 
-function createChart7(arrLine3, type) {
+function createMonthlyRevenueChart(arrLine3, type) {
   chartMonthlyRevenue = new Chart(chart2, {
     type: type,
     data: {
@@ -292,7 +290,7 @@ function createChart7(arrLine3, type) {
           text: "MONTHLY AVERAGE REVENUE",
         },
         legend: {
-          onClick  : (e) => e.stopPropagation()
+          onClick: (e) => e.stopPropagation(),
         },
       },
       scales: {
@@ -310,7 +308,7 @@ function createChart7(arrLine3, type) {
 }
 
 // SALES COMPOSITION
-const ctx = document.getElementById("chartComposition");
+const chartCompo = document.getElementById("chartComposition");
 
 fetch("File Json/Sales_Composition_building_classification (1).json")
   .then(function (response) {
@@ -325,18 +323,18 @@ fetch("File Json/Sales_Composition_building_classification (1).json")
     data.forEach((element) => {
       arrTotalRevenue.push(element.TOTAL_REVENUE);
       arrBuildingClass.push(element.BUILDING_CLASS);
-      arrPercentage.push(element.PERCENTAGE_REVENUE)
+      arrPercentage.push(element.PERCENTAGE_REVENUE);
     });
     var objChart = {
       total_revenue: arrTotalRevenue,
       building_class: arrBuildingClass,
       percentage_revenue: arrPercentage,
     };
-    createChart3(objChart, "pie");
+    createSalesCompositionChart(objChart, "pie");
   });
 
-function createChart3(arrPassed, type) {
-  new Chart(ctx, {
+function createSalesCompositionChart(arrPassed, type) {
+  new Chart(chartCompo, {
     type: type,
     data: {
       labels: arrPassed.building_class,
@@ -363,16 +361,13 @@ function createChart3(arrPassed, type) {
           display: true,
           text: "SALES COMPOSITION BUILDING CLASSIFICATION",
         },
-        tooltip: {
-          enabled: false,
-        },
         legend: {
           position: "bottom",
           onHover: null,
         },
         tooltip: {
           callbacks: {
-            label: function(context) {
+            label: function (context) {
               const index = context.dataIndex;
               const label = context.label;
               const totalRevenues = arrPassed.total_revenue[index];
@@ -387,7 +382,7 @@ function createChart3(arrPassed, type) {
 }
 
 //Total Revenue By Tax Class
-const chart4 = document.getElementById("chartTaxClass");
+const chartTax = document.getElementById("chartTaxClass");
 let dataTaxClass = null;
 let chartTaxClass = null;
 
@@ -398,7 +393,6 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
     }
   })
   .then(function (data) {
-    
     var arrTotalRevenue = [];
     var arrTaxClass = [];
     data.forEach((element) => {
@@ -413,7 +407,7 @@ fetch("File Json/Total_Revenue_by_Tax_Class.json")
     window.dataTaxClass = objChart;
     generateTaxClassOptions(objChart);
 
-    createChart2(objChart, "bar");
+    createTaxClassChart(objChart, "bar");
   });
 
 function generateTaxClassOptions(dataTaxClassPassed) {
@@ -485,15 +479,15 @@ function sortTaxClass(strSort) {
   window.chartTaxClass.update();
 }
 
-function createChart2(arrPassed2, type) {
-  window.chartTaxClass = new Chart(chart4, {
+function createTaxClassChart(arrPassedTax, type) {
+  window.chartTaxClass = new Chart(chartTax, {
     type: type,
     data: {
-      labels: arrPassed2.tax_class,
+      labels: arrPassedTax.tax_class,
       datasets: [
         {
           label: "Total Revenue",
-          data: arrPassed2.total_revenue,
+          data: arrPassedTax.total_revenue,
           borderWidth: 1,
         },
       ],
@@ -503,7 +497,7 @@ function createChart2(arrPassed2, type) {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          onClick  : (e) => e.stopPropagation()
+          onClick: (e) => e.stopPropagation(),
         },
         title: {
           display: true,
@@ -520,7 +514,7 @@ function createChart2(arrPassed2, type) {
 }
 
 //TOP 10 TOTAL REVENUE AND TRANSACTION BY NEIGHBORHOOD CHART
-const chart6 = document.getElementById("megachart");
+const chartNeighbour = document.getElementById("megachart");
 
 fetch("File Json/Total_revenue_transaction_neighborhood.json")
   .then(function (response) {
@@ -542,12 +536,12 @@ fetch("File Json/Total_revenue_transaction_neighborhood.json")
       total_transaction: arrTotalTransaction,
       neighborhood: arrNeighborhood,
     };
-    createChart(objChart, "bar");
+    createNeighbourhoodChart(objChart, "bar");
   });
 
-let megaChartSort; // Deklarasikan variabel chart di luar fungsi agar dapat diakses di luar fungsi juga
+let neighborhoodChartSort; // Deklarasikan variabel chart di luar fungsi agar dapat diakses di luar fungsi juga
 
-function createChart(arrPassed, type) {
+function createNeighbourhoodChart(arrPassed, type) {
   const updateChartScales = (chart, isMobile) => {
     if (isMobile) {
       chart.options.scales.sales.display = false;
@@ -560,12 +554,12 @@ function createChart(arrPassed, type) {
       chart.options.scales.x.ticks.maxRotation = 45;
       chart.options.scales.x.ticks.minRotation = 45;
     }
-    chart.update(); // Perbarui grafik setelah memperbarui opsi
+    chart.update();
   };
 
   const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
 
-  megaChartSort = new Chart(chart6, {
+  neighborhoodChartSort = new Chart(chartNeighbour, {
     type: type,
     data: {
       labels: arrPassed.neighborhood,
@@ -594,7 +588,7 @@ function createChart(arrPassed, type) {
         },
         legend: {
           onHover: null,
-          onClick  : (e) => e.stopPropagation()
+          onClick: (e) => e.stopPropagation(),
         },
       },
       layout: {
@@ -639,41 +633,41 @@ function createChart(arrPassed, type) {
 
   // Event listener untuk mendeteksi perubahan ukuran layar
   window.addEventListener("resize", () => {
-    updateChartScales(megaChartSort, isMobile());
+    updateChartScales(neighborhoodChartSort, isMobile());
   });
 
   // Panggil fungsi updateChartScales untuk mengatur skala grafik pada saat pertama kali dimuat
-  updateChartScales(megaChartSort, isMobile());
+  updateChartScales(neighborhoodChartSort, isMobile());
 }
 
 document
   .getElementById("sortAscRevenue")
   .addEventListener("click", function () {
-    sortChartData("asc", "revenue");
+    sortChartNeighbourhood("asc", "revenue");
   });
 
 document
   .getElementById("sortDescRevenue")
   .addEventListener("click", function () {
-    sortChartData("desc", "revenue");
+    sortChartNeighbourhood("desc", "revenue");
   });
 
 document
   .getElementById("sortAscTransactions")
   .addEventListener("click", function () {
-    sortChartData("asc", "transaction");
+    sortChartNeighbourhood("asc", "transaction");
   });
 
 document
   .getElementById("sortDescTransactions")
   .addEventListener("click", function () {
-    sortChartData("desc", "transaction");
+    sortChartNeighbourhood("desc", "transaction");
   });
 
-function sortChartData(strSort, sortBy) {
-  let arrNeighborhoodChart = megaChartSort.data.labels;
-  let arrTotalSalesChart = megaChartSort.data.datasets[0].data;
-  let arrTotalTransactionChart = megaChartSort.data.datasets[1].data;
+function sortChartNeighbourhood(strSort, sortBy) {
+  let arrNeighborhoodChart = neighborhoodChartSort.data.labels;
+  let arrTotalSalesChart = neighborhoodChartSort.data.datasets[0].data;
+  let arrTotalTransactionChart = neighborhoodChartSort.data.datasets[1].data;
   let arrSort = [];
 
   arrTotalSalesChart.forEach((element, index) => {
@@ -707,12 +701,11 @@ function sortChartData(strSort, sortBy) {
     arrTotalTransactionChart.push(element.totalTransaction);
   });
 
-  megaChartSort.data.labels = arrNeighborhoodChart;
-  megaChartSort.data.datasets[0].data = arrTotalSalesChart;
-  megaChartSort.data.datasets[1].data = arrTotalTransactionChart;
-  megaChartSort.update();
+  neighborhoodChartSort.data.labels = arrNeighborhoodChart;
+  neighborhoodChartSort.data.datasets[0].data = arrTotalSalesChart;
+  neighborhoodChartSort.data.datasets[1].data = arrTotalTransactionChart;
+  neighborhoodChartSort.update();
 }
-
 
 //Total Revenue By Building Category
 const chartBuildingCategory = document.getElementById("megachart_2");
@@ -735,13 +728,13 @@ fetch("File Json/Total_Revenue_building_Category.json")
       arrBuildingClassCategory.push(element.BUILDING_CLASS_CATEGORY);
       arrRevenuePercentage.push(element.Revenue_Percentage);
     });
-    
+
     var objChart = {
       building_class_category: arrBuildingClassCategory,
       total_revenue: arrTotalRevenue,
       revenue_percentage: arrRevenuePercentage,
     };
-    
+
     createChartBuildingCategory(objChart, "bar");
   });
 
@@ -767,15 +760,15 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
       scales: {
         x: {
           type: "logarithmic",
-          display: function(context) {
-            return context.chart.width >= 600; 
-          }
+          display: function (context) {
+            return context.chart.width >= 600;
+          },
         },
         y: {
-          display: function(context) {
+          display: function (context) {
             return context.chart.width >= 600;
-          }
-        }
+          },
+        },
       },
       plugins: {
         title: {
@@ -783,7 +776,7 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
           text: "TOP 10 TOTAL REVENUE BY BUILDING CATEGORY",
         },
         legend: {
-          onClick  : (e) => e.stopPropagation()
+          onClick: (e) => e.stopPropagation(),
         },
         tooltip: {
           callbacks: {
@@ -851,12 +844,3 @@ function sortChartDataRevenue(strSort, sortBy) {
   window.megaChart2Sort.data.datasets[0].data = arrTotalRevenueChart;
   window.megaChart2Sort.update();
 }
-
-
-
-
-
-
-
-
-
