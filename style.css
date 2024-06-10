@@ -128,7 +128,7 @@ section {
 }
 
 .home .content {
-  max-width: 60rem;
+  max-width: 50rem;
 }
 
 .home .content h1 {
@@ -574,8 +574,10 @@ button:hover {
   margin-top: 20px;
 }
 
-.chartQuarterlyBox, .chartMonthlyBox,
-.chartCompositionBox, .chartTaxClassBox {
+.chartQuarterlyBox,
+.chartMonthlyBox,
+.chartCompositionBox,
+.chartTaxClassBox {
   width: 600px;
   height: auto;
   padding: 10px;
@@ -990,7 +992,7 @@ button {
     justify-content: center;
     align-items: center;
     height: 50px;
-    border-bottom: 5px solid #ffd743 ;
+    border-bottom: 5px solid #ffd743;
   }
 
   header {
@@ -1234,7 +1236,6 @@ button {
   header {
     display: none;
   }
-
 }
 
 /*media screen untuk ukuran tablet*/
