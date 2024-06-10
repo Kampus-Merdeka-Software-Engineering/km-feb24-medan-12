@@ -274,7 +274,7 @@ function createMonthlyRevenueChart(arrLine3, type) {
       labels: arrLine3.Year_month,
       datasets: [
         {
-          label: "Monthly_Average_Revenue",
+          label: "Average Revenue",
           data: arrLine3.Avg_salesprice,
           fill: false,
           borderColor: "rgb(75, 192, 192)",
@@ -296,6 +296,10 @@ function createMonthlyRevenueChart(arrLine3, type) {
       scales: {
         y: {
           display: true,
+          title: {
+            display: true,
+            text: "Average Revenue (in USD)",
+          },
           ticks: {
             beginAtZero: true,
             max: 800000,
@@ -372,7 +376,7 @@ function createSalesCompositionChart(arrPassed, type) {
               const label = context.label;
               const totalRevenues = arrPassed.total_revenue[index];
               const percentages = arrPassed.percentage_revenue[index];
-              return `${label}: ${totalRevenues} (${percentages}%)`;
+              return `${label}: ${"$" + totalRevenues} (${percentages}%)`;
             },
           },
         },
@@ -507,6 +511,10 @@ function createTaxClassChart(arrPassedTax, type) {
       scales: {
         y: {
           beginAtZero: true,
+          title: {
+            display: true,
+            text: "Total Revenue (in USD)",
+          },
         },
       },
     },
@@ -565,7 +573,7 @@ function createNeighbourhoodChart(arrPassed, type) {
       labels: arrPassed.neighborhood,
       datasets: [
         {
-          label: "Total Sales",
+          label: "Total Revenue",
           data: arrPassed.total_sales,
           borderWidth: 1,
           yAxisID: "sales",
@@ -613,7 +621,7 @@ function createNeighbourhoodChart(arrPassed, type) {
           display: !isMobile(),
           title: {
             display: true,
-            text: "Total Sales",
+            text: "Total Revenue (in USD)",
           },
         },
         transaction: {
@@ -760,6 +768,10 @@ function createChartBuildingCategory(arrPassedBuildingCategory, type) {
       scales: {
         x: {
           type: "logarithmic",
+          title: {
+            display: true,
+            text: "Total Revenue (in USD)",
+          },
           display: function (context) {
             return context.chart.width >= 600;
           },
