@@ -1010,6 +1010,10 @@ button {
     flex-direction: row;
     background-color: #000;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-bottom: 5px solid #ffd743 ;
   }
 
   header {
@@ -1031,7 +1035,7 @@ button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 130px;
   }
 
   .menubar ul.menu-links i {
@@ -1250,6 +1254,10 @@ button {
     margin-top: 5px;
     margin-left: 10px;
   }
+  header {
+    display: none;
+  }
+
 }
 
 /*media screen untuk ukuran tablet*/
