@@ -574,7 +574,8 @@ button:hover {
   margin-top: 20px;
 }
 
-.chartQuarterlyBox {
+.chartQuarterlyBox, .chartMonthlyBox,
+.chartCompositionBox, .chartTaxClassBox {
   width: 600px;
   height: auto;
   padding: 10px;
@@ -610,14 +611,6 @@ button:hover {
   cursor: pointer;
 }
 
-.chartMonthlyBox {
-  width: 600px;
-  height: auto;
-  padding: 10px;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
-  border-radius: 25px;
-}
-
 #chartMonthly {
   margin-left: 30px;
 }
@@ -645,14 +638,6 @@ button:hover {
   cursor: pointer;
 }
 
-.chartCompositionBox {
-  width: 600px;
-  height: auto;
-  padding: 15px;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
-  border-radius: 25px;
-}
-
 #chartComposition {
   margin-top: 45px;
 }
@@ -678,14 +663,6 @@ button:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-.chartTaxClassBox {
-  width: 600px;
-  height: auto;
-  padding: 10px;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.214);
-  border-radius: 25px;
 }
 
 #insightChartTaxClass.hidden {
