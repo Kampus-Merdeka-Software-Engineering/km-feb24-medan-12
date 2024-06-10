@@ -594,10 +594,6 @@ function createNeighbourhoodChart(arrPassed, type) {
           display: true,
           text: "TOP 10 TOTAL REVENUE & TRANSACTION BY NEIGHBORHOOD",
         },
-        legend: {
-          onHover: null,
-          onClick: (e) => e.stopPropagation(),
-        },
       },
       layout: {
         padding: {},
